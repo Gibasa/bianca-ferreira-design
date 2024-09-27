@@ -16,8 +16,8 @@ function App() {
       <GlobalStyle />
       <Header />
       <Home/>
-      <Projetos/>
       <Servicos/>
+      <Projetos/>
       <Contato/>
       <Footer />
     </ThemeProvider>

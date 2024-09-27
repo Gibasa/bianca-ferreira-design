@@ -22,11 +22,17 @@ const StyledButton = styled(Button)`
   color: ${({ theme }) => theme.colors.black} !important;
   font-family: ${({ theme }) => theme.fonts.primary} !important;
   font-weight: 600 !important;
+  text-transform: none !important; 
+  font-size: 20px !important;
 `
 
 const StyledMenuIcon = styled(MenuIcon)`
   color: ${({ theme }) => theme.colors.black} !important; 
 `;
+
+const StyledToolbar = styled(Toolbar) `
+  height: 120px !important;
+`
 
 function Header() {
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -42,12 +48,12 @@ function Header() {
   return (
     <StyledAppBar position="static">
       <Container maxWidth="xl">
-        <Toolbar disableGutters>
+        <StyledToolbar disableGutters>
         <Box component="img" 
                src="/images/logoBiancaFerreira.png"
                alt="Logo"
                href="/#"
-               sx={{ height: 40, display: { xs: 'flex', md: 'flex' }, mr: 1, cursor: "pointer" }}
+               sx={{ height: 70, display: { xs: 'flex', md: 'flex' }, mr: 1, cursor: "pointer" }}
           />      
 
           <Box sx={{ flexGrow: 1 }} />
@@ -99,7 +105,7 @@ function Header() {
               ))}
             </Menu>
           </Box>
-        </Toolbar>
+        </StyledToolbar>
       </Container>
     </StyledAppBar>
   );
