@@ -6,6 +6,8 @@ import "slick-carousel/slick/slick-theme.css";
 const CarouselStyled = styled.div`
 width: 100%;
 overflow: hidden;
+margin-top: 110px;
+z-index: 1;
 `;
 
 const ImageContainer = styled.div `

@@ -16,6 +16,9 @@ const pages = ["projetos", "serviços", "contato"];
 
 const StyledAppBar = styled(AppBar)`
   background-color: ${({ theme }) => theme.colors.white} !important; 
+  position: fixed !important;
+  top: 0;
+  z-index: 5 !important;
 `;
 
 const StyledButton = styled(Button)`

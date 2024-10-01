@@ -10,8 +10,8 @@ const BannerContainer = styled.div`
 `;
 
 const Word = styled.div`
-  margin: 0 2rem; /* Ajuste o espaçamento entre palavras */
-  font-size: 30px; /* Definindo o tamanho da fonte aqui */
+  margin: 0 2rem; 
+  font-size: 30px;
   color: ${({ theme }) => theme.colors.white};
 `;
 
@@ -22,7 +22,6 @@ function Servicos() {
     <ServicosStyled id="serviços">
       <BannerContainer>
         <Marquee gradient={false} speed={50} autoFill>
-          {/* Duplicando as palavras para garantir a continuidade */}
           {words.concat(words).map((word, index) => (
             <Word key={`word-${index}`}>{word}</Word>
           ))}
