@@ -1,18 +1,99 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-  /* Reset básico */
+  
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
 
-  html, body {
-    height: 100%;
-    scroll-behavior: smooth;
+  
+  html {
+    font-size: 16px;
   }
 
+  body {
+    font-family: ${({ theme }) => theme.fonts.primary}; 
+    font-size: 1rem; 
+    line-height: 1.5;
+    background-color: ${({ theme }) => theme.colors.white};
+    color: ${({ theme }) => theme.colors.black};
+  }
+
+  
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-size: 2.8rem;
+    font-weight: 600;
+  }
+
+  p {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  button {
+    font-size: 1rem; 
+    padding: 0.8rem 1.5rem;
+    border: none;
+    background-color: ${({ theme }) => theme.colors.primary || '#007BFF'};
+    color: ${({ theme }) => theme.colors.white || '#fff'};
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  button:hover {
+    background-color: ${({ theme }) => theme.colors.primaryHover || '#0056b3'};
+    color: ${({ theme }) => theme.colors.white || '#fff'};
+  }
+
+  /* Responsividade */
+  @media (max-width: 899px) {
+    html {
+      font-size: 14px; /* 1rem = 14px, ajusta o tamanho base */
+    }
+
+    h1 {
+      font-size: 2.2rem; /* Aproximadamente 31px */
+    }
+
+    h2 {
+      font-size: 1.8rem; /* Aproximadamente 25px */
+    }
+
+    p {
+      font-size: 0.9rem; /* Aproximadamente 14px */
+    }
+
+    button {
+      font-size: 0.9rem; /* Aproximadamente 14px */
+      padding: 0.7rem 1.2rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    html {
+      font-size: 12px; /* 1rem = 12px */
+    }
+
+    h1 {
+      font-size: 2rem; /* Aproximadamente 24px */
+    }
+
+    h2 {
+      font-size: 1.6rem; /* Aproximadamente 19px */
+    }
+
+    p {
+      font-size: 0.8rem; /* Aproximadamente 12px */
+    }
+
+    button {
+      font-size: 0.8rem; /* Aproximadamente 12px */
+      padding: 0.6rem 1rem;
+    }
+  }
 `;
 
 export default GlobalStyle;

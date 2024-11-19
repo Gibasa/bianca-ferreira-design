@@ -6,7 +6,6 @@ import "slick-carousel/slick/slick-theme.css";
 const CarouselStyled = styled.div`
 width: 100%;
 overflow: hidden;
-margin-top: 110px;
 z-index: 1;
 `;
 
@@ -14,14 +13,12 @@ const ImageContainer = styled.div `
 display: flex;
 justify-content: center;
 align-items: center;
-height: 80vh;
-margin-top: 20px;
 overflow: hidden;
 
 `
 
 const ImageStyled = styled.img`
-max-width: 80%;
+max-width: 100%;
 max-height: 100%;
 object-fit: contain;
 margin: auto;
@@ -44,7 +41,7 @@ function Carousel() {
     pauseOnHover: false,
   };
   return (
-    <CarouselStyled>
+    <CarouselStyled id="projetos">
       <Slider {...settings}>
       {imageArray.map((image, index) => (
           <ImageContainer key={index}>
