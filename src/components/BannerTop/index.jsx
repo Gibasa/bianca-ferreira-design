@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import Lottie from "react-lottie";
 import animationData from "../../assets/circle.json";
@@ -41,6 +42,8 @@ const BannerTopStyled = styled.div`
         width: 14rem;
         height: 5rem;
         pointer-events: none;
+        opacity: ${({ animationTriggered }) => (animationTriggered ? 1 : 0)};
+        transition: opacity 0.5s ease-in-out;
       }
     }
   }
@@ -51,23 +54,48 @@ const BannerTopStyled = styled.div`
 `;
 
 function BannerTop() {
+  const sectionRef = useRef(null);
+  const [animationTriggered, setAnimationTriggered] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !animationTriggered) {
+          setTimeout(() => setAnimationTriggered(true), 1000); // Delay de 1 segundo
+        }
+      },
+      { threshold: 0.5 } // Ativa quando 50% do elemento está visível
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, [animationTriggered]);
+
   const defaultOptions = {
-    loop: true,
-    autoplay: true,
+    loop: false,
+    autoplay: animationTriggered,
     animationData: animationData,
     rendererSettings: {
       preserveAspectRatio: "none",
     },
   };
+
   return (
-    <BannerTopStyled>
+    <BannerTopStyled ref={sectionRef} animationTriggered={animationTriggered}>
       <div className="title">
         <h1>
           A SUA MARCA PRECISA{" "}
           <span className="highlight">
             MARCAR
             <div className="animation">
-              <Lottie options={defaultOptions} />
+              <Lottie options={defaultOptions} isStopped={!animationTriggered} />
             </div>
           </span>
           , SEJA A DIFERENÇA.

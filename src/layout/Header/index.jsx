@@ -2,25 +2,37 @@ import styled, { keyframes } from "styled-components";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
-import Container from "@mui/material/Container";
-import Button from "@mui/material/Button";
-import MenuItem from "@mui/material/MenuItem";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-const pages = ["projetos", "serviços", "contato"];
+// Animações de entrada e saída para o crescimento do menu
+const expandModal = keyframes`
+  from {
+    width: 60px;
+    height: 50px;  
+  }
+  to {
+    width: 30vw;
+    height: 60vh;
+  }
+`;
+
+const collapseModal = keyframes`
+  from {
+    width: 30vw;
+    height: 60vh;
+  }
+  to {
+    width: 60px;
+    height: 50px;  
+  }
+`;
 
 const StyledAppBar = styled(AppBar)`
-  background-color: ${({ theme }) => theme.colors.white} !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
   position: fixed !important;
   top: 0;
   z-index: 5 !important;
-  .css-hhdjsd-MuiContainer-root {
-    padding: 0;
-  }
 `;
 
 const StyledToolbar = styled(Toolbar)`
@@ -28,166 +40,172 @@ const StyledToolbar = styled(Toolbar)`
   margin: 0 5vw !important;
 `;
 
-const growLine = keyframes`
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
+const StyledLogo = styled(Box)`
+  height: 70px;
+  mix-blend-mode: difference !important;
+  cursor: pointer;
+`;
+
+const StyledHamburger = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 60px;
+  height: 50px;
+  cursor: pointer;
+  background-color: ${({ theme }) => theme.colors.white};
+  padding: 10px;
+  border-radius: 5px;
+  position: relative;
+  z-index: 10;
+  transition: all 0.3s ease-in-out;
+
+  div {
+    height: 5px;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+
+    &:nth-child(1) {
+      background-color: ${({ isOpen, theme }) =>
+        isOpen ? theme.colors.black : theme.colors.blue};
+      transform: ${({ isOpen }) =>
+        isOpen ? "rotate(48deg) translate(8px, 8px)" : "none"};
+    }
+
+    &:nth-child(2) {
+      background-color: ${({ theme }) => theme.colors.red};
+      opacity: ${({ isOpen }) => (isOpen ? "0" : "1")};
+    }
+
+    &:nth-child(3) {
+      background-color: ${({ isOpen, theme }) =>
+        isOpen ? theme.colors.black : theme.colors.green};
+      transform: ${({ isOpen }) =>
+        isOpen ? "rotate(-48deg) translate(10px, -9px)" : "none"};
+    }
   }
 `;
 
-const StyledButton = styled(Button)`
-  position: relative !important;
-  color: ${({ theme }) => theme.colors.black} !important;
-  font-family: ${({ theme }) => theme.fonts.primary} !important;
-  font-weight: 600 !important;
-  text-transform: none !important;
-  font-size: 1.8rem !important;
-
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: 4px;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 8px;
-    background-color: ${({ underlineColor }) => underlineColor};
-    width: ${({ isActive }) => (isActive ? "90%" : "0")};
-    animation: ${({ isActive }) => (isActive ? growLine : "none")} 0.4s ease-out;
-    transition: width 0.4s ease-out;
-  }
-  &:hover {
-    background-color: transparent !important;
-    box-shadow: none !important;
-  }
+const StyledModal = styled.div`
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 35px 74px;
+  display: flex;
+  padding: 50px;
+  align-items: start;
+  justify-content: center;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255);
+  animation: ${({ isClosing }) =>
+    isClosing ? collapseModal : expandModal} 0.5s ease-out forwards;
+  z-index: 5;
 `;
 
-const StyledMenuIcon = styled(MenuIcon)`
-  color: ${({ theme }) => theme.colors.black} !important;
+const ModalContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  opacity: 0;
+  animation: ${({ isClosing }) =>
+    isClosing ? "fadeOut 0.1s ease-in forwards" : "fadeIn 1s 0.5s forwards"};
+
+  a {
+    display: block;
+    margin: 10px 0;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+
+    &:hover {
+      color: gray;
+    }
+  }
+
+  button {
+    margin-top: 50px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    background-color: ${({ theme }) => theme.colors.blue};
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: ${({ theme }) => theme.colors.darkBlue};
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
 `;
 
 function Header() {
-  const [anchorElNav, setAnchorElNav] = useState(null);
-  const [activeSection, setActiveSection] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
 
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
-  // Scroll suave ao clicar no link
-  const handleClick = (id) => {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth", block: "start" });
+  const handleToggleModal = () => {
+    if (isModalOpen) {
+      setIsClosing(true);
+      setTimeout(() => {
+        setIsModalOpen(false);
+        setIsClosing(false);
+      }, 300); // Aguarda o fadeOut e o fechamento do modal
+    } else {
+      setIsModalOpen(true);
+      setIsClosing(false);
     }
   };
 
-  // Atualizar seção ativa com base no scroll
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const sections = pages.map((page) => document.getElementById(page));
-      for (const section of sections) {
-        if (
-          section.offsetTop <= scrollPosition + 120 &&
-          section.offsetTop + section.offsetHeight > scrollPosition + 120
-        ) {
-          setActiveSection(section.id);
-          break;
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // Cores para a linha
-  const underlineColors = {
-    projetos: "red",
-    serviços: "green",
-    contato: "blue",
-  };
+  const pages = ["projetos", "serviços", "contato"];
 
   return (
     <StyledAppBar position="static">
-      <Container maxWidth="xl">
-        <StyledToolbar disableGutters>
-          <Box
-            component="img"
-            src="/images/logoBiancaFerreira.png"
-            alt="Logo"
-            href="/#"
-            sx={{
-              height: 70,
-              display: { xs: "flex", md: "flex" },
-              mr: 1,
-              cursor: "pointer",
-            }}
-          />
+      <StyledToolbar disableGutters>
+        <StyledLogo
+          component="img"
+          src="/images/logoBiancaFerreira.png"
+          alt="Logo"
+        />
 
-          <Box sx={{ flexGrow: 1 }} />
+        <Box sx={{ flexGrow: 1 }} />
 
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <StyledButton
-                key={page}
-                underlineColor={underlineColors[page]}
-                isActive={activeSection === page}
-                onClick={() => handleClick(page)}
-              >
-                {page}
-              </StyledButton>
-            ))}
-          </Box>
+        <StyledHamburger onClick={handleToggleModal} isOpen={isModalOpen}>
+          <div />
+          <div />
+          <div />
+        </StyledHamburger>
 
-          <Box sx={{ flexGrow: 0, display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="open navigation menu"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-              sx={{ ml: "auto" }}
-            >
-              <StyledMenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-            >
+        {isModalOpen && (
+          <StyledModal isClosing={isClosing}>
+            <ModalContent isClosing={isClosing}>
               {pages.map((page) => (
-                <MenuItem
-                  key={page}
-                  onClick={() => {
-                    handleClick(page);
-                    handleCloseNavMenu();
-                  }}
-                >
-                  <Typography sx={{ textAlign: "center" }}>{page}</Typography>
-                </MenuItem>
+                <a key={page} href={`#${page}`} onClick={handleToggleModal}>
+                  {page}
+                </a>
               ))}
-            </Menu>
-          </Box>
-        </StyledToolbar>
-      </Container>
+              <button>faça seu orçamento</button>
+            </ModalContent>
+          </StyledModal>
+        )}
+      </StyledToolbar>
     </StyledAppBar>
   );
 }

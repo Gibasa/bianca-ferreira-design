@@ -1,6 +1,7 @@
+import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import Lottie from 'react-lottie';
-import animationData from '../../assets/circle.json'; 
+import Lottie from "react-lottie";
+import animationData from "../../assets/circle.json";
 
 const BannerMidStyled = styled.section`
   background-color: ${({ theme }) => theme.colors.green};
@@ -16,10 +17,11 @@ const BannerMidStyled = styled.section`
     align-items: center;
     flex: 1;
     position: relative;
+
     h2 {
       position: relative;
       text-align: justify;
-      z-index: 2; 
+      z-index: 2;
       line-height: 3rem;
     }
 
@@ -29,12 +31,12 @@ const BannerMidStyled = styled.section`
 
       .animation {
         position: absolute;
-        top: 50%; 
-        left: 50%; 
-        transform: translate(-50%, -50%) scale(1.2); 
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1.2);
         z-index: 1;
-        width: 16rem; 
-        height: 7rem; 
+        width: 16rem;
+        height: 7rem;
         pointer-events: none;
       }
     }
@@ -54,9 +56,33 @@ const BannerMidStyled = styled.section`
 `;
 
 function BannerMid() {
+  const [animationTriggered, setAnimationTriggered] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !animationTriggered) {
+          setTimeout(() => setAnimationTriggered(true), 1000); // Delay de 2 segundos
+        }
+      },
+      { threshold: 0.5 } // Ativa quando 50% do elemento está visível
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, [animationTriggered]);
+
   const defaultOptions = {
-    loop: true,
-    autoplay: true,
+    loop: false, // A animação para no final
+    autoplay: animationTriggered, // Só inicia se ativada
     animationData: animationData,
     rendererSettings: {
       preserveAspectRatio: "none",
@@ -64,16 +90,18 @@ function BannerMid() {
   };
 
   return (
-    <BannerMidStyled id="serviços">
+    <BannerMidStyled id="serviços" ref={sectionRef}>
       <div className="title">
         <h2>
-          COMO PODEMOS<br/> FAZER A{" "}
+          COMO PODEMOS
+          <br /> FAZER A{" "}
           <span className="highlight">
             DIFERENÇA
             <div className="animation">
-              <Lottie options={defaultOptions} />
+              <Lottie options={defaultOptions} isStopped={!animationTriggered} />
             </div>
-          </span>{" "}<br/>
+          </span>{" "}
+          <br />
           NA SUA MARCA.
         </h2>
       </div>
