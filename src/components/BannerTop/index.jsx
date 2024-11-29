@@ -5,6 +5,7 @@ import animationData from "../../assets/circle.json";
 
 const BannerTopStyled = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   background-color: ${({ theme }) => theme.colors.blue};
@@ -18,10 +19,10 @@ const BannerTopStyled = styled.div`
     align-items: center;
 
     h1 {
-      width: 70%;
+      width: 50%;
       display: block;
       line-height: 1;
-      text-align: justify;
+      text-align: center;
       &::after {
         content: "";
         display: inline-block;
@@ -32,6 +33,9 @@ const BannerTopStyled = styled.div`
     .highlight {
       position: relative;
       display: inline-block;
+      font-family: ${({ theme }) => theme.fonts.terciary};
+      font-size: 3rem;
+      font-style: italic;
 
       .animation {
         position: absolute;
@@ -39,8 +43,8 @@ const BannerTopStyled = styled.div`
         left: 50%;
         transform: translate(-50%, -50%) scale(1.2);
         z-index: 1;
-        width: 14rem;
-        height: 5rem;
+        width: 11rem;
+        height: 6rem;
         pointer-events: none;
         opacity: ${({ animationTriggered }) => (animationTriggered ? 1 : 0)};
         transition: opacity 0.5s ease-in-out;
@@ -50,6 +54,17 @@ const BannerTopStyled = styled.div`
 
   .paragrafs {
     flex: 1;
+    width: 50%;
+    text-align: center;
+  }
+  button {
+    background-color: ${({ theme }) => theme.colors.green};
+    margin-top: 50px;
+    padding: 5px 15px;
+    &:hover {
+      background-color: ${({ theme }) => theme.colors.white};
+      color: ${({ theme }) => theme.colors.green};
+    }
   }
 `;
 
@@ -91,26 +106,31 @@ function BannerTop() {
     <BannerTopStyled ref={sectionRef} animationTriggered={animationTriggered}>
       <div className="title">
         <h1>
-          A SUA MARCA PRECISA{" "}
+          A sua marca precisa{" "}
           <span className="highlight">
-            MARCAR
+            marcar
             <div className="animation">
-              <Lottie options={defaultOptions} isStopped={!animationTriggered} />
+              <Lottie
+                options={defaultOptions}
+                isStopped={!animationTriggered}
+              />
             </div>
           </span>
-          , SEJA A DIFERENÇA.
+          , seja a diferença.
         </h1>
       </div>
       <div className="paragrafs">
         <p>
           Acreditamos que a marca é muito mais do que um logotipo ou um slogan,
-          é a expressão da essência de um negócio.
+          é a maneira como a sua empresa se coloca no mundo.
         </p>
         <p>
-          Nosso trabalho é te guiar para tornar a sua marca forte, memorável e
-          criativa.
+          Construir uma marca é narrar uma história, onde cada palavra e imagem
+          se unem para criar uma identidade única.{" "}
         </p>
+        <p>Vamos começar a contar a sua história hoje?</p>
       </div>
+      <button>Vamos criar juntos?</button>
     </BannerTopStyled>
   );
 }

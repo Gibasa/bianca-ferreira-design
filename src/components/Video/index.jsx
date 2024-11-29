@@ -7,13 +7,13 @@ const VideoStyled = styled.video`
   align-items: center;
   background-color: ${({ theme }) => theme.colors.blue};
   width: 100%;
-  margin-top: 130px;
+  margin-top: 0;
 `;
 
 function Video() {
   return (
-    <VideoStyled muted autoPlay loop playsInline>
-      <source src={`./images/video-intro.mp4`} type="video/mp4" />
+    <VideoStyled id="video" muted autoPlay loop playsInline>
+      <source src={`./images/video-intro-bf.mp4`} type="video/mp4" />
     </VideoStyled>
   );
 }

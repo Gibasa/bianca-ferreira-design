@@ -2,14 +2,30 @@ import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import Lottie from "react-lottie";
 import animationData from "../../assets/circle.json";
+import { FaArrowCircleRight } from "react-icons/fa";
+import { keyframes } from "styled-components";
+
+const moveArrow = keyframes`
+  0% {
+    transform: translateX(-30px);
+  }
+  50% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(-30px);
+  }
+`;
 
 const BannerMidStyled = styled.section`
-  background-color: ${({ theme }) => theme.colors.green};
+  background-color: ${({ theme }) => theme.colors.black};
   color: ${({ theme }) => theme.colors.white};
-  padding: 8vw 5vw;
+  padding: 8vw 1vw;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
   margin-top: -17px;
+  gap: 50px;
 
   .title {
     display: flex;
@@ -20,7 +36,7 @@ const BannerMidStyled = styled.section`
 
     h2 {
       position: relative;
-      text-align: justify;
+      text-align: center;
       z-index: 2;
       line-height: 3rem;
     }
@@ -28,6 +44,9 @@ const BannerMidStyled = styled.section`
     .highlight {
       position: relative;
       display: inline-block;
+      font-family: ${({ theme }) => theme.fonts.terciary};
+      font-size: 3rem;
+      font-style: italic;
 
       .animation {
         position: absolute;
@@ -35,7 +54,7 @@ const BannerMidStyled = styled.section`
         left: 50%;
         transform: translate(-50%, -50%) scale(1.2);
         z-index: 1;
-        width: 16rem;
+        width: 13rem;
         height: 7rem;
         pointer-events: none;
       }
@@ -45,12 +64,65 @@ const BannerMidStyled = styled.section`
   .brandingSite {
     flex: 1;
     display: flex;
-    gap: 100px;
-
+    gap: 50px;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     .branding,
     .site {
       display: flex;
       flex-direction: column;
+      align-items: center;
+      color: ${({ theme }) => theme.colors.white};
+      border: 3px solid ${({ theme }) => theme.colors.white};
+      border-radius: 20px;
+      padding: 2vw 5vw 5vw 5vw;
+      width: 30vw;
+      text-align: center;
+      gap: 20px;
+      h2 {
+        margin-bottom: 20px;
+      }
+      button {
+        width: 130%;
+        line-height: 1rem;
+        letter-spacing: 1px;
+        border-radius: 0;
+        cursor: default;
+        &:nth-child(2) {
+          background-color: ${({ theme }) => theme.colors.blue};
+        }
+        &:nth-child(3) {
+          background-color: ${({ theme }) => theme.colors.red};
+        }
+        &:nth-child(4) {
+          background-color: ${({ theme }) => theme.colors.green};
+        }
+      }
+    }
+  }
+  .btn-bottom {
+    background-color: ${({ theme }) => theme.colors.white};
+    color: ${({ theme }) => theme.colors.black};
+    width: 30vw;
+    font-size: 1.8rem;
+    padding: 5px 5px 5px 10px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+    h3{
+      font-size: 1.8rem;
+      margin:0 8vw 0 0.6vw;
+    }
+    &:hover{
+      background-color: ${({ theme }) => theme.colors.green};
+    }
+    .arrow {
+      font-size: 2rem;
+      animation: ${moveArrow} 1.5s infinite;
     }
   }
 `;
@@ -93,37 +165,42 @@ function BannerMid() {
     <BannerMidStyled id="serviços" ref={sectionRef}>
       <div className="title">
         <h2>
-          COMO PODEMOS
-          <br /> FAZER A{" "}
+          Como podemos
+          <br /> fazer a{" "}
           <span className="highlight">
-            DIFERENÇA
+            diferença
             <div className="animation">
-              <Lottie options={defaultOptions} isStopped={!animationTriggered} />
+              <Lottie
+                options={defaultOptions}
+                isStopped={!animationTriggered}
+              />
             </div>
           </span>{" "}
           <br />
-          NA SUA MARCA.
+          na sua marca.
         </h2>
       </div>
       <div className="brandingSite">
         <div className="branding">
-          <h2>BRANDING</h2>
-          <p>Identidade Visual</p>
-          <p>
-            Design de papelaria <br />
-            e apresentações
-          </p>
-          <p>
+          <h2>Branding</h2>
+          <button>Identidade Visual</button>
+          <button>
+            Design de papelaria <br />e apresentações
+          </button>
+          <button>
             Design de social
             <br /> media para instagram
-          </p>
+          </button>
         </div>
         <div className="site">
-          <h2>SITE</h2>
-          <p>Institucional</p>
-          <p>Landing page</p>
+          <h2>Site</h2>
+          <button>Institucional</button>
+          <button>Landing page</button>
         </div>
       </div>
+      <button className="btn-bottom">
+        <h3>Vamos criar juntos?</h3> <FaArrowCircleRight className="arrow" />
+      </button>
     </BannerMidStyled>
   );
 }

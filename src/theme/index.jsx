@@ -9,5 +9,7 @@ export const theme = {
   },
   fonts: {
     primary: "forma-djr-display, sans-serif",
+    secondary: "degular, sans-serif",
+    terciary: "adobe-garamond-pro, serif"
   },
 };

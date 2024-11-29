@@ -14,7 +14,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: ${({ theme }) => theme.fonts.primary}; 
     font-size: 1rem; 
     line-height: 1.5;
     background-color: ${({ theme }) => theme.colors.blue};
@@ -23,30 +22,33 @@ const GlobalStyle = createGlobalStyle`
 
   
   h1, h2, h3, h4, h5, h6 {
+    font-family: ${({ theme }) => theme.fonts.secondary}; 
     margin: 0;
     font-size: 2.8rem;
     font-weight: 600;
   }
 
   p {
+    font-family: ${({ theme }) => theme.fonts.secondary}; 
     font-size: 1.2rem;
-    font-weight: 600;
+    font-weight: 500;
   }
 
   button {
     font-size: 1.2rem; 
+    font-family: ${({ theme }) => theme.fonts.secondary}; 
     font-weight: 600;
     padding: 0.8rem 1.5rem;
     border: none;
-    border-radius: 5px;
-    background-color: ${({ theme }) => theme.colors.primary || '#007BFF'};
+    border-radius: 30px;
+    background-color: ${({ theme }) => theme.colors.blue };
     color: ${({ theme }) => theme.colors.white};
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
   }
 
   button:hover {
-    background-color: ${({ theme }) => theme.colors.primaryHover || '#0056b3'};
+    background-color: ${({ theme }) => theme.colors.green};
     color: ${({ theme }) => theme.colors.white};
   }
 

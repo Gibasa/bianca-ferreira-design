@@ -5,11 +5,13 @@ import animationData from "../../assets/circle.json";
 
 const StaffStyled = styled.section`
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   background-color: ${({ theme }) => theme.colors.red};
   color: ${({ theme }) => theme.colors.white};
   padding: 8vw 5vw;
+  gap: 50px;
 
   .title,
   .portraits {
@@ -26,18 +28,22 @@ const StaffStyled = styled.section`
   }
 
   .title h2 {
+    text-align: center;
     .highlight {
       position: relative;
       display: inline-block;
+      font-family: ${({ theme }) => theme.fonts.terciary};
+      font-size: 3rem;
+      font-style: italic;
 
       .animation {
         position: absolute;
-        top: 40%;
-        left: 50%;
+        top: 50%;
+        left: 55%;
         transform: translate(-50%, -50%) scale(1.2);
         z-index: 1;
-        width: 6rem;
-        height: 5rem;
+        width: 5rem;
+        height: 7rem;
         pointer-events: none;
         opacity: ${({ animationTriggered }) => (animationTriggered ? 1 : 0)};
         transition: opacity 0.5s ease-in-out;
@@ -84,14 +90,17 @@ function Staff() {
     <StaffStyled ref={sectionRef} animationTriggered={animationTriggered}>
       <div className="title">
         <h2>
-          QUEM{" "}
+          Quem{" "}
           <span className="highlight">
-            FAZ
+            faz
             <div className="animation">
-              <Lottie options={defaultOptions} isStopped={!animationTriggered} />
+              <Lottie
+                options={defaultOptions}
+                isStopped={!animationTriggered}
+              />
             </div>
           </span>
-          <br /> ACONTECER.
+          <br /> acontecer.
         </h2>
       </div>
       <div className="portraits">
