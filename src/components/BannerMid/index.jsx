@@ -47,6 +47,12 @@ const BannerMidStyled = styled.section`
       font-family: ${({ theme }) => theme.fonts.terciary};
       font-size: 3rem;
       font-style: italic;
+      @media (max-width: 899px) {
+        font-size: 3.2rem;
+      }
+      @media (max-width: 600px) {
+        font-size: 3.4rem;
+      }
 
       .animation {
         position: absolute;
@@ -100,6 +106,18 @@ const BannerMidStyled = styled.section`
           background-color: ${({ theme }) => theme.colors.green};
         }
       }
+      @media (max-width: 899px) {
+        width: 50vw;
+        button {
+          width: 120%;
+        }
+      }
+      @media (max-width: 600px) {
+        width: 60vw;
+        button {
+          width: 110%;
+        }
+      }
     }
   }
   .btn-bottom {
@@ -110,19 +128,26 @@ const BannerMidStyled = styled.section`
     padding: 5px 5px 5px 10px;
     margin: 0;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
- 
-    h3{
+
+    h3 {
       font-size: 1.8rem;
-      margin:0 8vw 0 0.6vw;
+      margin: 0 20px 0 5px;
     }
-    &:hover{
+    &:hover {
       background-color: ${({ theme }) => theme.colors.green};
     }
     .arrow {
       font-size: 2rem;
       animation: ${moveArrow} 1.5s infinite;
+    }
+    @media (max-width: 899px) {
+    width: 50vw;
+    }
+    @media (max-width: 600px) {
+    width: 50vw;
+
     }
   }
 `;

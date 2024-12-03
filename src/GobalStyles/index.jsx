@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   
@@ -41,7 +41,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0.8rem 1.5rem;
     border: none;
     border-radius: 30px;
-    background-color: ${({ theme }) => theme.colors.blue };
+    background-color: ${({ theme }) => theme.colors.blue};
     color: ${({ theme }) => theme.colors.white};
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
@@ -58,20 +58,16 @@ const GlobalStyle = createGlobalStyle`
       font-size: 14px; /* 1rem = 14px, ajusta o tamanho base */
     }
 
-    h1 {
-      font-size: 2.2rem; /* Aproximadamente 31px */
-    }
-
-    h2 {
-      font-size: 1.8rem; /* Aproximadamente 25px */
+    h1, h2, h3, h4, h5, h6 {
+      font-size: 3rem; /* Aproximadamente 31px */
     }
 
     p {
-      font-size: 0.9rem; /* Aproximadamente 14px */
+      font-size: 1.3rem; /* Aproximadamente 14px */
     }
 
     button {
-      font-size: 0.9rem; /* Aproximadamente 14px */
+      font-size: 1.3rem; /* Aproximadamente 14px */
       padding: 0.7rem 1.2rem;
     }
   }
@@ -81,20 +77,16 @@ const GlobalStyle = createGlobalStyle`
       font-size: 12px; /* 1rem = 12px */
     }
 
-    h1 {
-      font-size: 2rem; /* Aproximadamente 24px */
-    }
-
-    h2 {
-      font-size: 1.6rem; /* Aproximadamente 19px */
+    h1, h2, h3, h4, h5, h6 {
+      font-size: 3.2rem; /* Aproximadamente 24px */
     }
 
     p {
-      font-size: 0.8rem; /* Aproximadamente 12px */
+      font-size: 1.5rem; /* Aproximadamente 12px */
     }
 
     button {
-      font-size: 0.8rem; /* Aproximadamente 12px */
+      font-size: 1.5rem; /* Aproximadamente 12px */
       padding: 0.6rem 1rem;
     }
   }

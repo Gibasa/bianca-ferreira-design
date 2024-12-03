@@ -24,7 +24,7 @@ const slideIn = keyframes`
   }
 `;
 
-// Animações de entrada e saída para o crescimento do menu
+// Animação de expansão e colapso do modal
 const expandModal = keyframes`
   from {
     width: 60px;
@@ -47,20 +47,73 @@ const collapseModal = keyframes`
   }
 `;
 
-// Contêiner para o logo
+const expandModalMedium = keyframes`
+  from {
+    width: 60px;
+    height: 50px;
+  }
+  to {
+    width: 50vw;
+    height: 60vh;
+  }
+`;
+
+const collapseModalMedium = keyframes`
+  from {
+    width: 50vw;
+    height: 60vh;
+  }
+  to {
+    width: 60px;
+    height: 50px;
+  }
+`;
+
+const expandModalSmall = keyframes`
+  from {
+    width: 60px;
+    height: 50px;
+  }
+  to {
+    width: 50vw;
+    height: 50vh;
+  }
+`;
+
+const collapseModalSmall = keyframes`
+  from {
+    width: 50vw;
+    height: 50vh;
+  }
+  to {
+    width: 60px;
+    height: 50px;
+  }
+`;
+
+// Contêiner do logo
 const LogoContainer = styled(Box)`
   position: relative;
   height: 70px;
-  width: 35vw;
+  width: 100vw;
   overflow: hidden;
+
+  @media (max-width: 899px) {
+    height: 60px;
+  }
+
+  @media (max-width: 600px) {
+    height: 10vw;
+  }
 `;
 
-// Estilo do logo com animações diferentes
+// Logo com animações
 const AnimatedLogo = styled.img`
   position: absolute;
   height: 100%;
   width: auto;
   cursor: pointer;
+
   ${({ $animation }) =>
     $animation &&
     css`
@@ -68,6 +121,7 @@ const AnimatedLogo = styled.img`
     `}
 `;
 
+// Barra de navegação estilizada
 const StyledAppBar = styled(AppBar)`
   background-color: transparent !important;
   box-shadow: none !important;
@@ -75,6 +129,14 @@ const StyledAppBar = styled(AppBar)`
   top: 0;
   z-index: 5 !important;
   transition: background-color 0.5s ease-in-out;
+
+  @media (max-width: 899px) {
+    height: 100px;
+  }
+
+  @media (max-width: 600px) {
+    height: 70px;
+  }
 `;
 
 const StyledToolbar = styled(Toolbar)`
@@ -82,6 +144,7 @@ const StyledToolbar = styled(Toolbar)`
   margin: 0 5vw !important;
 `;
 
+// Menu hambúrguer
 const StyledHamburger = styled.div`
   display: flex;
   flex-direction: column;
@@ -122,20 +185,30 @@ const StyledHamburger = styled.div`
   }
 `;
 
+// Modal estilizado
 const StyledModal = styled.div`
   position: fixed;
   top: 0;
   right: 0;
-  margin: 25px 55px;
+  margin: 1.8vw 4vw;
   display: flex;
-  padding: 50px;
+  padding: 5vw;
   align-items: start;
   justify-content: center;
   border-radius: 5px;
   background-color: rgba(255, 255, 255);
-  animation: ${({ isClosing }) =>
-    isClosing ? collapseModal : expandModal} 0.5s ease-out forwards;
+  animation: ${({ isClosing }) => (isClosing ? collapseModal : expandModal)}
+    0.5s ease-out forwards;
   z-index: 5;
+  @media (max-width: 899px) {
+    animation: ${({ isClosing }) =>
+      isClosing ? collapseModalMedium : expandModalMedium} 0.5s ease-out forwards;
+  }
+
+  @media (max-width: 600px) {
+    animation: ${({ isClosing }) =>
+      isClosing ? collapseModalSmall : expandModalSmall} 0.5s ease-out forwards
+  }
 `;
 
 const ModalContent = styled.div`
@@ -161,7 +234,7 @@ const ModalContent = styled.div`
 
   button {
     margin-top: 50px;
-    }
+  }
 
   @keyframes fadeIn {
     from {
@@ -182,6 +255,7 @@ const ModalContent = styled.div`
   }
 `;
 
+// Componente principal
 function Header() {
   const [isIntersecting, setIsIntersecting] = useState(true);
   const [logoState, setLogoState] = useState({
@@ -193,7 +267,6 @@ function Header() {
 
   const pages = ["projetos", "serviços", "contato"];
 
-  // Observa a interseção do elemento
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => setIsIntersecting(entry.isIntersecting),
@@ -208,7 +281,6 @@ function Header() {
     };
   }, []);
 
-  // Troca o logo com animação
   useEffect(() => {
     const newLogo = isIntersecting
       ? "/images/logoBiancaFerreira.png"
@@ -216,11 +288,9 @@ function Header() {
 
     if (logoState.currentLogo === newLogo) return;
 
-    // Determina a direção da animação com base no estado atual
     const exitAnimation = slideOut;
     const entryAnimation = slideIn;
 
-    // Inicia a transição
     setLogoState((prevState) => ({
       ...prevState,
       animation: exitAnimation,
@@ -231,7 +301,7 @@ function Header() {
         currentLogo: newLogo,
         animation: entryAnimation,
       });
-    }, 300); // Tempo da animação de saída
+    }, 300);
 
     return () => clearTimeout(timeout);
   }, [isIntersecting, logoState.currentLogo]);
@@ -242,7 +312,7 @@ function Header() {
       setTimeout(() => {
         setIsModalOpen(false);
         setIsClosing(false);
-      }, 300); // Aguarda o fadeOut e o fechamento do modal
+      }, 300);
     } else {
       setIsModalOpen(true);
       setIsClosing(false);
@@ -253,7 +323,7 @@ function Header() {
     <StyledAppBar position="static">
       <StyledToolbar disableGutters>
         <LogoContainer>
-        <AnimatedLogo
+          <AnimatedLogo
             src={logoState.currentLogo}
             alt="Logo"
             $animation={logoState.animation}

@@ -19,11 +19,26 @@ const StaffStyled = styled.section`
   }
 
   .portraits {
+    width: 100%;
     display: flex;
-    gap: 150px;
+    justify-content: space-around;
+    @media (max-width: 899px) {
+    }
+    @media (max-width: 600px) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 50px;
+    }
 
     img {
       width: 20vw;
+      @media (max-width: 899px) {
+        width: 30vw;
+      }
+      @media (max-width: 600px) {
+        width: 40vw;
+      }
     }
   }
 
@@ -35,6 +50,12 @@ const StaffStyled = styled.section`
       font-family: ${({ theme }) => theme.fonts.terciary};
       font-size: 3rem;
       font-style: italic;
+      @media (max-width: 899px) {
+        font-size: 3.2rem;
+      }
+      @media (max-width: 600px) {
+        font-size: 3.4rem;
+      }
 
       .animation {
         position: absolute;
