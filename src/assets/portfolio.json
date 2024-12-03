@@ -1,0 +1,55 @@
+[
+  {
+    "group": "ARROZ",
+    "text": {
+      "p1": "No coração da Chapada Diamantina, onde a natureza exuberante e a tradição se encontram, nasce o Arroz, um restaurante que se dedica a celebrar o essencial da vida. Em um ambiente acolhedor, o Arroz proporciona uma experiência sensorial que resgata a simplicidade e transforma o cotidiano em algo extraordinário.",
+      "p2": "Neste espaço, o arroz – ingrediente simples, mas poderoso – é elevado a uma verdadeira arte. A proposta do Arroz é reimaginar o arroz em todas as suas formas, explorando suas variadas cores, texturas e sabores. Cada prato traz à mesa a essência da cultura local, mas com um toque inovador que surpreende e encanta. A combinação da tradição das receitas familiares com uma abordagem moderna e criativa revela a beleza do simples e a potência do essencial.",
+      "p3": "O compromisso com a qualidade, a união e o acolhimento está presente em cada detalhe. A tipografia escolhida, uma fusão de sem serifa e manuscrita com traços irregulares, transmite a sensação de um produto artesanal, feito com carinho e dedicação. O acabamento rústico das letras, assim como o cuidado com cada ingrediente, reflete a alma genuína da Chapada Diamantina, onde o campo e a tradição se entrelaçam com a inovação. As cores, inspiradas nas tonalidades naturais do arroz, envolvem o olhar e aquecem o coração, criando uma identidade visual única, alinhada com a proposta gastronômica do restaurante.",
+      "p4": "No Arroz, acredita-se que a comida vai além de alimentar o corpo – ela nutre a alma. O essencial que une todos está na simplicidade de um prato bem-feito, na conexão com a terra, na união dos sabores e na alegria de compartilhar uma refeição. Cada refeição no Arroz é uma celebração do que é verdadeiro, do que é simples e do que, de fato, une a todos."
+    },
+    "video": "/images/portfolio/ARROZ/arroz teaser.mp4",
+    "images": {
+      "cover": "/images/portfolio/ARROZ/cover.png",
+      "img 1": "/images/portfolio/ARROZ/ARROZ1.png",
+      "img 2": "/images/portfolio/ARROZ/ARROZ2.png",
+      "img 3": "/images/portfolio/ARROZ/ARROZ3.png",
+      "img 4": "/images/portfolio/ARROZ/ARROZ4.png",
+      "img 5": "/images/portfolio/ARROZ/ARROZ6.png"
+    }
+  },
+  {
+    "group": "BARZA",
+    "text": {
+      "p1": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugit corporis ad dolorem alias, omnis aliquam harum neque. Blanditiis porro doloremque ratione labore tempore excepturi delectus. Aut, dolor. Reiciendis consectetur soluta alias. Quae beatae dolore doloremque qui veniam quisquam, dolorum esse consectetur a fuga, facere, numquam eligendi ea commodi soluta.",
+      "p2": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium reiciendis sapiente, laborum fugit corrupti excepturi et, nesciunt, provident repellat modi ad. Minima fugiat ullam expedita voluptas harum eos nulla ad, nostrum natus dolorem numquam exercitationem consequatur nam a deserunt illo fuga, magni iste! Mollitia vel culpa recusandae natus nam, quis vitae voluptates reiciendis distinctio dolore vero molestiae rerum quibusdam fuga!",
+      "p3": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis quae at modi iste, odit nobis ea quaerat nemo, repellendus corporis voluptatum? Quo modi nesciunt quidem magni animi delectus culpa atque facere, fugit id dignissimos nemo earum ducimus expedita, doloribus pariatur. At, modi nesciunt nam ullam animi enim, excepturi eveniet deserunt nihil quibusdam autem velit officiis dolor sint non quam. Cum dolore dolores ipsum esse repellat! Minima sit animi quae consequatur."
+    },
+    "video": null,
+    "images": {
+      "cover": "/images/portfolio/BARZA/cover.png",
+      "img 1": "/images/portfolio/BARZA/BARZA1.png",
+      "img 2": "/images/portfolio/BARZA/BARZA2.png",
+      "img 3": "/images/portfolio/BARZA/BARZA3.png",
+      "img 4": "/images/portfolio/BARZA/BARZA4.png",
+      "img 5": "/images/portfolio/BARZA/BARZA5.png",
+      "img 6": "/images/portfolio/BARZA/BARZA6.png"
+    }
+  },
+  {
+    "group": "COPARTNERS BANK",
+    "text": {
+      "p1": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugit corporis ad dolorem alias, omnis aliquam harum neque. Blanditiis porro doloremque ratione labore tempore excepturi delectus. Aut, dolor. Reiciendis consectetur soluta alias. Quae beatae dolore doloremque qui veniam quisquam, dolorum esse consectetur a fuga, facere, numquam eligendi ea commodi soluta.",
+      "p2": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium reiciendis sapiente, laborum fugit corrupti excepturi et, nesciunt, provident repellat modi ad. Minima fugiat ullam expedita voluptas harum eos nulla ad, nostrum natus dolorem numquam exercitationem consequatur nam a deserunt illo fuga, magni iste! Mollitia vel culpa recusandae natus nam, quis vitae voluptates reiciendis distinctio dolore vero molestiae rerum quibusdam fuga!",
+      "p3": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis quae at modi iste, odit nobis ea quaerat nemo, repellendus corporis voluptatum? Quo modi nesciunt quidem magni animi delectus culpa atque facere, fugit id dignissimos nemo earum ducimus expedita, doloribus pariatur. At, modi nesciunt nam ullam animi enim, excepturi eveniet deserunt nihil quibusdam autem velit officiis dolor sint non quam. Cum dolore dolores ipsum esse repellat! Minima sit animi quae consequatur."
+    },
+    "video": "/images/portfolio/COPARTNERS BANK/VIDEO INTRO CB TIPO5 .mp4",
+    "images": {
+      "cover": "/images/portfolio/COPARTNERS BANK/cover.png",
+      "img 1": "/images/portfolio/COPARTNERS BANK/CB1.png",
+      "img 2": "/images/portfolio/COPARTNERS BANK/CB2.png",
+      "img 3": "/images/portfolio/COPARTNERS BANK/CB3.png",
+      "img 4": "/images/portfolio/COPARTNERS BANK/CB4.png",
+      "img 5": "/images/portfolio/COPARTNERS BANK/CB5.png"
+    }
+  }
+]

@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import Carousel from "@/components/Carousel";
 import Video from "@/components/Video";
 import BannerTop from "@/components/BannerTop";
 import BannerMid from "@/components/BannerMid";
 import Staff from "@/components/Staff";
+import Portfolio from "../../components/Portfolio";
 
 const HomeStyled = styled.section`
 `;
@@ -13,7 +13,7 @@ function Home() {
     <HomeStyled id="home">
       <Video/>
       <BannerTop/>
-      <Carousel />
+      <Portfolio />
       <BannerMid/>
       <Staff/>
     </HomeStyled>
