@@ -3,6 +3,8 @@ import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Box from "@mui/material/Box";
 import { useState, useEffect } from "react";
+import { useLanguage } from "../../context/TranslationContext";
+import { useTranslation } from "react-i18next";
 
 // Animação para o logo sair da tela (da direita para a esquerda)
 const slideOut = keyframes`
@@ -202,12 +204,14 @@ const StyledModal = styled.div`
   z-index: 5;
   @media (max-width: 899px) {
     animation: ${({ isClosing }) =>
-      isClosing ? collapseModalMedium : expandModalMedium} 0.5s ease-out forwards;
+        isClosing ? collapseModalMedium : expandModalMedium}
+      0.5s ease-out forwards;
   }
 
   @media (max-width: 600px) {
     animation: ${({ isClosing }) =>
-      isClosing ? collapseModalSmall : expandModalSmall} 0.5s ease-out forwards
+        isClosing ? collapseModalSmall : expandModalSmall}
+      0.5s ease-out forwards;
   }
 `;
 
@@ -255,6 +259,25 @@ const ModalContent = styled.div`
   }
 `;
 
+const LanguageButton = styled.button`
+  background: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  gap: 10px;
+
+  &:hover {
+    background: none;
+  }
+`;
+
+// Estilizando o texto "PT" e "EN"
+const LanguageText = styled.span`
+  font-weight: ${({ isSelected }) => (isSelected ? "bold" : "normal")};
+`;
+
 // Componente principal
 function Header() {
   const [isIntersecting, setIsIntersecting] = useState(true);
@@ -265,7 +288,13 @@ function Header() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
 
-  const pages = ["projetos", "serviços", "contato"];
+  const { language, toggleLanguage } = useLanguage(); // Obtendo valores do contexto
+  const { t } = useTranslation(); // Utilizando o hook useTranslation para acessar as traduções
+
+  const pages =
+    language === "pt"
+      ? ["projetos", "serviços", "contato"]
+      : ["projects", "services", "contact"];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -333,6 +362,11 @@ function Header() {
 
         <Box sx={{ flexGrow: 1 }} />
 
+        <LanguageButton onClick={toggleLanguage}>
+          <LanguageText isSelected={language === "pt"}>PT</LanguageText>|
+          <LanguageText isSelected={language === "en"}>EN</LanguageText>
+        </LanguageButton>
+
         <StyledHamburger onClick={handleToggleModal} isOpen={isModalOpen}>
           <div />
           <div />
@@ -344,10 +378,10 @@ function Header() {
             <ModalContent isClosing={isClosing}>
               {pages.map((page) => (
                 <a key={page} href={`#${page}`} onClick={handleToggleModal}>
-                  {page}
+                  {t(page)} {/* Traduzindo com o i18next */}
                 </a>
               ))}
-              <button>Faça seu orçamento</button>
+              <button>{t('Faça seu orçamento')}</button> {/* Traduzindo o texto */}
             </ModalContent>
           </StyledModal>
         )}

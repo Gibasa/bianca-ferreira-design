@@ -19,12 +19,17 @@ function processGroupFolder(folderPath) {
   const files = fs.readdirSync(folderPath);
 
   const textFile = files.find(file => file.endsWith('.txt'));
+  const textFileEn = files.find(file => file.endsWith('_en.txt'));  // Arquivo de texto em inglês
   const videoFile = files.find(file => file.endsWith('.mp4'));
   const coverImage = files.find(file => file.startsWith('cover') && /\.(jpg|png|jpeg)$/i.test(file));
   const otherImages = files.filter(file => /\.(jpg|png|jpeg)$/i.test(file) && !file.startsWith('cover'));
 
+  const textData = textFile ? readTextFile(path.join(folderPath, textFile)) : {};
+  const textDataEn = textFileEn ? readTextFile(path.join(folderPath, textFileEn)) : {};  // Dados do texto em inglês
+
   return {
-    text: textFile ? readTextFile(path.join(folderPath, textFile)) : {},
+    text: textData,
+    text_en: textDataEn,  // Inclui o texto em inglês
     video: videoFile ? `/images/portfolio/${path.basename(folderPath)}/${videoFile}` : null,
     images: {
       cover: coverImage ? `/images/portfolio/${path.basename(folderPath)}/${coverImage}` : null,

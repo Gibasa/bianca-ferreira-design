@@ -1,0 +1,103 @@
+{
+  "bannerMid": {
+    "title": {
+      "part1": "How we can",
+      "part2": "make a",
+      "highlight": "difference",
+      "part3": "to your brand"
+    },
+    "brandingSite": {
+      "branding": {
+        "h2": "Branding",
+        "buttons": [
+          "Visual Identity",
+          "Stationery and Presentation Design",
+          "Social Media Design for Instagram"
+        ]
+      },
+      "site": {
+        "h2": "Site",
+        "buttons": ["Institutional", "Landing Page"]
+      }
+    },
+    "bottomButton": "Shall we create together?"
+  },
+  "bannerTop": {
+    "title": {
+      "part1": "Your brand needs to",
+      "highlight": "stand out",
+      "part2": "be the difference"
+    },
+    "description": {
+      "part1": "We believe that branding is much more than a logo or a slogan; it’s how your company positions itself in the world.",
+      "part2": "Building a brand is telling a story, where every word and image come together to create a unique identity.",
+      "part3": "Shall we start telling your story today?"
+    },
+    "button": "Shall we create together?"
+  },
+  "cookiesBanner": {
+    "text": "We use cookies to enhance your experience.",
+    "linkText": "Learn more",
+    "acceptButton": "Accept"
+  },
+  "privacyPolicy": {
+    "title": "Privacy Policy",
+    "index": {
+      "title": "Index",
+      "items": [
+        "Information We Collect",
+        "How We Use Information",
+        "Data Sharing",
+        "Cookies and Tracking Technologies",
+        "Information Security",
+        "Your Rights",
+        "How to Contact Us",
+        "Changes to This Policy"
+      ]
+    },
+    "sections": {
+      "informacoesColetadas": {
+        "title": "Information We Collect",
+        "text": "We automatically collect data such as IP address, browser type, and visited pages, as well as voluntarily provided information through the Google Form."
+      },
+      "usoDasInformacoes": {
+        "title": "How We Use Information",
+        "text": "We use your information to improve your experience on the site, respond to submitted requests, and analyze traffic data for statistical purposes."
+      },
+      "compartilhamentoDados": {
+        "title": "Data Sharing",
+        "text": "We do not share personal information with third parties, except for Google Analytics and Google Forms. Please refer to Google’s policies for more information."
+      },
+      "cookies": {
+        "title": "Cookies and Tracking Technologies",
+        "text": "We use cookies to improve site experience and collect traffic data. You can disable cookies in your browser settings."
+      },
+      "seguranca": {
+        "title": "Information Security",
+        "text": "We take measures to protect your information, but no electronic transmission method is completely secure."
+      },
+      "seusDireitos": {
+        "title": "Your Rights",
+        "text": "You have rights over your personal data, such as requesting access, correction, or deletion. Please contact us for more information."
+      },
+      "contato": {
+        "title": "How to Contact Us",
+        "text": "If you have questions, email us at biancafdesign@gmail.com."
+      },
+      "alteracoes": {
+        "title": "Changes to This Policy",
+        "text": "We may update this policy periodically. We recommend you review this page regularly."
+      }
+    }
+  },
+  "portfolio": {
+    "viewMore": "View more"
+  },
+  "staff": {
+    "title": {
+      "part1": "Who",
+      "highlight": "makes",
+      "part2": "it happen"
+    }
+  }
+}

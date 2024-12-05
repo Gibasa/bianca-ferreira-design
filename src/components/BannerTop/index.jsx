@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import Lottie from "react-lottie";
 import animationData from "../../assets/circle.json";
+import { useTranslation } from "react-i18next";
 
 // Componentes estilizados
 const BannerTopContainer = styled.div`
@@ -55,8 +56,8 @@ const AnimationContainer = styled.div`
   left: 50%;
   transform: translate(-50%, -50%) scale(1.2);
   z-index: 1;
-  width: 11rem;
-  height: 6rem;
+  width: ${({ animationWidth }) => animationWidth};
+  height: ${({ animationHeight }) => animationHeight};
   pointer-events: none;
   opacity: ${({ animationTriggered }) => (animationTriggered ? 1 : 0)};
   transition: opacity 0.5s ease-in-out;
@@ -89,6 +90,25 @@ const StyledButton = styled.button`
 function BannerTop() {
   const sectionRef = useRef(null);
   const [animationTriggered, setAnimationTriggered] = useState(false);
+  const { t, i18n } = useTranslation();
+
+  const [animationDimensions, setAnimationDimensions] = useState({ width: "11rem", height: "6rem" });
+
+  // Função para calcular as dimensões da animação de acordo com o idioma
+  const getAnimationDimensions = (language) => {
+    if (language === "en") {
+      return { width: "14rem", height: "6rem" }; // Dimensões para o idioma inglês
+    } else if (language === "pt") {
+      return { width: "11rem", height: "6rem" }; // Dimensões para o idioma português
+    } else {
+      return { width: "11rem", height: "6rem" }; // Valores padrão
+    }
+  };
+
+  // Atualiza as dimensões quando o idioma mudar
+  useEffect(() => {
+    setAnimationDimensions(getAnimationDimensions(i18n.language));
+  }, [i18n.language]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -124,32 +144,25 @@ function BannerTop() {
     <BannerTopContainer ref={sectionRef}>
       <TitleContainer>
         <Title>
-          A sua marca precisa
-          <br />
+          {t("bannerTop.title.part1")} <br />
           <Highlight>
-            marcar
-            <AnimationContainer animationTriggered={animationTriggered}>
+            {t("bannerTop.title.highlight")}
+            <AnimationContainer animationTriggered={animationTriggered} animationWidth={animationDimensions.width} animationHeight={animationDimensions.height}>
               <Lottie
                 options={defaultOptions}
                 isStopped={!animationTriggered}
               />
             </AnimationContainer>
           </Highlight>
-          , seja a<br /> diferença.
+          , {t("bannerTop.title.part2")}
         </Title>
       </TitleContainer>
       <ParagraphsContainer>
-        <p>
-          Acreditamos que a marca é muito mais do que um logotipo ou um slogan,
-          é a maneira como a sua empresa se coloca no mundo.
-        </p>
-        <p>
-          Construir uma marca é narrar uma história, onde cada palavra e imagem
-          se unem para criar uma identidade única.{" "}
-        </p>
-        <p>Vamos começar a contar a sua história hoje?</p>
+        <p>{t("bannerTop.description.part1")}</p>
+        <p>{t("bannerTop.description.part2")}</p>
+        <p>{t("bannerTop.description.part3")}</p>
       </ParagraphsContainer>
-      <StyledButton>Vamos criar juntos?</StyledButton>
+      <StyledButton>{t("bannerTop.button")}</StyledButton>
     </BannerTopContainer>
   );
 }

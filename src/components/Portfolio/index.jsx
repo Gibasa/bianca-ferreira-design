@@ -4,7 +4,7 @@ import styled from "styled-components";
 import portfolioData from "/src/assets/portfolio.json";
 import { FaArrowCircleRight } from "react-icons/fa";
 import { IoIosCloseCircle } from "react-icons/io";
-
+import { useTranslation } from "react-i18next";
 
 const Container = styled.div`
   display: flex;
@@ -17,12 +17,12 @@ const Container = styled.div`
 `;
 
 const PortfolioItem = styled.div`
-  width: calc(50% - 20px); /* Ajuste para garantir espaçamento */
+  width: calc(50% - 20px);
   margin: 10px;
   box-sizing: border-box;
 
   @media (max-width: 768px) {
-    width: 100%; /* Em telas menores, cada item ocupa 100% */
+    width: 100%;
   }
 `;
 
@@ -117,14 +117,16 @@ const CloseButton = styled.div`
   font-size: 24px;
   cursor: pointer;
   color: ${({ theme }) => theme.colors.white};
-
 `;
 
 const Modal = ({ groupData, onClose }) => {
+  const { t } = useTranslation();
   if (!groupData) return null;
 
   const { group, text, video, images } = groupData;
-  const paragraphs = Object.values(text);
+
+  // A tradução do texto
+  const paragraphs = Object.values(text).map((para) => t(para));
   const otherImages = Object.entries(images)
     .filter(([key]) => key !== "cover")
     .map(([, value]) => value);

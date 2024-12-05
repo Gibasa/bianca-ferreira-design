@@ -4,6 +4,7 @@ import Lottie from "react-lottie";
 import animationData from "../../assets/circle.json";
 import { FaArrowCircleRight } from "react-icons/fa";
 import { keyframes } from "styled-components";
+import { useTranslation } from 'react-i18next';
 
 const moveArrow = keyframes`
   0% {
@@ -155,6 +156,7 @@ const BannerMidStyled = styled.section`
 function BannerMid() {
   const [animationTriggered, setAnimationTriggered] = useState(false);
   const sectionRef = useRef(null);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -190,10 +192,10 @@ function BannerMid() {
     <BannerMidStyled id="serviços" ref={sectionRef}>
       <div className="title">
         <h2>
-          Como podemos
-          <br /> fazer a{" "}
+          {t("bannerMid.title.part1")}
+          <br /> {t("bannerMid.title.part2")}{" "}
           <span className="highlight">
-            diferença
+            {t("bannerMid.title.highlight")}
             <div className="animation">
               <Lottie
                 options={defaultOptions}
@@ -202,29 +204,24 @@ function BannerMid() {
             </div>
           </span>{" "}
           <br />
-          na sua marca.
+          {t("bannerMid.title.part3")}
         </h2>
       </div>
       <div className="brandingSite">
         <div className="branding">
-          <h2>Branding</h2>
-          <button>Identidade Visual</button>
-          <button>
-            Design de papelaria <br />e apresentações
-          </button>
-          <button>
-            Design de social
-            <br /> media para instagram
-          </button>
+          <h2>{t("bannerMid.brandingSite.branding.h2")}</h2>
+          <button>{t("bannerMid.brandingSite.branding.buttons.0")}</button>
+          <button>{t("bannerMid.brandingSite.branding.buttons.1")}</button>
+          <button>{t("bannerMid.brandingSite.branding.buttons.2")}</button>
         </div>
         <div className="site">
-          <h2>Site</h2>
-          <button>Institucional</button>
-          <button>Landing page</button>
+          <h2>{t("bannerMid.brandingSite.site.h2")}</h2>
+          <button>{t("bannerMid.brandingSite.site.buttons.0")}</button>
+          <button>{t("bannerMid.brandingSite.site.buttons.1")}</button>
         </div>
       </div>
       <button className="btn-bottom">
-        <h3>Vamos criar juntos?</h3> <FaArrowCircleRight className="arrow" />
+        <h3>{t("bannerMid.bottomButton")}</h3> <FaArrowCircleRight className="arrow" />
       </button>
     </BannerMidStyled>
   );

@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import Lottie from "react-lottie";
 import animationData from "../../assets/circle.json";
+import { useTranslation } from 'react-i18next';
+
 
 const StaffStyled = styled.section`
   display: flex;
@@ -63,8 +65,8 @@ const StaffStyled = styled.section`
         left: 55%;
         transform: translate(-50%, -50%) scale(1.2);
         z-index: 1;
-        width: 5rem;
-        height: 7rem;
+        width: ${({ animationWidth }) => animationWidth};
+        height: ${({ animationHeight }) => animationHeight};
         pointer-events: none;
         opacity: ${({ animationTriggered }) => (animationTriggered ? 1 : 0)};
         transition: opacity 0.5s ease-in-out;
@@ -76,6 +78,24 @@ const StaffStyled = styled.section`
 function Staff() {
   const sectionRef = useRef(null);
   const [animationTriggered, setAnimationTriggered] = useState(false);
+  const { t, i18n } = useTranslation();
+  const [animationDimensions, setAnimationDimensions] = useState({ width: "5rem", height: "7rem" });
+  console.log(t.language);
+
+  const getAnimationDimensions = (language) => {
+    if (language === 'en') {
+      return { width: "9rem", height: "8rem" };  // Dimensões para o idioma inglês
+    } else if (language === 'pt') {
+      return { width: "5rem", height: "7rem" };  // Dimensões para o idioma português
+    } else {
+      return { width: "5rem", height: "7rem" };  // Valores padrão, caso precise adicionar mais idiomas
+    }
+  };
+
+  useEffect(() => {
+    setAnimationDimensions(getAnimationDimensions(i18n.language));
+  }, [i18n.language]);
+
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -108,12 +128,12 @@ function Staff() {
   };
 
   return (
-    <StaffStyled ref={sectionRef} animationTriggered={animationTriggered}>
+    <StaffStyled ref={sectionRef} animationTriggered={animationTriggered} animationWidth={animationDimensions.width} animationHeight={animationDimensions.height}>
       <div className="title">
         <h2>
-          Quem{" "}
+        {t("staff.title.part1")}{" "}
           <span className="highlight">
-            faz
+          {t("staff.title.highlight")}
             <div className="animation">
               <Lottie
                 options={defaultOptions}
@@ -121,7 +141,7 @@ function Staff() {
               />
             </div>
           </span>
-          <br /> acontecer.
+          <br /> {t("staff.title.part2")}
         </h2>
       </div>
       <div className="portraits">
