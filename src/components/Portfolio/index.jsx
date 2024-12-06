@@ -120,13 +120,14 @@ const CloseButton = styled.div`
 `;
 
 const Modal = ({ groupData, onClose }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   if (!groupData) return null;
 
-  const { group, text, video, images } = groupData;
+  const { group, text, text_en, video, images } = groupData;
 
-  // A tradução do texto
-  const paragraphs = Object.values(text).map((para) => t(para));
+  const paragraphs = i18n.language === "en" ? text_en : text;
+  
+
   const otherImages = Object.entries(images)
     .filter(([key]) => key !== "cover")
     .map(([, value]) => value);
@@ -134,18 +135,14 @@ const Modal = ({ groupData, onClose }) => {
   return (
     <ModalOverlay onClick={onClose}>
       <ModalContent onClick={(e) => e.stopPropagation()}>
-        <CloseButton onClick={onClose}><IoIosCloseCircle /></CloseButton>
-        <ModalHeader>
-          {group.charAt(0).toUpperCase() + group.slice(1).toLowerCase()}
-        </ModalHeader>
+        <CloseButton onClick={onClose}>
+          <IoIosCloseCircle />
+        </CloseButton>
+        <ModalHeader>{t(group)}</ModalHeader>
         {video && <Video src={video} autoPlay loop muted />}
-        {paragraphs.length > 0 ? (
-          paragraphs.map((para, index) => (
-            <Paragraph key={index}>{para}</Paragraph>
-          ))
-        ) : (
-          <Paragraph>Sem descrição disponível.</Paragraph>
-        )}
+        {paragraphs.map((para, index) => (
+          <Paragraph key={index}>{para}</Paragraph>
+        ))}
         {images.cover && (
           <ModalImage src={images.cover} alt={`${group} Cover`} />
         )}
@@ -161,6 +158,7 @@ Modal.propTypes = {
   groupData: PropTypes.shape({
     group: PropTypes.string.isRequired,
     text: PropTypes.objectOf(PropTypes.string),
+    text_en: PropTypes.objectOf(PropTypes.string),
     video: PropTypes.string,
     images: PropTypes.shape({
       cover: PropTypes.string.isRequired,
@@ -186,14 +184,14 @@ const Portfolio = () => {
           />
           <TitleContainer>
             <GroupName>{data.group}</GroupName>
-            <ViewMore onClick={() => openModal(data)}>Ver mais <FaArrowCircleRight className="arrow" /></ViewMore>
+            <ViewMore onClick={() => openModal(data)}>
+              Ver mais <FaArrowCircleRight className="arrow" />
+            </ViewMore>
           </TitleContainer>
         </PortfolioItem>
       ))}
 
-      {selectedGroup && (
-        <Modal groupData={selectedGroup} onClose={closeModal} />
-      )}
+      {selectedGroup && <Modal groupData={selectedGroup} onClose={closeModal} />}
     </Container>
   );
 };
