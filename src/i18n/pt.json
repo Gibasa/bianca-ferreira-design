@@ -20,7 +20,7 @@
         "buttons": ["Institucional", "Landing page"]
       }
     },
-    "bottomButton": "Vamos criar juntos?"
+    "bottomButton": "Solicite seu orçamento"
   },
   "bannerTop": {
     "title": {
@@ -44,16 +44,16 @@
     "title": "Política de Privacidade",
     "index": {
       "title": "Índice",
-      "items": [
-        "Informações que Coletamos",
-        "Como Utilizamos as Informações",
-        "Compartilhamento de Dados",
-        "Cookies e Tecnologias de Rastreamento",
-        "Segurança das Informações",
-        "Seus Direitos",
-        "Como Entrar em Contato",
-        "Alterações a Esta Política"
-      ]
+      "items": {
+        "1": "Informações que Coletamos",
+        "2": "Como Utilizamos as Informações",
+        "3": "Compartilhamento de Dados",
+        "4": "Cookies e Tecnologias de Rastreamento",
+        "5": "Segurança das Informações",
+        "6": "Seus Direitos",
+        "7": "Como Entrar em Contato",
+        "8": "Alterações a Esta Política"
+      }
     },
     "sections": {
       "informacoesColetadas": {
@@ -82,7 +82,8 @@
       },
       "contato": {
         "title": "Como Entrar em Contato",
-        "text": "Se você tiver dúvidas, envie um e-mail para biancafdesign@gmail.com."
+        "text": "Se você tiver dúvidas, envie um e-mail para ",
+        "email": "biancafdesign@gmail.com"
       },
       "alteracoes": {
         "title": "Alterações a Esta Política",

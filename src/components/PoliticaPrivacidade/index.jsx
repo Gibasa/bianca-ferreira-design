@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useTranslation } from "react-i18next";
 
 const PageWrapper = styled.div`
   padding: 20px;
@@ -40,87 +41,88 @@ const Paragraph = styled.p`
 `;
 
 const PrivacyPolicy = () => {
+  const { t } = useTranslation();
+
   return (
     <PageWrapper>
-      <h2>Política de Privacidade</h2>
+      <h2>{t("privacyPolicy.title")}</h2>
       <Index>
-        <h2>Índice</h2>
-        <IndexItem href="#informacoes-coletadas">Informações que Coletamos</IndexItem>
-        <IndexItem href="#uso-das-informacoes">Como Utilizamos as Informações</IndexItem>
-        <IndexItem href="#compartilhamento-dados">Compartilhamento de Dados</IndexItem>
-        <IndexItem href="#cookies">Cookies e Tecnologias de Rastreamento</IndexItem>
-        <IndexItem href="#seguranca">Segurança das Informações</IndexItem>
-        <IndexItem href="#seus-direitos">Seus Direitos</IndexItem>
-        <IndexItem href="#contato">Como Entrar em Contato</IndexItem>
-        <IndexItem href="#alteracoes">Alterações a Esta Política</IndexItem>
+        <h2>{t("privacyPolicy.index.title")}</h2>
+        <IndexItem href="#informacoes-coletadas">
+          {t("privacyPolicy.index.items.1")}
+        </IndexItem>
+        <IndexItem href="#uso-das-informacoes">
+          {t("privacyPolicy.index.items.2")}
+        </IndexItem>
+        <IndexItem href="#compartilhamento-dados">
+          {t("privacyPolicy.index.items.3")}
+        </IndexItem>
+        <IndexItem href="#cookies">
+          {t("privacyPolicy.index.items.4")}
+        </IndexItem>
+        <IndexItem href="#seguranca">
+          {t("privacyPolicy.index.items.5")}
+        </IndexItem>
+        <IndexItem href="#seus-direitos">
+          {t("privacyPolicy.index.items.6")}
+        </IndexItem>
+        <IndexItem href="#contato">
+          {t("privacyPolicy.index.items.7")}
+        </IndexItem>
+        <IndexItem href="#alteracoes">
+          {t("privacyPolicy.index.items.8")}
+        </IndexItem>
       </Index>
 
       <Section id="informacoes-coletadas">
-        <Title>Informações que Coletamos</Title>
+        <Title>{t("privacyPolicy.sections.informacoesColetadas.title")}</Title>
         <Paragraph>
-          Coletamos dados automaticamente, como endereço IP, tipo de navegador e
-          páginas visitadas, além de informações fornecidas voluntariamente
-          através do formulário do Google.
+          {t("privacyPolicy.sections.informacoesColetadas.text")}
         </Paragraph>
       </Section>
 
       <Section id="uso-das-informacoes">
-        <Title>Como Utilizamos as Informações</Title>
+        <Title>{t("privacyPolicy.sections.usoDasInformacoes.title")}</Title>
         <Paragraph>
-          Utilizamos suas informações para melhorar sua experiência no site,
-          responder às solicitações enviadas e analisar dados de tráfego para
-          fins estatísticos.
+          {t("privacyPolicy.sections.usoDasInformacoes.text")}
         </Paragraph>
       </Section>
 
       <Section id="compartilhamento-dados">
-        <Title>Compartilhamento de Dados</Title>
+        <Title>{t("privacyPolicy.sections.compartilhamentoDados.title")}</Title>
         <Paragraph>
-          Não compartilhamos informações pessoais com terceiros, exceto para o
-          Google Analytics e Google Forms. Consulte as políticas do Google para
-          mais informações.
+          {t("privacyPolicy.sections.compartilhamentoDados.text")}
         </Paragraph>
       </Section>
 
       <Section id="cookies">
-        <Title>Cookies e Tecnologias de Rastreamento</Title>
-        <Paragraph>
-          Utilizamos cookies para melhorar a experiência no site e coletar dados
-          de tráfego. Você pode desativar os cookies nas configurações do
-          navegador.
-        </Paragraph>
+        <Title>{t("privacyPolicy.sections.cookies.title")}</Title>
+        <Paragraph>{t("privacyPolicy.sections.cookies.text")}</Paragraph>
       </Section>
 
       <Section id="seguranca">
-        <Title>Segurança das Informações</Title>
-        <Paragraph>
-          Adotamos medidas para proteger suas informações, mas nenhum método de
-          transmissão eletrônica é completamente seguro.
-        </Paragraph>
+        <Title>{t("privacyPolicy.sections.seguranca.title")}</Title>
+        <Paragraph>{t("privacyPolicy.sections.seguranca.text")}</Paragraph>
       </Section>
 
       <Section id="seus-direitos">
-        <Title>Seus Direitos</Title>
-        <Paragraph>
-          Você tem direitos sobre seus dados pessoais, como solicitar acesso,
-          correção ou exclusão. Entre em contato conosco para mais informações.
-        </Paragraph>
+        <Title>{t("privacyPolicy.sections.seusDireitos.title")}</Title>
+        <Paragraph>{t("privacyPolicy.sections.seusDireitos.text")}</Paragraph>
       </Section>
 
       <Section id="contato">
-        <Title>Como Entrar em Contato</Title>
+        <Title>{t("privacyPolicy.sections.contato.title")}</Title>
         <Paragraph>
-          Se você tiver dúvidas, envie um e-mail para
-          <a href="mailto:biancafdesign@gmail.com"> biancafdesign@gmail.com</a>.
+        {t("privacyPolicy.sections.contato.text")}
+          <a href="mailto:biancafdesign@gmail.com">
+          {t("privacyPolicy.sections.contato.email")}
+          </a>
         </Paragraph>
       </Section>
 
       <Section id="alteracoes">
-        <Title>Alterações a Esta Política</Title>
-        <Paragraph>
-          Podemos atualizar esta política periodicamente. Recomendamos que você
-          revise esta página regularmente.
-        </Paragraph>
+        <Title>{t("privacyPolicy.sections.alteracoes.title")}</Title>
+        <Paragraph>{t("privacyPolicy.sections.alteracoes.text")}</Paragraph>
       </Section>
     </PageWrapper>
   );

@@ -12,7 +12,7 @@ const BannerTopContainer = styled.div`
   align-items: center;
   background-color: ${({ theme }) => theme.colors.blue};
   color: ${({ theme }) => theme.colors.white};
-  padding: 8vw 5vw;
+  padding: 8vw 5vw 4vw;
 `;
 
 const TitleContainer = styled.div`
@@ -78,7 +78,6 @@ const ParagraphsContainer = styled.div`
 const StyledButton = styled.button`
   background-color: ${({ theme }) => theme.colors.green};
   margin-top: 50px;
-  padding: 5px 15px;
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.white};

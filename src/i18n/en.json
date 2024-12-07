@@ -20,7 +20,7 @@
         "buttons": ["Institutional", "Landing Page"]
       }
     },
-    "bottomButton": "Shall we create together?"
+    "bottomButton": "Request your quote"
   },
   "bannerTop": {
     "title": {
@@ -44,16 +44,16 @@
     "title": "Privacy Policy",
     "index": {
       "title": "Index",
-      "items": [
-        "Information We Collect",
-        "How We Use Information",
-        "Data Sharing",
-        "Cookies and Tracking Technologies",
-        "Information Security",
-        "Your Rights",
-        "How to Contact Us",
-        "Changes to This Policy"
-      ]
+      "items": {
+        "1":"Information We Collect",
+        "2": "How We Use Information",
+        "3": "Data Sharing",
+        "4": "Cookies and Tracking Technologies",
+        "5": "Information Security",
+        "6": "Your Rights",
+        "7": "How to Contact Us",
+        "8": "Changes to This Policy"
+      }
     },
     "sections": {
       "informacoesColetadas": {
@@ -82,7 +82,8 @@
       },
       "contato": {
         "title": "How to Contact Us",
-        "text": "If you have questions, email us at biancafdesign@gmail.com."
+        "text": "If you have questions, email us at ",
+        "email": "biancafdesign@gmail.com"
       },
       "alteracoes": {
         "title": "Changes to This Policy",

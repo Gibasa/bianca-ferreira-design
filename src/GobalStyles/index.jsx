@@ -26,6 +26,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     font-size: 2.8rem;
     font-weight: 600;
+    line-height: 40px;
   }
 
   p {
@@ -45,6 +46,8 @@ const GlobalStyle = createGlobalStyle`
     color: ${({ theme }) => theme.colors.white};
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
+  line-height: 16px;
+
   }
 
   button:hover {

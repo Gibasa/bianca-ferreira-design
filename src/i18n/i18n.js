@@ -4,6 +4,8 @@ import LanguageDetector from "i18next-browser-languagedetector"; // Importando o
 import pt from "./pt.json";
 import en from "./en.json";
 
+const userLanguage = navigator.language.startsWith("pt") ? "pt" : "en"
+
 i18n
   .use(LanguageDetector) // Usar o detector de idioma
   .use(initReactI18next) // Integrar com o React
@@ -12,6 +14,7 @@ i18n
       pt: { translation: pt },
       en: { translation: en },
     },
+    lng: userLanguage,
     fallbackLng: "pt", // Idioma de fallback
     interpolation: {
       escapeValue: false, // React já trata a segurança

@@ -1,5 +1,27 @@
 [
   {
+    "group": "COPARTNERS BANK",
+    "text": [
+      "O Copartners Bank é uma instituição financeira inovadora, especializada em oferecer soluções de crédito inteligente por meio de parcerias estratégicas. Seu propósito é transformar a maneira como as pessoas e empresas acessam e gerenciam o crédito, criando relações de confiança e oferecendo alternativas financeiras eficientes e sustentáveis.",
+      "Para refletir essa proposta moderna e ousada, a identidade da marca foi cuidadosamente construída com elementos que transmitem confiabilidade e inovação. A paleta de cores do Copartners Bank é dominada pelo azul, uma cor que inspira confiança e é amplamente aceita, criando uma conexão imediata com o público. O estilo tipográfico, sem serifa, foi escolhido para garantir boa legibilidade, além de transmitir modernidade, sendo altamente eficaz tanto em meios digitais quanto físicos.",
+      "O símbolo da marca foi desenhado para refletir a ideia de união e parceria, princípios essenciais para o banco. A forma do cifrão, sutilmente incorporada ao design, remete ao universo financeiro, resultando numa imagem dinâmica e cheia de personalidade, que transmite a energia e o movimento da marca."
+    ],
+    "text_en": [
+      "The Copartners Bank is an innovative financial institution specializing in offering smart credit solutions through strategic partnerships. Its purpose is to transform how individuals and businesses access and manage credit, fostering trust and providing efficient and sustainable financial alternatives.",
+      "To reflect this bold and modern approach, the brand's identity was carefully crafted with elements that convey reliability and innovation. The Copartners Bank's color palette is dominated by blue, a hue that inspires trust and is widely embraced, creating an immediate connection with its audience. The sans-serif typography was chosen for its excellent readability and its ability to convey modernity, performing effectively in both digital and physical media.",
+      "The brand's symbol was designed to reflect the ideas of unity and partnership, essential principles for the bank. The subtle incorporation of the dollar sign into the design evokes the financial realm, resulting in a dynamic and distinctive image that conveys the brand's energy and momentum."
+    ],
+    "video": "/images/portfolio/COPARTNERS BANK/VIDEO INTRO CB TIPO5 .mp4",
+    "images": {
+      "cover": "/images/portfolio/COPARTNERS BANK/cover.png",
+      "img 1": "/images/portfolio/COPARTNERS BANK/CB1.png",
+      "img 2": "/images/portfolio/COPARTNERS BANK/CB2.png",
+      "img 3": "/images/portfolio/COPARTNERS BANK/CB3.png",
+      "img 4": "/images/portfolio/COPARTNERS BANK/CB4.png",
+      "img 5": "/images/portfolio/COPARTNERS BANK/CB5.png"
+    }
+  },
+  {
     "group": "ARROZ",
     "text": [
       "No coração da Chapada Diamantina, onde a natureza exuberante e a tradição se encontram, nasce o Arroz, um restaurante que se dedica a celebrar o essencial da vida. Em um ambiente acolhedor, o Arroz proporciona uma experiência sensorial que resgata a simplicidade e transforma o cotidiano em algo extraordinário.",
@@ -24,44 +46,103 @@
     }
   },
   {
+    "group": "GEORGIA VITA",
+    "text": [
+      "Georgia Vita é uma nutricionista que guia aqueles que buscam transformar seus hábitos de forma leve, respeitosa e sem pressões. Seu trabalho vai além de apenas prescrever dietas; ela propõe um novo estilo de vida, baseado em escolhas conscientes, equilíbrio e respeito pelo corpo, sem cair no terrorismo nutricional.",
+      "A marca de Georgia Vita é construída sobre o símbolo do infinito, representando que a verdadeira mudança é um processo contínuo e em constante evolução. Não é uma mudança radical, mas um caminho de transformação que segue o fluxo da vida.",
+      "Com um toque de sofisticação, sua identidade transmite elegância e exclusividade. As consultorias premium são desenhadas para oferecer um atendimento totalmente personalizado e individualizado, garantindo que cada paciente tenha um plano que atenda suas necessidades únicas.",
+      "Georgia Vita não é apenas sobre nutrição; é sobre cuidar de cada pessoa de forma única, respeitando seu ritmo e guiando-a para um estilo de vida mais saudável e pleno."
+    ],
+    "text_en": [
+      "Georgia Vita is a nutritionist who guides those seeking to transform their habits in a light, respectful, and pressure-free way. Her work goes beyond simply prescribing diets; she advocates for a new lifestyle based on conscious choices, balance, and respect for the body, steering clear of nutritional extremism.",
+      "Georgia Vita's brand is built around the infinity symbol, representing that true change is a continuous and ever-evolving process. It’s not about radical shifts but about a transformative journey that flows with the rhythm of life.",
+      "With a touch of sophistication, her identity conveys elegance and exclusivity. Her premium consultations are designed to provide fully personalized and individualized care, ensuring that each patient receives a plan tailored to their unique needs.",
+      "Georgia Vita is not just about nutrition; it’s about caring for each person uniquely, respecting their pace, and guiding them toward a healthier and more fulfilling lifestyle."
+    ],
+    "video": "/images/portfolio/GEORGIA VITA/VIDEO GEO .mp4",
+    "images": {
+      "cover": "/images/portfolio/GEORGIA VITA/cover.png",
+      "img 1": "/images/portfolio/GEORGIA VITA/GEO1.png",
+      "img 2": "/images/portfolio/GEORGIA VITA/GEO2.png",
+      "img 3": "/images/portfolio/GEORGIA VITA/GEO3.png",
+      "img 4": "/images/portfolio/GEORGIA VITA/GEO4.png",
+      "img 5": "/images/portfolio/GEORGIA VITA/GEO5_1.png"
+    }
+  },
+  {
+    "group": "3P ENERGIA",
+    "text": [
+      "Na 3P Energia, a identidade da empresa é guiada por três pilares fundamentais: Propósito, Performance e Preservação. Esses valores não são apenas conceitos, mas a essência da missão da empresa. A 3P Energia busca liderar a transição para uma matriz energética mais limpa, eficiente e sustentável, oferecendo soluções que realmente fazem a diferença.",
+      "O redesign da marca reflete essa essência. O verde, símbolo do compromisso com a sustentabilidade, foi mantido, enquanto o laranja foi introduzido como uma cor complementar, inspirada no sol — a energia que move as placas fotovoltaicas. A tipografia personalizada, com cortes inspirados no raio, símbolo de energia, que promove um ar mais “tech” para a marca.",
+      "Com quase 10 anos de experiência, a 3P Energia já realizou mais de 1.600 instalações e executou mais de 60MWp em projetos de energia solar. Sua excelência técnica e compromisso com o desempenho superior a tornam uma referência no mercado de energia solar B2B.",
+      "Com soluções avançadas e alinhadas aos mais altos padrões de qualidade, a 3P Energia está pronta para transformar o setor e contribuir para um futuro mais limpo, eficiente e sustentável."
+    ],
+    "text_en": [
+      "At 3P Energia, the company's identity is guided by three fundamental pillars: Purpose, Performance, and Preservation. These values are not just concepts but the core of the company's mission. 3P Energia strives to lead the transition to a cleaner, more efficient, and sustainable energy matrix by offering solutions that truly make a difference.",
+      "The brand redesign reflects this essence. Green, symbolizing the commitment to sustainability, has been retained, while orange was introduced as a complementary color, inspired by the sun — the energy that powers photovoltaic panels. The custom typography, with cuts inspired by lightning bolts, represents energy and gives the brand a more \"tech\" vibe.",
+      "With nearly 10 years of experience, 3P Energia has completed over 1,600 installations and executed more than 60 MWp in solar energy projects. Its technical excellence and commitment to superior performance make it a benchmark in the B2B solar energy market.",
+      "With advanced solutions aligned with the highest quality standards, 3P Energia is ready to transform the sector and contribute to a cleaner, more efficient, and sustainable future."
+    ],
+    "video": "/images/portfolio/3P ENERGIA/VIDEO 3P.mp4",
+    "images": {
+      "cover": "/images/portfolio/3P ENERGIA/cover.png",
+      "img 1": "/images/portfolio/3P ENERGIA/3P1.png",
+      "img 2": "/images/portfolio/3P ENERGIA/3P2.png",
+      "img 3": "/images/portfolio/3P ENERGIA/3P3.png",
+      "img 4": "/images/portfolio/3P ENERGIA/3P4.png",
+      "img 5": "/images/portfolio/3P ENERGIA/3P5.png"
+    }
+  },
+
+  {
     "group": "BARZA",
     "text": [
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugit corporis ad dolorem alias, omnis aliquam harum neque. Blanditiis porro doloremque ratione labore tempore excepturi delectus. Aut, dolor. Reiciendis consectetur soluta alias. Quae beatae dolore doloremque qui veniam quisquam, dolorum esse consectetur a fuga, facere, numquam eligendi ea commodi soluta.",
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium reiciendis sapiente, laborum fugit corrupti excepturi et, nesciunt, provident repellat modi ad. Minima fugiat ullam expedita voluptas harum eos nulla ad, nostrum natus dolorem numquam exercitationem consequatur nam a deserunt illo fuga, magni iste! Mollitia vel culpa recusandae natus nam, quis vitae voluptates reiciendis distinctio dolore vero molestiae rerum quibusdam fuga!",
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis quae at modi iste, odit nobis ea quaerat nemo, repellendus corporis voluptatum? Quo modi nesciunt quidem magni animi delectus culpa atque facere, fugit id dignissimos nemo earum ducimus expedita, doloribus pariatur. At, modi nesciunt nam ullam animi enim, excepturi eveniet deserunt nihil quibusdam autem velit officiis dolor sint non quam. Cum dolore dolores ipsum esse repellat! Minima sit animi quae consequatur."
+      "Barza é uma empresa que une arquitetura, interiores e urbanismo, criada por Camilla Souza e Gilvanei Barbosa. O nome do escritório é a combinação dos fundadores, refletindo a essência colaborativa e criativa da marca. Com uma visão de transformar espaços e criar experiências, Barza se destaca por sua visão sofisticada e criativa.",
+      "A identidade visual da Barza foi cuidadosamente desenvolvida para transmitir essa proposta de elegância e harmonia. A tipografia personalizada, com linhas retas e sem serifas, confere à marca uma estética moderna e limpa, simbolizando precisão e modernidade. O símbolo da marca foi inspirado nas letras do nome e na planta baixa, criando uma conexão direta com o universo da arquitetura e do design de interiores.",
+      "A paleta de cores da marca é sóbria e acolhedora, com tons de bege terroso e verde escuro, inspirados no ambiente do próprio escritório, que apresenta tons amadeirados e plantas. Essa escolha de cores reforça a ideia de espaços acolhedores e harmônicos.\r\nBarza é uma marca que representa a união entre criatividade, funcionalidade e respeito à natureza. Cada projeto é uma obra única que traduz elegância e inovação, sempre com um toque de autenticidade e sofisticação."
     ],
-    "text_en": {
-      "p1": "No description at the moment"
-    },
-    "video": null,
+    "text_en": [
+      "Barza is a company that combines architecture, interiors, and urbanism, founded by Camilla Souza and Gilvanei Barbosa. The firm's name is a blend of its founders' names, reflecting the brand's collaborative and creative essence. With a vision of transforming spaces and creating experiences, Barza stands out for its sophisticated and innovative approach.",
+      "Barza's visual identity was carefully developed to convey this concept of elegance and harmony. The custom typography, with clean, sans-serif lines, gives the brand a modern and minimalist aesthetic, symbolizing precision and contemporary design. The brand's symbol is inspired by the letters in the name and architectural floor plans, creating a direct connection to the world of architecture and interior design.",
+      "The brand's color palette is understated and inviting, featuring earthy beige and deep green tones inspired by the studio's own environment, which incorporates wood textures and greenery. This choice of colors reinforces the idea of welcoming and harmonious spaces.",
+      "Barza represents the union of creativity, functionality, and respect for nature. Each project is a unique creation that embodies elegance and innovation, always infused with authenticity and sophistication."
+    ],
+    "video": "/images/portfolio/BARZA/VIDEO BARZA .mp4",
     "images": {
       "cover": "/images/portfolio/BARZA/cover.png",
       "img 1": "/images/portfolio/BARZA/BARZA1.png",
       "img 2": "/images/portfolio/BARZA/BARZA2.png",
       "img 3": "/images/portfolio/BARZA/BARZA3.png",
       "img 4": "/images/portfolio/BARZA/BARZA4.png",
-      "img 5": "/images/portfolio/BARZA/BARZA5.png",
-      "img 6": "/images/portfolio/BARZA/BARZA6.png"
+      "img 5": "/images/portfolio/BARZA/BARZA5png.png"
     }
   },
+
   {
-    "group": "COPARTNERS BANK",
+    "group": "PIMENTA",
     "text": [
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugit corporis ad dolorem alias, omnis aliquam harum neque. Blanditiis porro doloremque ratione labore tempore excepturi delectus. Aut, dolor. Reiciendis consectetur soluta alias. Quae beatae dolore doloremque qui veniam quisquam, dolorum esse consectetur a fuga, facere, numquam eligendi ea commodi soluta.",
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium reiciendis sapiente, laborum fugit corrupti excepturi et, nesciunt, provident repellat modi ad. Minima fugiat ullam expedita voluptas harum eos nulla ad, nostrum natus dolorem numquam exercitationem consequatur nam a deserunt illo fuga, magni iste! Mollitia vel culpa recusandae natus nam, quis vitae voluptates reiciendis distinctio dolore vero molestiae rerum quibusdam fuga!",
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis quae at modi iste, odit nobis ea quaerat nemo, repellendus corporis voluptatum? Quo modi nesciunt quidem magni animi delectus culpa atque facere, fugit id dignissimos nemo earum ducimus expedita, doloribus pariatur. At, modi nesciunt nam ullam animi enim, excepturi eveniet deserunt nihil quibusdam autem velit officiis dolor sint non quam. Cum dolore dolores ipsum esse repellat! Minima sit animi quae consequatur."
+      "Pimenta é uma marca de acessórios criada para um público feminino mais maduro, oferecendo peças sofisticadas que exaltam a beleza única de cada cliente. Com a missão de proporcionar elegância e autoestima, a marca sempre se dedicou a criar produtos que fazem cada mulher se sentir especial e confiante.",
+      "O redesign da marca foi desenvolvido para transmitir essa sofisticação e evolução, mantendo sua essência e elevando sua identidade visual. A paleta de cores foi cuidadosamente repensada, migrando do tradicional preto e dourado para um tom mais feminino e sofisticado, com rosa suave, bege e preto. Essa combinação traz um equilíbrio perfeito entre delicadeza e sofisticação, refletindo o público-alvo da marca.",
+      "A tipografia escolhida para o redesign é moderna e sem serifa, com linhas limpas e poucos contrastes, para transmitir um ar contemporâneo e elegante, que dialoga com o estilo refinado da marca. O símbolo da Pimenta foi inspirado na sombra e reflexão de uma pedra lapidada, com suas terminações arredondadas, criando uma imagem que abraça e fortalece a autoestima das mulheres, trazendo uma sensação de acolhimento e exclusividade.",
+      "Pimenta é um convite para cada mulher realçar sua beleza, sua confiança e seu estilo com peças que são tão sofisticadas quanto elas mesmas."
     ],
-    "text_en": {
-      "p1": "No description at the moment"
-    },
-    "video": "/images/portfolio/COPARTNERS BANK/VIDEO INTRO CB TIPO5 .mp4",
+    "text_en": [
+      "Pimenta is an accessories brand designed for a more mature female audience, offering sophisticated pieces that celebrate the unique beauty of every customer. With a mission to provide elegance and boost self-esteem, the brand is dedicated to creating products that make every woman feel special and confident.",
+      "The brand redesign was developed to convey sophistication and growth while preserving its essence and elevating its visual identity. The color palette was carefully reimagined, transitioning from traditional black and gold to a more feminine and refined combination of soft pink, beige, and black. This blend achieves the perfect balance between delicacy and sophistication, reflecting the brand’s target audience.",
+      "The chosen typography for the redesign is modern and sans-serif, featuring clean lines and minimal contrast to convey a contemporary and elegant look that resonates with the brand's refined style. Pimenta’s symbol draws inspiration from the shadow and reflection of a cut gemstone, with rounded edges that create a design embracing and empowering women’s self-esteem, offering a sense of warmth and exclusivity.",
+      "Pimenta is an invitation for every woman to enhance her beauty, confidence, and style with pieces that are as sophisticated as she is."
+    ],
+    "video": "/images/portfolio/PIMENTA/VIDEO PIMENTA.mp4",
     "images": {
-      "cover": "/images/portfolio/COPARTNERS BANK/cover.png",
-      "img 1": "/images/portfolio/COPARTNERS BANK/CB1.png",
-      "img 2": "/images/portfolio/COPARTNERS BANK/CB2.png",
-      "img 3": "/images/portfolio/COPARTNERS BANK/CB3.png",
-      "img 4": "/images/portfolio/COPARTNERS BANK/CB4.png",
-      "img 5": "/images/portfolio/COPARTNERS BANK/CB5.png"
+      "cover": "/images/portfolio/PIMENTA/cover.png",
+      "img 1": "/images/portfolio/PIMENTA/PIMENTA 4.png",
+      "img 2": "/images/portfolio/PIMENTA/PIMENTA 5.png",
+      "img 3": "/images/portfolio/PIMENTA/PIMENTA 7.png",
+      "img 4": "/images/portfolio/PIMENTA/PIMENTA 8.png",
+      "img 5": "/images/portfolio/PIMENTA/PIMENTA1.png",
+      "img 6": "/images/portfolio/PIMENTA/PIMENTA2.png",
+      "img 7": "/images/portfolio/PIMENTA/PIMENTA9.png",
+      "img 8": "/images/portfolio/PIMENTA/PIMNETA 3.png"
     }
   }
 ]

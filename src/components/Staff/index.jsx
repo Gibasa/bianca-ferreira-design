@@ -23,7 +23,8 @@ const StaffStyled = styled.section`
   .portraits {
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 10vw;
     @media (max-width: 899px) {
     }
     @media (max-width: 600px) {
@@ -78,9 +79,21 @@ const StaffStyled = styled.section`
 function Staff() {
   const sectionRef = useRef(null);
   const [animationTriggered, setAnimationTriggered] = useState(false);
-  const { t, i18n } = useTranslation();
   const [animationDimensions, setAnimationDimensions] = useState({ width: "5rem", height: "7rem" });
+  const [biaImgSrc, setBiaImgSrc] = useState("");
+  const { t, i18n } = useTranslation();
   console.log(t.language);
+
+  
+
+  useEffect(() => {
+    const language = i18n.language;
+    const biaImgSrc = language.startsWith("pt")
+      ? "./images/bia.png"
+      : "./images/bia-en.png";
+
+    setBiaImgSrc(biaImgSrc);
+  }, [i18n.language]);
 
   const getAnimationDimensions = (language) => {
     if (language === 'en') {
@@ -145,7 +158,7 @@ function Staff() {
         </h2>
       </div>
       <div className="portraits">
-        <img src="/images/bia.png" alt="Bianca Portrait" />
+        <img src={biaImgSrc} alt="Bianca Portrait" />
         <img src="/images/giba.png" alt="Gilberto Portrait" />
       </div>
     </StaffStyled>

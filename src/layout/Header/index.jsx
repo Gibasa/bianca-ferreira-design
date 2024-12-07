@@ -33,15 +33,15 @@ const expandModal = keyframes`
     height: 50px;
   }
   to {
-    width: 30vw;
-    height: 60vh;
+    width: 25vw;
+    height: 45vh;
   }
 `;
 
 const collapseModal = keyframes`
   from {
-    width: 30vw;
-    height: 60vh;
+    width: 25vw;
+    height: 50vh;
   }
   to {
     width: 60px;
@@ -55,15 +55,15 @@ const expandModalMedium = keyframes`
     height: 50px;
   }
   to {
-    width: 50vw;
-    height: 60vh;
+    width: 32vw;
+    height: 45vh;
   }
 `;
 
 const collapseModalMedium = keyframes`
   from {
-    width: 50vw;
-    height: 60vh;
+    width: 25vw;
+    height: 45vh;
   }
   to {
     width: 60px;
@@ -77,8 +77,8 @@ const expandModalSmall = keyframes`
     height: 50px;
   }
   to {
-    width: 50vw;
-    height: 50vh;
+    width: 45vw;
+    height: 38vh;
   }
 `;
 
@@ -194,7 +194,7 @@ const StyledModal = styled.div`
   right: 0;
   margin: 1.8vw 4vw;
   display: flex;
-  padding: 5vw;
+  padding: 2vw 5vw;
   align-items: start;
   justify-content: center;
   border-radius: 5px;
@@ -219,7 +219,10 @@ const ModalContent = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
+  justify-content: center;
+  align-items: center;
   opacity: 0;
+  width: 100%;
   animation: ${({ isClosing }) =>
     isClosing ? "fadeOut 0.1s ease-in forwards" : "fadeIn 1s 0.5s forwards"};
 
@@ -237,7 +240,8 @@ const ModalContent = styled.div`
   }
 
   button {
-    margin-top: 50px;
+    margin-top: 20px;
+    width: 120%;
   }
 
   @keyframes fadeIn {
@@ -311,9 +315,12 @@ function Header() {
   }, []);
 
   useEffect(() => {
-    const newLogo = isIntersecting
-      ? "/images/logoBiancaFerreira.png"
-      : "/images/logoBiancaFerreiraSmall.png";
+    const isPrivacyPolicyPage =
+      window.location.pathname === "/politica-de-privacidade";
+    const newLogo =
+      !isIntersecting || isPrivacyPolicyPage
+        ? "/images/logoBiancaFerreiraSmall.png"
+        : "/images/logoBiancaFerreira.png";
 
     if (logoState.currentLogo === newLogo) return;
 
@@ -356,7 +363,10 @@ function Header() {
             src={logoState.currentLogo}
             alt="Logo"
             $animation={logoState.animation}
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            onClick={() => {
+              window.location.href = "/";
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
           />
         </LogoContainer>
 
@@ -381,7 +391,8 @@ function Header() {
                   {t(page)} {/* Traduzindo com o i18next */}
                 </a>
               ))}
-              <button>{t('Faça seu orçamento')}</button> {/* Traduzindo o texto */}
+              <button>{t("Faça seu orçamento")}</button>{" "}
+              {/* Traduzindo o texto */}
             </ModalContent>
           </StyledModal>
         )}
