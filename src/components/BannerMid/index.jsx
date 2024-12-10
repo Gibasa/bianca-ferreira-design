@@ -5,6 +5,7 @@ import animationData from "../../assets/circle.json";
 import { FaArrowCircleRight } from "react-icons/fa";
 import { keyframes } from "styled-components";
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from "react-router-dom";
 
 const moveArrow = keyframes`
   0% {
@@ -156,6 +157,7 @@ const BannerMidStyled = styled.section`
 function BannerMid() {
   const [animationTriggered, setAnimationTriggered] = useState(false);
   const sectionRef = useRef(null);
+  const navigate = useNavigate();
   const { t } = useTranslation();
 
   useEffect(() => {
@@ -220,7 +222,7 @@ function BannerMid() {
           <button>{t("bannerMid.brandingSite.site.buttons.1")}</button>
         </div>
       </div>
-      <button className="btn-bottom">
+      <button className="btn-bottom" onClick={() => navigate("/form")}>
         <h3>{t("bannerMid.bottomButton")}</h3> <FaArrowCircleRight className="arrow" />
       </button>
     </BannerMidStyled>

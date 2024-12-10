@@ -5,8 +5,8 @@ import Box from "@mui/material/Box";
 import { useState, useEffect } from "react";
 import { useLanguage } from "../../context/TranslationContext";
 import { useTranslation } from "react-i18next";
+import { useNavigate, useLocation } from "react-router-dom";
 
-// Animação para o logo sair da tela (da direita para a esquerda)
 const slideOut = keyframes`
   0% {
     transform: translateX(0);
@@ -16,7 +16,6 @@ const slideOut = keyframes`
   }
 `;
 
-// Animação para o logo entrar na tela (da esquerda para a direita)
 const slideIn = keyframes`
   0% {
     transform: translateX(-100%);
@@ -26,7 +25,6 @@ const slideIn = keyframes`
   }
 `;
 
-// Animação de expansão e colapso do modal
 const expandModal = keyframes`
   from {
     width: 60px;
@@ -93,7 +91,6 @@ const collapseModalSmall = keyframes`
   }
 `;
 
-// Contêiner do logo
 const LogoContainer = styled(Box)`
   position: relative;
   height: 70px;
@@ -109,7 +106,6 @@ const LogoContainer = styled(Box)`
   }
 `;
 
-// Logo com animações
 const AnimatedLogo = styled.img`
   position: absolute;
   height: 100%;
@@ -119,11 +115,10 @@ const AnimatedLogo = styled.img`
   ${({ $animation }) =>
     $animation &&
     css`
-      animation: ${$animation} 0.6s ease-in-out;
+      animation: ${$animation} 0.5s ease;
     `}
 `;
 
-// Barra de navegação estilizada
 const StyledAppBar = styled(AppBar)`
   background-color: transparent !important;
   box-shadow: none !important;
@@ -146,7 +141,6 @@ const StyledToolbar = styled(Toolbar)`
   margin: 0 5vw !important;
 `;
 
-// Menu hambúrguer
 const StyledHamburger = styled.div`
   display: flex;
   flex-direction: column;
@@ -187,7 +181,6 @@ const StyledHamburger = styled.div`
   }
 `;
 
-// Modal estilizado
 const StyledModal = styled.div`
   position: fixed;
   top: 0;
@@ -277,70 +270,84 @@ const LanguageButton = styled.button`
   }
 `;
 
-// Estilizando o texto "PT" e "EN"
 const LanguageText = styled.span`
   font-weight: ${({ isSelected }) => (isSelected ? "bold" : "normal")};
 `;
 
-// Componente principal
 function Header() {
-  const [isIntersecting, setIsIntersecting] = useState(true);
   const [logoState, setLogoState] = useState({
     currentLogo: "/images/logoBiancaFerreira.png",
     animation: null,
   });
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
+  const { language, toggleLanguage } = useLanguage();
+  const { t } = useTranslation();
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  const { language, toggleLanguage } = useLanguage(); // Obtendo valores do contexto
-  const { t } = useTranslation(); // Utilizando o hook useTranslation para acessar as traduções
+  const sectionIds = {
+    projetos: "projetos",
+    projects: "projetos",
+    contato: "contato",
+    contact: "contato",
+    serviços: "serviços",
+    services: "serviços",
+  };
+
+  useEffect(() => {
+    const updateLogoBasedOnRoute = () => {
+      const smallLogoRoutes = ["/form", "/politica-de-privacidade"];
+
+      if (smallLogoRoutes.includes(location.pathname)) {
+        setLogoState({
+          currentLogo: "/images/logoBiancaFerreiraSmall.png",
+          animation: null, 
+        });
+      } else {
+        const handleScroll = () => {
+          const videoElement = document.getElementById("video");
+          if (!videoElement) return;
+
+          const videoRect = videoElement.getBoundingClientRect();
+          const isInView =
+            videoRect.top < window.innerHeight && videoRect.bottom >= 0;
+
+          setLogoState((prev) => {
+            if (
+              isInView &&
+              prev.currentLogo !== "/images/logoBiancaFerreira.png"
+            ) {
+              return {
+                currentLogo: "/images/logoBiancaFerreira.png",
+                animation: slideIn,
+              };
+            } else if (
+              !isInView &&
+              prev.currentLogo !== "/images/logoBiancaFerreiraSmall.png"
+            ) {
+              return {
+                currentLogo: "/images/logoBiancaFerreiraSmall.png",
+                animation: slideOut,
+              };
+            }
+            return prev;
+          });
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        handleScroll();
+        return () => window.removeEventListener("scroll", handleScroll);
+      }
+    };
+
+    updateLogoBasedOnRoute();
+  }, [location.pathname]); 
 
   const pages =
     language === "pt"
       ? ["projetos", "serviços", "contato"]
       : ["projects", "services", "contact"];
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => setIsIntersecting(entry.isIntersecting),
-      { threshold: 0.1 }
-    );
-
-    const target = document.getElementById("video");
-    if (target) observer.observe(target);
-
-    return () => {
-      if (target) observer.unobserve(target);
-    };
-  }, []);
-
-  useEffect(() => {
-    const isPrivacyPolicyPage =
-      window.location.pathname === "/politica-de-privacidade";
-    const newLogo =
-      !isIntersecting || isPrivacyPolicyPage
-        ? "/images/logoBiancaFerreiraSmall.png"
-        : "/images/logoBiancaFerreira.png";
-
-    if (logoState.currentLogo === newLogo) return;
-
-    const exitAnimation = slideOut;
-    const entryAnimation = slideIn;
-
-    setLogoState((prevState) => ({
-      ...prevState,
-      animation: exitAnimation,
-    }));
-
-    const timeout = setTimeout(() => {
-      setLogoState({
-        currentLogo: newLogo,
-        animation: entryAnimation,
-      });
-    }, 300);
-
-    return () => clearTimeout(timeout);
-  }, [isIntersecting, logoState.currentLogo]);
 
   const handleToggleModal = () => {
     if (isModalOpen) {
@@ -364,7 +371,7 @@ function Header() {
             alt="Logo"
             $animation={logoState.animation}
             onClick={() => {
-              window.location.href = "/";
+              navigate("/"); 
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
           />
@@ -387,12 +394,24 @@ function Header() {
           <StyledModal isClosing={isClosing}>
             <ModalContent isClosing={isClosing}>
               {pages.map((page) => (
-                <a key={page} href={`#${page}`} onClick={handleToggleModal}>
-                  {t(page)} {/* Traduzindo com o i18next */}
+                <a
+                  key={page}
+                  href={`#${sectionIds[page]}`} 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const targetId = sectionIds[page];
+                    document
+                      .getElementById(targetId)
+                      ?.scrollIntoView({ behavior: "smooth" });
+                    handleToggleModal();
+                  }}
+                >
+                  {t(page)} 
                 </a>
               ))}
-              <button>{t("Faça seu orçamento")}</button>{" "}
-              {/* Traduzindo o texto */}
+              <button onClick={() => navigate("/form")}>
+                {t("header.button")}
+              </button>{" "}
             </ModalContent>
           </StyledModal>
         )}

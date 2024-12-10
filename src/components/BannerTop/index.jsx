@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Lottie from "react-lottie";
 import animationData from "../../assets/circle.json";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 // Componentes estilizados
 const BannerTopContainer = styled.div`
@@ -78,7 +79,7 @@ const ParagraphsContainer = styled.div`
 const StyledButton = styled.button`
   background-color: ${({ theme }) => theme.colors.green};
   margin-top: 50px;
-
+  font-size: 1.8rem;
   &:hover {
     background-color: ${({ theme }) => theme.colors.white};
     color: ${({ theme }) => theme.colors.green};
@@ -88,10 +89,13 @@ const StyledButton = styled.button`
 // Componente funcional
 function BannerTop() {
   const sectionRef = useRef(null);
+  const navigate = useNavigate();
   const [animationTriggered, setAnimationTriggered] = useState(false);
   const { t, i18n } = useTranslation();
-
-  const [animationDimensions, setAnimationDimensions] = useState({ width: "11rem", height: "6rem" });
+  const [animationDimensions, setAnimationDimensions] = useState({
+    width: "11rem",
+    height: "6rem",
+  });
 
   // Função para calcular as dimensões da animação de acordo com o idioma
   const getAnimationDimensions = (language) => {
@@ -146,7 +150,11 @@ function BannerTop() {
           {t("bannerTop.title.part1")} <br />
           <Highlight>
             {t("bannerTop.title.highlight")}
-            <AnimationContainer animationTriggered={animationTriggered} animationWidth={animationDimensions.width} animationHeight={animationDimensions.height}>
+            <AnimationContainer
+              animationTriggered={animationTriggered}
+              animationWidth={animationDimensions.width}
+              animationHeight={animationDimensions.height}
+            >
               <Lottie
                 options={defaultOptions}
                 isStopped={!animationTriggered}
@@ -161,7 +169,9 @@ function BannerTop() {
         <p>{t("bannerTop.description.part2")}</p>
         <p>{t("bannerTop.description.part3")}</p>
       </ParagraphsContainer>
-      <StyledButton>{t("bannerTop.button")}</StyledButton>
+      <StyledButton onClick={() => navigate("/form")}>
+        {t("bannerTop.button")}
+      </StyledButton>
     </BannerTopContainer>
   );
 }

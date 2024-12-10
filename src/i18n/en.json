@@ -45,7 +45,7 @@
     "index": {
       "title": "Index",
       "items": {
-        "1":"Information We Collect",
+        "1": "Information We Collect",
         "2": "How We Use Information",
         "3": "Data Sharing",
         "4": "Cookies and Tracking Technologies",
@@ -100,5 +100,19 @@
       "highlight": "makes",
       "part2": "it happen"
     }
+  },
+  "header": {
+    "button": "Request a quotation"
+  },
+  "footer": {
+    "title": {
+      "part1": "Let's",
+      "highlight": "create",
+      "part2": "together?"
+    },
+
+    "contact": "CONTACT US",
+    "instagram": "FOLLOW US ON INSTAGRAM",
+    "copyright": "Todos os direitos reservados"
   }
 }

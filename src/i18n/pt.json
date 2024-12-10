@@ -1,4 +1,11 @@
 {
+  "home": {
+    "title": "Bianca Ferreira Creative Studio",
+    "description": "Transforme a sua marca com um design único e estratégico. A especialista em identidade visual vai criar soluções criativas que conectam sua marca ao público.",
+    "ogTitle": "Identidade Visual e Estratégia de Marca - Designer Profissional",
+    "ogDescription": "Crie uma identidade visual impactante para sua marca. Serviços de design para redes sociais, papelaria, sites institucionais e landing pages.",
+    "keywords": "identidade visual, estratégia de marca, design para redes sociais, papelaria, materiais institucionais, design de site institucional, landing page, branding"
+  },
   "bannerMid": {
     "title": {
       "part1": "Como podemos",
@@ -100,5 +107,18 @@
       "highlight": "faz",
       "part2": "acontecer"
     }
+  },
+  "header": {
+    "button": "Faça seu orçamento"
+  },
+  "footer": {
+    "title": {
+      "part1": "Vamos",
+      "highlight": "criar",
+      "part2": "juntos?"
+    },
+    "contact": "FALE CONSOCO",
+    "instagram": "ACOMPANHE NOSSO INSTAGRAM",
+    "copyright": "Todos os direitos reservados"
   }
 }

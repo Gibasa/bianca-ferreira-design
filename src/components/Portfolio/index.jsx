@@ -174,7 +174,7 @@ const Portfolio = () => {
   const closeModal = () => setSelectedGroup(null);
 
   return (
-    <Container>
+    <Container id="projetos">
       {portfolioData.map((data, index) => (
         <PortfolioItem key={index}>
           <CoverImage

@@ -52,7 +52,7 @@ const Cookie = () => {
     <Banner>
       <p>
       {t("cookiesBanner.text")}{" "}
-        <a href="/politica-de-privacidade" style={{ color: "#4caf50" }}>
+        <a href="#/politica-de-privacidade" style={{ color: "#4caf50" }}>
         {t("cookiesBanner.linkText")}
         </a>.
         <Button onClick={handleAccept}>{t("cookiesBanner.acceptButton")}</Button>

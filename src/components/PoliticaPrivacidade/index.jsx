@@ -40,7 +40,7 @@ const Paragraph = styled.p`
   color: #555;
 `;
 
-const PrivacyPolicy = () => {
+const PoliticaPrivacidade = () => {
   const { t } = useTranslation();
 
   return (
@@ -128,4 +128,4 @@ const PrivacyPolicy = () => {
   );
 };
 
-export default PrivacyPolicy;
+export default PoliticaPrivacidade;
