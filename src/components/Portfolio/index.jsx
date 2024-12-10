@@ -5,6 +5,8 @@ import portfolioData from "/src/assets/portfolio.json";
 import { FaArrowCircleRight } from "react-icons/fa";
 import { IoIosCloseCircle } from "react-icons/io";
 import { useTranslation } from "react-i18next";
+import Lottie from "react-lottie";
+import loadingAnimation from "../../assets/loading.json";
 
 const Container = styled.div`
   display: flex;
@@ -82,6 +84,7 @@ const ModalContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 50px;
 `;
 
 const ModalHeader = styled.h2`
@@ -96,10 +99,41 @@ const Paragraph = styled.p`
   width: 90%;
 `;
 
-const Video = styled.video`
+const ParagraphContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+  flex-direction: column;
+`;
+
+const VideoContainer = styled.div`
+  position: relative;
   width: 90%;
   border-radius: 8px;
   margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px; /* Define um espaço mínimo para evitar saltos */
+  flex-shrink: 0;
+`;
+
+const Video = styled.video`
+  width: 100%;
+  border-radius: 8px;
+  display: ${({ isVideoLoaded }) => (isVideoLoaded ? "block" : "none")};
+`;
+
+const LottieWrapper = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: ${({ isVideoLoaded }) => (isVideoLoaded ? "none" : "flex")};
+  justify-content: center;
+  align-items: center;
 `;
 
 const ModalImage = styled.img`
@@ -121,12 +155,12 @@ const CloseButton = styled.div`
 
 const Modal = ({ groupData, onClose }) => {
   const { t, i18n } = useTranslation();
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+
   if (!groupData) return null;
 
   const { group, text, text_en, video, images } = groupData;
-
   const paragraphs = i18n.language === "en" ? text_en : text;
-  
 
   const otherImages = Object.entries(images)
     .filter(([key]) => key !== "cover")
@@ -139,10 +173,34 @@ const Modal = ({ groupData, onClose }) => {
           <IoIosCloseCircle />
         </CloseButton>
         <ModalHeader>{t(group)}</ModalHeader>
-        {video && <Video src={video} autoPlay loop muted />}
-        {paragraphs.map((para, index) => (
-          <Paragraph key={index}>{para}</Paragraph>
-        ))}
+        {video && (
+          <VideoContainer>
+            <LottieWrapper isVideoLoaded={isVideoLoaded}>
+              <Lottie
+                options={{
+                  animationData: loadingAnimation,
+                  loop: true,
+                  autoplay: true,
+                }}
+                height={200}
+                width={200}
+              />
+            </LottieWrapper>
+            <Video
+              src={video}
+              autoPlay
+              loop
+              muted
+              isVideoLoaded={isVideoLoaded}
+              onLoadedData={() => setIsVideoLoaded(true)}
+            />
+          </VideoContainer>
+        )}
+        <ParagraphContainer>
+          {paragraphs.map((para, index) => (
+            <Paragraph key={index}>{para}</Paragraph>
+          ))}
+        </ParagraphContainer>
         {images.cover && (
           <ModalImage src={images.cover} alt={`${group} Cover`} />
         )}
@@ -169,6 +227,7 @@ Modal.propTypes = {
 
 const Portfolio = () => {
   const [selectedGroup, setSelectedGroup] = useState(null);
+  const { t } = useTranslation();
 
   const openModal = (groupData) => setSelectedGroup(groupData);
   const closeModal = () => setSelectedGroup(null);
@@ -185,13 +244,15 @@ const Portfolio = () => {
           <TitleContainer>
             <GroupName>{data.group}</GroupName>
             <ViewMore onClick={() => openModal(data)}>
-              Ver mais <FaArrowCircleRight className="arrow" />
+              {t("portfolio.viewMore")} <FaArrowCircleRight className="arrow" />
             </ViewMore>
           </TitleContainer>
         </PortfolioItem>
       ))}
 
-      {selectedGroup && <Modal groupData={selectedGroup} onClose={closeModal} />}
+      {selectedGroup && (
+        <Modal groupData={selectedGroup} onClose={closeModal} />
+      )}
     </Container>
   );
 };
