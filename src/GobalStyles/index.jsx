@@ -81,7 +81,8 @@ const GlobalStyle = createGlobalStyle`
     }
 
     h1, h2, h3, h4, h5, h6 {
-      font-size: 3.2rem; /* Aproximadamente 24px */
+      font-size: 2.5rem; /* Aproximadamente 24px */
+      line-height: 20px;
     }
 
     p {

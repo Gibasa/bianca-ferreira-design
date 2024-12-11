@@ -32,14 +32,14 @@ const expandModal = keyframes`
   }
   to {
     width: 25vw;
-    height: 45vh;
+    height: 25vw;
   }
 `;
 
 const collapseModal = keyframes`
   from {
     width: 25vw;
-    height: 50vh;
+    height: 25vw;
   }
   to {
     width: 60px;
@@ -75,15 +75,15 @@ const expandModalSmall = keyframes`
     height: 50px;
   }
   to {
-    width: 45vw;
-    height: 38vh;
+    width: 50vw;
+    height: 85vw;
   }
 `;
 
 const collapseModalSmall = keyframes`
   from {
     width: 50vw;
-    height: 50vh;
+    height: 85vw;
   }
   to {
     width: 60px;
@@ -102,7 +102,7 @@ const LogoContainer = styled(Box)`
   }
 
   @media (max-width: 600px) {
-    height: 10vw;
+    height: 8vw;
   }
 `;
 
@@ -187,7 +187,7 @@ const StyledModal = styled.div`
   right: 0;
   margin: 1.8vw 4vw;
   display: flex;
-  padding: 2vw 5vw;
+  padding: 4vw 5vw 2vw;
   align-items: start;
   justify-content: center;
   border-radius: 5px;
@@ -205,6 +205,7 @@ const StyledModal = styled.div`
     animation: ${({ isClosing }) =>
         isClosing ? collapseModalSmall : expandModalSmall}
       0.5s ease-out forwards;
+    padding: 12vw 5vw 2vw;
   }
 `;
 
@@ -234,7 +235,13 @@ const ModalContent = styled.div`
 
   button {
     margin-top: 20px;
-    width: 120%;
+    width: 100%;
+    font-size: 1.8rem;
+    line-height: 20px;
+    @media (max-width: 600px) {
+      font-size: 1.5rem;
+      line-height: 20px;
+    }
   }
 
   @keyframes fadeIn {
@@ -302,7 +309,7 @@ function Header() {
       if (smallLogoRoutes.includes(location.pathname)) {
         setLogoState({
           currentLogo: "/images/logoBiancaFerreiraSmall.png",
-          animation: null, 
+          animation: null,
         });
       } else {
         const handleScroll = () => {
@@ -342,7 +349,7 @@ function Header() {
     };
 
     updateLogoBasedOnRoute();
-  }, [location.pathname]); 
+  }, [location.pathname]);
 
   const pages =
     language === "pt"
@@ -371,7 +378,7 @@ function Header() {
             alt="Logo"
             $animation={logoState.animation}
             onClick={() => {
-              navigate("/"); 
+              navigate("/");
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
           />
@@ -396,7 +403,7 @@ function Header() {
               {pages.map((page) => (
                 <a
                   key={page}
-                  href={`#${sectionIds[page]}`} 
+                  href={`#${sectionIds[page]}`}
                   onClick={(e) => {
                     e.preventDefault();
                     const targetId = sectionIds[page];
@@ -406,10 +413,15 @@ function Header() {
                     handleToggleModal();
                   }}
                 >
-                  {t(page)} 
+                  {t(page)}
                 </a>
               ))}
-              <button onClick={() => navigate("/form")}>
+              <button
+                onClick={() => {
+                  navigate("/form");
+                  handleToggleModal();
+                }}
+              >
                 {t("header.button")}
               </button>{" "}
             </ModalContent>

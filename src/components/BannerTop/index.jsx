@@ -47,7 +47,7 @@ const Highlight = styled.span`
     font-size: 3.2rem;
   }
   @media (max-width: 600px) {
-    font-size: 3.4rem;
+    font-size: 3rem;
   }
 `;
 

@@ -13,7 +13,7 @@ const StaffStyled = styled.section`
   background-color: ${({ theme }) => theme.colors.red};
   color: ${({ theme }) => theme.colors.white};
   padding: 8vw 5vw;
-  gap: 50px;
+  gap: 10vw;
 
   .title,
   .portraits {
@@ -57,7 +57,7 @@ const StaffStyled = styled.section`
         font-size: 3.2rem;
       }
       @media (max-width: 600px) {
-        font-size: 3.4rem;
+        font-size: 3rem;
       }
 
       .animation {

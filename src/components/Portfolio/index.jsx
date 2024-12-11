@@ -12,7 +12,7 @@ const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 5vw;
+  margin: 5vw 5vw 10vw;
   background-color: ${({ theme }) => theme.colors.white};
   border-radius: 10px;
   padding-top: 2vw;
@@ -84,7 +84,7 @@ const ModalContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 50px;
+  gap: 2vw;
 `;
 
 const ModalHeader = styled.h2`

@@ -4,7 +4,7 @@ import Lottie from "react-lottie";
 import animationData from "../../assets/circle.json";
 import { FaArrowCircleRight } from "react-icons/fa";
 import { keyframes } from "styled-components";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
 const moveArrow = keyframes`
@@ -53,7 +53,7 @@ const BannerMidStyled = styled.section`
         font-size: 3.2rem;
       }
       @media (max-width: 600px) {
-        font-size: 3.4rem;
+        font-size: 3rem;
       }
 
       .animation {
@@ -88,7 +88,7 @@ const BannerMidStyled = styled.section`
       padding: 2vw 5vw 5vw 5vw;
       width: 30vw;
       text-align: center;
-      gap: 20px;
+      gap: 2vw;
       h2 {
         margin-bottom: 20px;
       }
@@ -128,7 +128,7 @@ const BannerMidStyled = styled.section`
     width: 30vw;
     font-size: 1.8rem;
     padding: 5px 5px 5px 10px;
-    margin: 0;
+    margin: 0 0 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -145,11 +145,14 @@ const BannerMidStyled = styled.section`
       animation: ${moveArrow} 1.5s infinite;
     }
     @media (max-width: 899px) {
-    width: 50vw;
+      width: 50vw;
     }
     @media (max-width: 600px) {
-    width: 50vw;
-
+      width: 50vw;
+      h3 {
+        font-size: 1.5rem;
+        line-height: 20px;
+      }
     }
   }
 `;
@@ -223,7 +226,8 @@ function BannerMid() {
         </div>
       </div>
       <button className="btn-bottom" onClick={() => navigate("/form")}>
-        <h3>{t("bannerMid.bottomButton")}</h3> <FaArrowCircleRight className="arrow" />
+        <h3>{t("bannerMid.bottomButton")}</h3>{" "}
+        <FaArrowCircleRight className="arrow" />
       </button>
     </BannerMidStyled>
   );

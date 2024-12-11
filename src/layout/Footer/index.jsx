@@ -58,14 +58,23 @@ const FooterStyled = styled.footer`
       }
     }
   }
+  .copyright{
+    margin-top:20px ;
+    font-size: 1rem;
+  }
   @media (max-width: 899px) {
     .footerContainer{
       flex-direction: column;
-      gap: 5vw;
+      gap: 8vw;
       justify-content: center;
       align-items: center;
+      margin-top: 20px;
       .title, .contact{
         text-align: center;
+        line-height: 20px;
+        gap: 2vw;
+        display: flex;
+        flex-direction: column;
       }
 
     }
@@ -167,7 +176,7 @@ function Footer() {
           </p>
         </div>
       </div>
-      <p>
+      <p className="copyright">
         {yearnow()} © {t("footer.copyright")}
       </p>
     </FooterStyled>

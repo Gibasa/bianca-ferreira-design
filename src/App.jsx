@@ -22,7 +22,7 @@ function App() {
       <GlobalStyle />
       <Router>
         <Header />
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense>
           <Routes>
             <Route
               path="/"
