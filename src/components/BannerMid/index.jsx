@@ -90,14 +90,15 @@ const BannerMidStyled = styled.section`
       text-align: center;
       gap: 2vw;
       h2 {
-        margin-bottom: 20px;
+        margin: 10px 0;
       }
       button {
         width: 130%;
-        line-height: 1rem;
+        line-height: 20px;
         letter-spacing: 1px;
         border-radius: 0;
         cursor: default;
+        font-family: ${({ theme }) => theme.fonts.primary};
         &:nth-child(2) {
           background-color: ${({ theme }) => theme.colors.blue};
         }
