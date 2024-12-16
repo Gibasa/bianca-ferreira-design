@@ -169,7 +169,7 @@ function BannerTop() {
         <p>{t("bannerTop.description.part2")}</p>
         <p>{t("bannerTop.description.part3")}</p>
       </ParagraphsContainer>
-      <StyledButton onClick={() => navigate("/form")}>
+      <StyledButton onClick={() => navigate(i18n.language === "en" ? "/form-en" : "/form")}>
         {t("bannerTop.button")}
       </StyledButton>
     </BannerTopContainer>

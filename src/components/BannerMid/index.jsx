@@ -162,7 +162,7 @@ function BannerMid() {
   const [animationTriggered, setAnimationTriggered] = useState(false);
   const sectionRef = useRef(null);
   const navigate = useNavigate();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -226,7 +226,7 @@ function BannerMid() {
           <button>{t("bannerMid.brandingSite.site.buttons.1")}</button>
         </div>
       </div>
-      <button className="btn-bottom" onClick={() => navigate("/form")}>
+      <button className="btn-bottom" onClick={() => navigate(i18n.language === "en" ? "/form-en" : "/form")}>
         <h3>{t("bannerMid.bottomButton")}</h3>{" "}
         <FaArrowCircleRight className="arrow" />
       </button>

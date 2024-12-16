@@ -289,7 +289,7 @@ function Header() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const { language, toggleLanguage } = useLanguage();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -418,7 +418,7 @@ function Header() {
               ))}
               <button
                 onClick={() => {
-                  navigate("/form");
+                  navigate(i18n.language === "en" ? "/form-en" : "/form");
                   handleToggleModal();
                 }}
               >
