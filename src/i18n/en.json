@@ -1,14 +1,14 @@
 {
   "bannerMid": {
     "title": {
-      "part1": "How we can",
-      "part2": "make a",
+      "part1": "HOW WE CAN",
+      "part2": "MAKE A",
       "highlight": "difference",
-      "part3": "to your brand"
+      "part3": "TO YOUR BRAND"
     },
     "brandingSite": {
       "branding": {
-        "h2": "Branding",
+        "h2": "BRANDING",
         "buttons": [
           "Visual Identity + Brand Strategy",
           "Design for Social Media",
@@ -16,24 +16,24 @@
         ]
       },
       "site": {
-        "h2": "Site",
+        "h2": "SITE",
         "buttons": ["Institutional", "Landing Page"]
       }
     },
-    "bottomButton": "Request your quote"
+    "bottomButton": "REQUEST YOUR QUOTE"
   },
   "bannerTop": {
     "title": {
-      "part1": "Your brand needs to",
+      "part1": "YOUR BRAND NEEDS TO",
       "highlight": "stand out",
-      "part2": "be the difference"
+      "part2": "BE THE DIFFERENCE"
     },
     "description": {
       "part1": "We believe that branding is much more than a logo or a slogan; it’s how your company positions itself in the world.",
       "part2": "Building a brand is telling a story, where every word and image come together to create a unique identity.",
       "part3": "Shall we start telling your story today?"
     },
-    "button": "Shall we create together?"
+    "button": "SHALL WE CREATE TOGETHER?"
   },
   "cookiesBanner": {
     "text": "We use cookies to enhance your experience.",
@@ -96,19 +96,19 @@
   },
   "staff": {
     "title": {
-      "part1": "Who",
+      "part1": "WHO",
       "highlight": "makes",
-      "part2": "it happen"
+      "part2": "IT HAPPEN"
     }
   },
   "header": {
-    "button": "Request a quotation"
+    "button": "REQUEST A QUOTATION"
   },
   "footer": {
     "title": {
-      "part1": "Let's",
+      "part1": "LET'S",
       "highlight": "create",
-      "part2": "together?"
+      "part2": "TOGETHER?"
     },
 
     "contact": "CONTACT US",

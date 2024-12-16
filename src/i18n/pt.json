@@ -8,14 +8,14 @@
   },
   "bannerMid": {
     "title": {
-      "part1": "Como podemos",
-      "part2": "fazer a",
+      "part1": "COMO PODEMOS",
+      "part2": "FAZER A",
       "highlight": "diferença",
-      "part3": "na sua marca"
+      "part3": "NA SUA MARCA"
     },
     "brandingSite": {
       "branding": {
-        "h2": "Branding",
+        "h2": "BRANDING",
         "buttons": [
           "Identidade Visual + Estratégia de Marca",
           "Design para Redes Sociais",
@@ -23,24 +23,24 @@
         ]
       },
       "site": {
-        "h2": "Site",
+        "h2": "SITE",
         "buttons": ["Institucional", "Landing page"]
       }
     },
-    "bottomButton": "Solicite seu orçamento"
+    "bottomButton": "SOLICITE SEU ORÇAMENTO"
   },
   "bannerTop": {
     "title": {
-      "part1": "A sua marca precisa",
+      "part1": "A SUA MARCA PRECISA",
       "highlight": "marcar",
-      "part2": "seja a diferença"
+      "part2": "SEJA A DIFERENÇA"
     },
     "description": {
       "part1": "Acreditamos que a marca é muito mais do que um logotipo ou um slogan, é a maneira como a sua empresa se coloca no mundo.",
       "part2": "Construir uma marca é narrar uma história, onde cada palavra e imagem se unem para criar uma identidade única.",
       "part3": "Vamos começar a contar a sua história hoje?"
     },
-    "button": "Vamos criar juntos?"
+    "button": "VAMOS CRIAR JUNTOS?"
   },
   "cookiesBanner": {
     "text": "Usamos cookies para melhorar sua experiência.",
@@ -103,19 +103,19 @@
   },
   "staff": {
     "title": {
-      "part1": "Quem",
+      "part1": "QUEM",
       "highlight": "faz",
-      "part2": "acontecer"
+      "part2": "ACONTECER"
     }
   },
   "header": {
-    "button": "Faça seu orçamento"
+    "button": "FAÇA SEU ORÇAMENTO"
   },
   "footer": {
     "title": {
-      "part1": "Vamos",
+      "part1": "VAMOS",
       "highlight": "criar",
-      "part2": "juntos?"
+      "part2": "JUNTOS?"
     },
     "contact": "FALE CONSOCO",
     "instagram": "ACOMPANHE NOSSO INSTAGRAM",

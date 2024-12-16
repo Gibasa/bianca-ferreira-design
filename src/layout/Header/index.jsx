@@ -237,7 +237,7 @@ const ModalContent = styled.div`
     margin-top: 20px;
     width: 100%;
     font-size: 1.8rem;
-    line-height: 20px;
+    line-height: 25px;
     @media (max-width: 600px) {
       font-size: 1.5rem;
       line-height: 20px;
@@ -294,12 +294,12 @@ function Header() {
   const location = useLocation();
 
   const sectionIds = {
-    projetos: "projetos",
-    projects: "projetos",
-    contato: "contato",
-    contact: "contato",
-    serviços: "serviços",
-    services: "serviços",
+    PROJETOS: "projetos",
+    PROJECTS: "projetos",
+    CONTATO: "contato",
+    CONTACT: "contato",
+    SERVIÇOS: "serviços",
+    SERVICES: "serviços",
   };
 
   useEffect(() => {
@@ -353,8 +353,8 @@ function Header() {
 
   const pages =
     language === "pt"
-      ? ["projetos", "serviços", "contato"]
-      : ["projects", "services", "contact"];
+      ? ["PROJETOS", "SERVIÇOS", "CONTATO"]
+      : ["PROJECTS", "SERVICES", "CONTACT"];
 
   const handleToggleModal = () => {
     if (isModalOpen) {

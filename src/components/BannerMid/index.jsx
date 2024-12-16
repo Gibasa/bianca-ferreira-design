@@ -133,7 +133,7 @@ const BannerMidStyled = styled.section`
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    
     h3 {
       font-size: 1.8rem;
       margin: 0 20px 0 5px;
