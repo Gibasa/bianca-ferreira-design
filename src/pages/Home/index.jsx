@@ -11,8 +11,8 @@ const HomeStyled = styled.section`
 function Home() {
   return (
     <HomeStyled id="home">
-      <BannerTop/>
       <Video/>
+      <BannerTop/>
       <BannerMid/>
       <Portfolio />
       <Staff/>

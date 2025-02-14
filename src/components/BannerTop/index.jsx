@@ -13,16 +13,7 @@ const BannerTopContainer = styled.div`
   align-items: center;
   background-color: ${({ theme }) => theme.colors.blue};
   color: ${({ theme }) => theme.colors.white};
-  padding: 8vw 5vw 4vw;
-  margin-top: 50px;
-  @media (max-width: 899px) {
-    margin-bottom: 70px;
-  }
-  @media (max-width: 600px) {
-  margin-top: 80px;
-    margin-bottom: 100px;
-    
-  }
+  padding: 8vw 5vw ;
 `;
 
 const TitleContainer = styled.div`
