@@ -78,11 +78,14 @@ const ParagraphsContainer = styled.div`
 
 const StyledButton = styled.button`
   background-color: ${({ theme }) => theme.colors.green};
-  margin-top: 50px;
+  margin-top: 4vw;
   font-size: 1.8rem;
   &:hover {
     background-color: ${({ theme }) => theme.colors.white};
     color: ${({ theme }) => theme.colors.green};
+  }
+  @media (max-width: 600px) {
+    margin: 5vw 0;
   }
 `;
 

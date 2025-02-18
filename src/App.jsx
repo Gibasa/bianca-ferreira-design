@@ -1,4 +1,4 @@
-import { HashRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes, useLocation } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import GlobalStyle from "./GobalStyles";
 import { theme } from "./theme";
@@ -6,9 +6,9 @@ import Header from "@/layout/Header";
 import Footer from "@/layout/Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Cookie from "./components/Cookie";
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect } from "react";
 import { Helmet } from "react-helmet";
-import { useTranslation } from "react-i18next"; // Importando o useTranslation
+import { useTranslation } from "react-i18next"; 
 
 const Home = React.lazy(() => import("@/pages/Home"));
 const PoliticaPrivacidade = React.lazy(() =>
@@ -16,6 +16,21 @@ const PoliticaPrivacidade = React.lazy(() =>
 );
 const Form = React.lazy(() => import("./components/Form"));
 const FormEn = React.lazy(() => import("./components/FormEn"));
+
+function Analytics() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (window.gtag) {
+      window.gtag("event", "page_view", {
+        page_path: location.pathname,
+        page_title: document.title,
+      });
+    }
+  }, [location]);
+
+  return null;
+}
 
 function App() {
   const { t } = useTranslation();
@@ -26,6 +41,7 @@ function App() {
       <Router>
         <Suspense>
           <Header />
+          <Analytics/>
           <Routes>
             <Route
               path="/"
