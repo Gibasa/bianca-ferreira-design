@@ -96,7 +96,7 @@ const BannerMidStyled = styled.section`
         width: 130%;
         line-height: 20px;
         letter-spacing: 1px;
-        border-radius: 0;
+        border-radius: 50px;
         cursor: default;
         font-family: ${({ theme }) => theme.fonts.primary};
         &:nth-child(2) {
