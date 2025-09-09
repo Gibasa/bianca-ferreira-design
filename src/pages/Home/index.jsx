@@ -8,12 +8,11 @@ import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 const HomeStyled = styled.section`
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
-
 
 const StyledButton = styled.button`
   background-color: ${({ theme }) => theme.colors.black};
@@ -26,6 +25,7 @@ const StyledButton = styled.button`
   }
   @media (max-width: 600px) {
     margin: 5vw 0;
+    width: 80vw;
   }
 `;
 
