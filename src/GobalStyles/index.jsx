@@ -45,7 +45,7 @@ const GlobalStyle = createGlobalStyle`
     color: ${({ theme }) => theme.colors.white};
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
-  line-height: 16px;
+  line-height: 25px;
 
   }
 
@@ -55,6 +55,12 @@ const GlobalStyle = createGlobalStyle`
   }
 
   /* Responsividade */
+  @media (max-width: 1300px) {
+     button {
+      padding: 0.7rem 1rem;
+      font-size: 0.8rem;
+     }
+  }
   @media (max-width: 899px) {
     html {
       font-size: 14px; /* 1rem = 14px, ajusta o tamanho base */

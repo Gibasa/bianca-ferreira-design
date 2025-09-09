@@ -5,7 +5,7 @@ import Box from "@mui/material/Box";
 import { useState } from "react";
 import { useLanguage } from "../../context/TranslationContext";
 import { useTranslation } from "react-i18next";
-import { useNavigate,} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 // const slideOut = keyframes`
 //   0% {
@@ -25,21 +25,21 @@ import { useNavigate,} from "react-router-dom";
 //   }
 // `;
 
-const expandModal = keyframes`
+const expandModal1 = keyframes`
   from {
     width: 60px;
     height: 50px;
   }
   to {
     width: 25vw;
-    height: 18vw;
+    height: 20vw;
   }
 `;
 
-const collapseModal = keyframes`
+const collapseModal1 = keyframes`
   from {
     width: 25vw;
-    height: 18vw;
+    height: 20vw;
   }
   to {
     width: 60px;
@@ -47,21 +47,21 @@ const collapseModal = keyframes`
   }
 `;
 
-const expandModalMedium = keyframes`
+const expandModal2 = keyframes`
   from {
     width: 60px;
     height: 50px;
   }
   to {
-    width: 32vw;
-    height: 45vh;
+    width: 30vw;
+    height: 37vh;
   }
 `;
 
-const collapseModalMedium = keyframes`
+const collapseModal2 = keyframes`
   from {
-    width: 25vw;
-    height: 45vh;
+    width: 30vw;
+    height: 37vh;
   }
   to {
     width: 60px;
@@ -69,21 +69,87 @@ const collapseModalMedium = keyframes`
   }
 `;
 
-const expandModalSmall = keyframes`
+const expandModal3 = keyframes`
   from {
     width: 60px;
     height: 50px;
   }
   to {
-    width: 50vw;
-    height: 85vw;
+    width: 40vw;
+    height: 35vw
   }
 `;
 
-const collapseModalSmall = keyframes`
+const collapseModal3 = keyframes`
   from {
-    width: 50vw;
-    height: 85vw;
+    width: 40vw;
+    height: 35vw;
+  }
+  to {
+    width: 60px;
+    height: 50px;
+  }
+`;
+
+const expandModal4 = keyframes`
+  from {
+    width: 60px;
+    height: 50px;
+  }
+  to {
+    width: 38vw;
+    height: 40vw
+  }
+`;
+
+const collapseModal4 = keyframes`
+  from {
+    width: 38vw;
+    height: 40vw;
+  }
+  to {
+    width: 60px;
+    height: 50px;
+  }
+`;
+
+const expandModal5 = keyframes`
+  from {
+    width: 60px;
+    height: 50px;
+  }
+  to {
+    width: 45vw;
+    height: 50vw
+  }
+`;
+
+const collapseModal5 = keyframes`
+  from {
+    width: 45vw;
+    height: 50vw;
+  }
+  to {
+    width: 60px;
+    height: 50px;
+  }
+`;
+
+const expandModal6 = keyframes`
+  from {
+    width: 60px;
+    height: 50px;
+  }
+  to {
+    width: 62vw;
+    height: 67vw
+  }
+`;
+
+const collapseModal6 = keyframes`
+  from {
+    width: 38vw;
+    height: 50vw;
   }
   to {
     width: 60px;
@@ -188,26 +254,55 @@ const StyledModal = styled.div`
   right: 0;
   margin: 1.8vw 4vw;
   display: flex;
-  padding: 2vw 5vw 2vw;
+  padding: 2vw 2vw 2vw;
   align-items: start;
   justify-content: center;
   border-radius: 5px;
   background-color: ${({ theme }) => theme.colors.white};
   border: 2px solid ${({ theme }) => theme.colors.black};
-  animation: ${({ isClosing }) => (isClosing ? collapseModal : expandModal)}
+  animation: ${({ isClosing }) => (isClosing ? collapseModal1 : expandModal1)}
     0.5s ease-out forwards;
   z-index: 5;
-  @media (max-width: 899px) {
+  @media (max-width: 1300px) {
+    padding: 2vw 2vw 2vw;
+  }
+  @media (max-width: 1080px) {
     animation: ${({ isClosing }) =>
-        isClosing ? collapseModalMedium : expandModalMedium}
+        isClosing ? collapseModal2 : expandModal2}
       0.5s ease-out forwards;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 899px) {
     animation: ${({ isClosing }) =>
-        isClosing ? collapseModalSmall : expandModalSmall}
+        isClosing ? collapseModal2 : expandModal2}
       0.5s ease-out forwards;
-    padding: 12vw 5vw 2vw;
+    padding: 2vw 2vw 2vw;
+  }
+
+  @media (max-width: 700px) {
+    animation: ${({ isClosing }) =>
+        isClosing ? collapseModal3 : expandModal3}
+      0.5s ease-out forwards;
+    padding: 5vw 5vw 2vw;
+  }
+  @media (max-width: 625px) {
+    animation: ${({ isClosing }) =>
+        isClosing ? collapseModal4 : expandModal4}
+      0.5s ease-out forwards;
+    padding: 5vw 5vw 2vw;
+  }
+  @media (max-width: 500px) {
+    animation: ${({ isClosing }) =>
+        isClosing ? collapseModal5 : expandModal5}
+      0.5s ease-out forwards;
+    padding: 5vw 5vw 2vw;
+  }
+
+  @media (max-width: 400px) {
+    animation: ${({ isClosing }) =>
+        isClosing ? collapseModal6 : expandModal6}
+      0.5s ease-out forwards;
+    padding: 5vw 5vw 2vw;
   }
 `;
 
@@ -240,7 +335,12 @@ const ModalContent = styled.div`
     width: 100%;
     font-size: 1.8rem;
     line-height: 25px;
-    @media (max-width: 600px) {
+    @media (max-width: 1300px) {
+      font-size: 1.2rem;
+    }
+    @media (max-width: 899px) {
+    }
+    @media (max-width: 700px) {
       font-size: 1.5rem;
       line-height: 20px;
     }
@@ -355,9 +455,7 @@ function Header() {
   // }, [location.pathname]);
 
   const pages =
-    language === "pt"
-      ? ["PROJETOS", "CONTATO"]
-      : ["PROJECTS", "CONTACT"];
+    language === "pt" ? ["PROJETOS", "CONTATO"] : ["PROJECTS", "CONTACT"];
 
   const handleToggleModal = () => {
     if (isModalOpen) {

@@ -18,6 +18,11 @@ const BannerTopContainer = styled.div`
 `;
 const TextContainer = styled.div`
   display: flex;
+  @media (max-width: 899px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 const TitleContainer = styled.div`
@@ -25,6 +30,10 @@ const TitleContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 900px) {
+    width: 80%;
+    margin-top: 5vw;
+  }
 `;
 
 const Title = styled.h1`
@@ -74,7 +83,7 @@ const ParagraphsContainer = styled.div`
   text-align: left;
   white-space: pre-wrap;
   @media (max-width: 899px) {
-    width: 60%;
+    width: 80%;
   }
   @media (max-width: 600px) {
     width: 80%;
