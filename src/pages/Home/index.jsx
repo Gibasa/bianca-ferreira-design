@@ -16,7 +16,7 @@ const HomeStyled = styled.section`
 
 const StyledButton = styled.button`
   background-color: ${({ theme }) => theme.colors.black};
-  margin: 4vw 0;
+  margin: 6vw 0;
   font-size: 1.8rem;
   width: 28vw;
   &:hover {
@@ -24,8 +24,8 @@ const StyledButton = styled.button`
     color: ${({ theme }) => theme.colors.white};
   }
   @media (max-width: 600px) {
-    margin: 5vw 0;
-    width: 80vw;
+    margin: 9vw 0;
+    width: 70vw;
   }
 `;
 

@@ -302,7 +302,7 @@ const StyledModal = styled.div`
     animation: ${({ isClosing }) =>
         isClosing ? collapseModal6 : expandModal6}
       0.5s ease-out forwards;
-    padding: 9vw 5vw 2vw;
+    padding: 13vw 5vw 2vw;
   }
 `;
 
