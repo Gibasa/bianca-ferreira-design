@@ -16,7 +16,6 @@ const GlobalStyle = createGlobalStyle`
   body {
     font-size: 1rem; 
     line-height: 1.5;
-    background-color: ${({ theme }) => theme.colors.blue};
     color: ${({ theme }) => theme.colors.black};
   }
 
@@ -24,7 +23,7 @@ const GlobalStyle = createGlobalStyle`
   h1, h2, h3, h4, h5, h6 {
     font-family: ${({ theme }) => theme.fonts.secondary}; 
     margin: 0;
-    font-size: 2.8rem;
+    font-size: 3.5rem;
     font-weight: 600;
     line-height: 40px;
   }
@@ -42,7 +41,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0.8rem 1.5rem;
     border: none;
     border-radius: 30px;
-    background-color: ${({ theme }) => theme.colors.blue};
+    background-color: ${({ theme }) => theme.colors.green};
     color: ${({ theme }) => theme.colors.white};
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
@@ -51,7 +50,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   button:hover {
-    background-color: ${({ theme }) => theme.colors.green};
+    background-color: ${({ theme }) => theme.colors.blue};
     color: ${({ theme }) => theme.colors.white};
   }
 

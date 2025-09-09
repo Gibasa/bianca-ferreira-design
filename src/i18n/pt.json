@@ -9,7 +9,7 @@
   "bannerMid": {
     "title": {
       "part1": "COMO PODEMOS",
-      "part2": "FAZER A",
+      "part2": "FAZER A DIFERENÇA",
       "highlight": "diferença",
       "part3": "NA SUA MARCA"
     },
@@ -31,14 +31,14 @@
   },
   "bannerTop": {
     "title": {
-      "part1": "A SUA MARCA PRECISA",
+      "part1": "SUA MARCA, \nSUA PRESENÇA.",
       "highlight": "marcar",
-      "part2": "SEJA A DIFERENÇA"
+      "part2": "POSICIONAMENTO \nQUE FALA MAIS ALTO."
     },
     "description": {
-      "part1": "Acreditamos que a marca é muito mais do que um logotipo ou um slogan, é a maneira como a sua empresa se coloca no mundo.",
-      "part2": "Construir uma marca é narrar uma história, onde cada palavra e imagem se unem para criar uma identidade única.",
-      "part3": "Vamos começar a contar a sua história hoje?"
+      "part1": "Transformamos comunicação visual em posicionamento de mercado, elevando \nsua marca com estratégia, design e identidade.",
+      "part2": "Aqui, design é identidade com propósito. Por meio do branding, damos voz à sua essência e construímos sua presença no mercado. Cada detalhe, cor, tipografia, imagem e tom, é pensado para reforçar sua autoridade.",
+      "part3": "Não se trata apenas de criar algo que encanta. Trata-se de criar algo que conecta, comunica e diferencia. Sua marca merece ser percebida pelo que ela é."
     },
     "button": "VAMOS CRIAR JUNTOS?"
   },
@@ -103,7 +103,7 @@
   },
   "staff": {
     "title": {
-      "part1": "QUEM",
+      "part1": "QUEM FAZ",
       "highlight": "faz",
       "part2": "ACONTECER"
     }
@@ -113,7 +113,7 @@
   },
   "footer": {
     "title": {
-      "part1": "VAMOS",
+      "part1": "VAMOS CRIAR",
       "highlight": "criar",
       "part2": "JUNTOS?"
     },

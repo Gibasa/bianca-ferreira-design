@@ -12,7 +12,7 @@ const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 5vw 5vw 10vw;
+  margin: 0vw 5vw;
   background-color: ${({ theme }) => theme.colors.white};
   border-radius: 10px;
   padding-top: 2vw;
@@ -115,7 +115,7 @@ const VideoContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 200px; /* Define um espaço mínimo para evitar saltos */
+  min-height: 200px;
   flex-shrink: 0;
 `;
 

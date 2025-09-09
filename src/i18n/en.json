@@ -9,7 +9,7 @@
   "bannerMid": {
     "title": {
       "part1": "HOW WE CAN",
-      "part2": "MAKE A",
+      "part2": "MAKE A DIFFERENCE",
       "highlight": "difference",
       "part3": "TO YOUR BRAND"
     },
@@ -31,14 +31,14 @@
   },
   "bannerTop": {
     "title": {
-      "part1": "YOUR BRAND NEEDS TO",
+      "part1": "YOUR BRAND, \nYOUR VOICE.",
       "highlight": "stand out",
-      "part2": "BE THE DIFFERENCE"
+      "part2": "STAND OUT \nWITH PURPOSE"
     },
     "description": {
-      "part1": "We believe that branding is much more than a logo or a slogan; it’s how your company positions itself in the world.",
-      "part2": "Building a brand is telling a story, where every word and image come together to create a unique identity.",
-      "part3": "Shall we start telling your story today?"
+      "part1": "We transform visual communication into market positioning, elevating your brand with strategy, design, and identity.",
+      "part2": "Here, design is identity with purpose. Through branding, we give voice to your essence and build your presence in the market. Every detail, color, typography, imagery, and tone, is carefully crafted to reinforce your authority",
+      "part3": "It’s not just about creating something that delights. It’s about creating something that connects, communicates, and differentiates. Your brand deserves to be recognized for what it truly is."
     },
     "button": "SHALL WE CREATE TOGETHER?"
   },
@@ -103,7 +103,7 @@
   },
   "staff": {
     "title": {
-      "part1": "WHO",
+      "part1": "WHO MAKES",
       "highlight": "makes",
       "part2": "IT HAPPEN"
     }
@@ -113,7 +113,7 @@
   },
   "footer": {
     "title": {
-      "part1": "LET'S",
+      "part1": "LET'S CREATE",
       "highlight": "create",
       "part2": "TOGETHER?"
     },

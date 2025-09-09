@@ -89,7 +89,7 @@
               "ml": 4,
               "o": { "a": 0, "k": 100, "ix": 4 },
               "w": { "a": 0, "k": 8, "ix": 5 },
-              "c": { "a": 0, "k": [1, 1, 1], "ix": 3 }
+              "c": { "a": 0, "k": [0, 0, 0], "ix": 3 }
             },
             {
               "ty": "tr",
@@ -133,7 +133,8 @@
   ],
   "v": "5.7.0",
   "fr": 30,
-  "op": 42,
+   "_comment": "o valor de op era 42, caso precise ativar a animação novamente, mude para 42",
+  "op": 0,
   "ip": 0,
   "assets": []
 }

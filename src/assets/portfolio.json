@@ -119,30 +119,34 @@
   },
 
   {
-    "group": "PIMENTA",
+    "group": "YUMMA",
     "text": [
-      "Pimenta é uma marca de acessórios criada para um público feminino mais maduro, oferecendo peças sofisticadas que exaltam a beleza única de cada cliente. Com a missão de proporcionar elegância e autoestima, a marca sempre se dedicou a criar produtos que fazem cada mulher se sentir especial e confiante.",
-      "O redesign da marca foi desenvolvido para transmitir essa sofisticação e evolução, mantendo sua essência e elevando sua identidade visual. A paleta de cores foi cuidadosamente repensada, migrando do tradicional preto e dourado para um tom mais feminino e sofisticado, com rosa suave, bege e preto. Essa combinação traz um equilíbrio perfeito entre delicadeza e sofisticação, refletindo o público-alvo da marca.",
-      "A tipografia escolhida para o redesign é moderna e sem serifa, com linhas limpas e poucos contrastes, para transmitir um ar contemporâneo e elegante, que dialoga com o estilo refinado da marca. O símbolo da Pimenta foi inspirado na sombra e reflexão de uma pedra lapidada, com suas terminações arredondadas, criando uma imagem que abraça e fortalece a autoestima das mulheres, trazendo uma sensação de acolhimento e exclusividade.",
-      "Pimenta é um convite para cada mulher realçar sua beleza, sua confiança e seu estilo com peças que são tão sofisticadas quanto elas mesmas."
+      "Quando comecei a criar a identidade visual da Yumma, sabia que não era só sobre design. Era sobre contar uma história, a história da Letícia e de sua mãe, que transformaram o talento de família em um negócio cheio de propósito.",
+      "Cada detalhe da marca foi pensado para refletir esse afeto e, ao mesmo tempo, transmitir profissionalismo. As cores quentes, laranja e vermelho, despertam apetite e transmitem energia, enquanto o verde entra como respiro, trazendo equilíbrio e frescor, lembrando que praticidade também pode ser saudável.",
+      "A tipografia, com formas arredondadas e cursiva, foi escolhida para passar acolhimento e proximidade, quase como uma escrita à mão, sem parecer formal ou distante. Afinal, a Yumma fala de comida caseira, feita com carinho. ",
+      "O nome também carrega significado: é curto, sonoro, fácil de lembrar, com aquele som de \"hummm, que delícia!\", e ainda homenageia a família: o Y de Yuri, pai da Letícia, e o MA de mãe, como comida de mãe mesmo.",
+      "Até o rótulo das embalagens segue esse cuidado: leitura simples, layout prático para identificar rapidamente o prato e informações claras de conservação, porque ninguém tem tempo para decifrar rótulos confusos.",
+      "Minha missão nessa identidade visual foi traduzir essa história de amor, coragem e recomeço em uma marca viva.",
+      "E então, o que achou da Yumma? Quer que a história da sua marca também seja contada de forma única?"
     ],
     "text_en": [
-      "Pimenta is an accessories brand designed for a more mature female audience, offering sophisticated pieces that celebrate the unique beauty of every customer. With a mission to provide elegance and boost self-esteem, the brand is dedicated to creating products that make every woman feel special and confident.",
-      "The brand redesign was developed to convey sophistication and growth while preserving its essence and elevating its visual identity. The color palette was carefully reimagined, transitioning from traditional black and gold to a more feminine and refined combination of soft pink, beige, and black. This blend achieves the perfect balance between delicacy and sophistication, reflecting the brand’s target audience.",
-      "The chosen typography for the redesign is modern and sans-serif, featuring clean lines and minimal contrast to convey a contemporary and elegant look that resonates with the brand's refined style. Pimenta’s symbol draws inspiration from the shadow and reflection of a cut gemstone, with rounded edges that create a design embracing and empowering women’s self-esteem, offering a sense of warmth and exclusivity.",
-      "Pimenta is an invitation for every woman to enhance her beauty, confidence, and style with pieces that are as sophisticated as she is."
+      "When I started creating Yumma’s visual identity, I knew it wasn’t just about design. It was about telling a story, the story of Letícia and her mother, who turned their family’s talent into a business filled with purpose.",
+      "Every detail of the brand was carefully designed to reflect this affection while also conveying professionalism. The warm colors orange and red, stimulate appetite and evoke energy, while green serves as a breath of freshness, bringing balance and reminding us that convenience can also be healthy.",
+      "The typography, with its rounded and cursive shapes, was chosen to communicate warmth and closeness, almost like handwriting, without feeling formal or distant. After all, Yumma is about homemade food, made with love.",
+      "The name also carries meaning: short, memorable, and with that “hmm, delicious!” sound, while honoring the family with the Y from Yuri, Letícia’s father, and the MA from “mãe” (mother), like true mom-made food.",
+      "Even the packaging labels reflect this care: clear reading, practical layout to identify the dish at a glance, and straightforward storage information, because no one has time to decode complicated labels.",
+      "My mission with this visual identity was to translate a story of love, courage, and new beginnings into a living brand.",
+      "So, what do you think of Yumma? Would you like your brand’s story to be told in such a unique way too?"
     ],
-    "video": "/images/portfolio/PIMENTA/VIDEO PIMENTA.mp4",
+    "video": "/images/portfolio/YUMMA/VIDEO YUMMA.mp4",
     "images": {
-      "cover": "/images/portfolio/PIMENTA/cover.png",
-      "img 1": "/images/portfolio/PIMENTA/PIMENTA 4.png",
-      "img 2": "/images/portfolio/PIMENTA/PIMENTA 5.png",
-      "img 3": "/images/portfolio/PIMENTA/PIMENTA 7.png",
-      "img 4": "/images/portfolio/PIMENTA/PIMENTA 8.png",
-      "img 5": "/images/portfolio/PIMENTA/PIMENTA1.png",
-      "img 6": "/images/portfolio/PIMENTA/PIMENTA2.png",
-      "img 7": "/images/portfolio/PIMENTA/PIMENTA9.png",
-      "img 8": "/images/portfolio/PIMENTA/PIMNETA 3.png"
+      "cover": "/images/portfolio/YUMMA/cover.png",
+      "img 1": "/images/portfolio/YUMMA/YUMMA 1.png",
+      "img 2": "/images/portfolio/YUMMA/YUMMA 2.png",
+      "img 3": "/images/portfolio/YUMMA/YUMMA 3.png",
+      "img 4": "/images/portfolio/YUMMA/YUMMA 4.png",
+      "img 5": "/images/portfolio/YUMMA/YUMMA 5.png",
+      "img 6": "/images/portfolio/YUMMA/YUMMA 6.png"
     }
   }
 ]

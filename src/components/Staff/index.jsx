@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import Lottie from "react-lottie";
-import animationData from "../../assets/circle.json";
+// import Lottie from "react-lottie";
+// import animationData from "../../assets/circle.json";
 import { useTranslation } from 'react-i18next';
 
 
@@ -10,8 +10,8 @@ const StaffStyled = styled.section`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-color: ${({ theme }) => theme.colors.red};
-  color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.white};
+  color: ${({ theme }) => theme.colors.black};
   padding: 8vw 5vw;
   gap: 10vw;
 
@@ -131,21 +131,21 @@ function Staff() {
     };
   }, [animationTriggered]);
 
-  const defaultOptions = {
-    loop: false, // A animação para no final
-    autoplay: animationTriggered, // Só inicia se ativada
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: "none",
-    },
-  };
+  // const defaultOptions = {
+  //   loop: false, // A animação para no final
+  //   autoplay: animationTriggered, // Só inicia se ativada
+  //   animationData: animationData,
+  //   rendererSettings: {
+  //     preserveAspectRatio: "none",
+  //   },
+  // };
 
   return (
     <StaffStyled ref={sectionRef} animationTriggered={animationTriggered} animationWidth={animationDimensions.width} animationHeight={animationDimensions.height}>
       <div className="title">
         <h2>
         {t("staff.title.part1")}{" "}
-          <span className="highlight">
+          {/* <span className="highlight">
           {t("staff.title.highlight")}
             <div className="animation">
               <Lottie
@@ -153,7 +153,7 @@ function Staff() {
                 isStopped={!animationTriggered}
               />
             </div>
-          </span>
+          </span> */}
           <br /> {t("staff.title.part2")}
         </h2>
       </div>

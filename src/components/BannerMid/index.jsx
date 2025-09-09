@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import Lottie from "react-lottie";
-import animationData from "../../assets/circle.json";
+// import Lottie from "react-lottie";
+// import animationData from "../../assets/circle.json";
 import { FaArrowCircleRight } from "react-icons/fa";
 import { keyframes } from "styled-components";
 import { useTranslation } from "react-i18next";
@@ -20,8 +20,8 @@ const moveArrow = keyframes`
 `;
 
 const BannerMidStyled = styled.section`
-  background-color: ${({ theme }) => theme.colors.black};
-  color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.white};
+  color: ${({ theme }) => theme.colors.black};
   padding: 8vw 1vw;
   display: flex;
   flex-direction: column;
@@ -82,8 +82,8 @@ const BannerMidStyled = styled.section`
       display: flex;
       flex-direction: column;
       align-items: center;
-      color: ${({ theme }) => theme.colors.white};
-      border: 3px solid ${({ theme }) => theme.colors.white};
+      color: ${({ theme }) => theme.colors.black};
+      border: 3px solid ${({ theme }) => theme.colors.black};
       border-radius: 20px;
       padding: 2vw 5vw 5vw 5vw;
       width: 30vw;
@@ -124,8 +124,8 @@ const BannerMidStyled = styled.section`
     }
   }
   .btn-bottom {
-    background-color: ${({ theme }) => theme.colors.white};
-    color: ${({ theme }) => theme.colors.black};
+    background-color: ${({ theme }) => theme.colors.black};
+    color: ${({ theme }) => theme.colors.white};
     width: 30vw;
     font-size: 1.8rem;
     padding: 5px 5px 5px 10px;
@@ -185,14 +185,14 @@ function BannerMid() {
     };
   }, [animationTriggered]);
 
-  const defaultOptions = {
-    loop: false, // A animação para no final
-    autoplay: animationTriggered, // Só inicia se ativada
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: "none",
-    },
-  };
+  // const defaultOptions = {
+  //   loop: false, // A animação para no final
+  //   autoplay: animationTriggered, // Só inicia se ativada
+  //   animationData: animationData,
+  //   rendererSettings: {
+  //     preserveAspectRatio: "none",
+  //   },
+  // };
 
   return (
     <BannerMidStyled id="serviços" ref={sectionRef}>
@@ -200,7 +200,7 @@ function BannerMid() {
         <h2>
           {t("bannerMid.title.part1")}
           <br /> {t("bannerMid.title.part2")}{" "}
-          <span className="highlight">
+          {/* <span className="highlight">
             {t("bannerMid.title.highlight")}
             <div className="animation">
               <Lottie
@@ -208,7 +208,7 @@ function BannerMid() {
                 isStopped={!animationTriggered}
               />
             </div>
-          </span>{" "}
+          </span>{" "} */}
           <br />
           {t("bannerMid.title.part3")}
         </h2>

@@ -2,28 +2,28 @@ import styled, { keyframes, css } from "styled-components";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Box from "@mui/material/Box";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useLanguage } from "../../context/TranslationContext";
 import { useTranslation } from "react-i18next";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate,} from "react-router-dom";
 
-const slideOut = keyframes`
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-`;
+// const slideOut = keyframes`
+//   0% {
+//     transform: translateX(0);
+//   }
+//   100% {
+//     transform: translateX(-100%);
+//   }
+// `;
 
-const slideIn = keyframes`
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-`;
+// const slideIn = keyframes`
+//   0% {
+//     transform: translateX(-100%);
+//   }
+//   100% {
+//     transform: translateX(0);
+//   }
+// `;
 
 const expandModal = keyframes`
   from {
@@ -32,14 +32,14 @@ const expandModal = keyframes`
   }
   to {
     width: 25vw;
-    height: 25vw;
+    height: 18vw;
   }
 `;
 
 const collapseModal = keyframes`
   from {
     width: 25vw;
-    height: 25vw;
+    height: 18vw;
   }
   to {
     width: 60px;
@@ -148,7 +148,8 @@ const StyledHamburger = styled.div`
   width: 60px;
   height: 50px;
   cursor: pointer;
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ isOpen, theme }) =>
+    isOpen ? theme.colors.white : theme.colors.white};
   padding: 10px;
   border-radius: 5px;
   position: relative;
@@ -164,7 +165,7 @@ const StyledHamburger = styled.div`
       background-color: ${({ isOpen, theme }) =>
         isOpen ? theme.colors.black : theme.colors.blue};
       transform: ${({ isOpen }) =>
-        isOpen ? "rotate(48deg) translate(8px, 8px)" : "none"};
+        isOpen ? "rotate(48deg) translate(9px, 8px)" : "none"};
     }
 
     &:nth-child(2) {
@@ -187,11 +188,12 @@ const StyledModal = styled.div`
   right: 0;
   margin: 1.8vw 4vw;
   display: flex;
-  padding: 4vw 5vw 2vw;
+  padding: 2vw 5vw 2vw;
   align-items: start;
   justify-content: center;
   border-radius: 5px;
-  background-color: rgba(255, 255, 255);
+  background-color: ${({ theme }) => theme.colors.white};
+  border: 2px solid ${({ theme }) => theme.colors.black};
   animation: ${({ isClosing }) => (isClosing ? collapseModal : expandModal)}
     0.5s ease-out forwards;
   z-index: 5;
@@ -225,7 +227,7 @@ const ModalContent = styled.div`
     margin: 10px 0;
     font-size: 1.5rem;
     text-decoration: none;
-    color: black;
+    color: ${({ theme }) => theme.colors.black};
     font-weight: bold;
 
     &:hover {
@@ -271,9 +273,10 @@ const LanguageButton = styled.button`
   cursor: pointer;
   display: flex;
   gap: 10px;
-
+  color: ${({ theme }) => theme.colors.black};
   &:hover {
     background: none;
+    color: ${({ theme }) => theme.colors.black};
   }
 `;
 
@@ -282,16 +285,16 @@ const LanguageText = styled.span`
 `;
 
 function Header() {
-  const [logoState, setLogoState] = useState({
-    currentLogo: "/images/logoBiancaFerreira.png",
-    animation: null,
-  });
+  // const [logoState, setLogoState] = useState({
+  //   currentLogo: "/images/logoBiancaFerreira.png",
+  //   animation: null,
+  // });
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const { language, toggleLanguage } = useLanguage();
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
-  const location = useLocation();
+  // const location = useLocation();
 
   const sectionIds = {
     PROJETOS: "projetos",
@@ -302,59 +305,59 @@ function Header() {
     SERVICES: "serviços",
   };
 
-  useEffect(() => {
-    const updateLogoBasedOnRoute = () => {
-      const smallLogoRoutes = ["/form", "/politica-de-privacidade"];
+  // useEffect(() => {
+  //   const updateLogoBasedOnRoute = () => {
+  //     const smallLogoRoutes = ["/form", "/politica-de-privacidade"];
 
-      if (smallLogoRoutes.includes(location.pathname)) {
-        setLogoState({
-          currentLogo: "/images/logoBiancaFerreiraSmall.png",
-          animation: null,
-        });
-      } else {
-        const handleScroll = () => {
-          const videoElement = document.getElementById("video");
-          if (!videoElement) return;
+  //     if (smallLogoRoutes.includes(location.pathname)) {
+  //       setLogoState({
+  //         currentLogo: "/images/logoBiancaFerreiraSmall.png",
+  //         animation: null,
+  //       });
+  //     } else {
+  //       const handleScroll = () => {
+  //         const videoElement = document.getElementById("video");
+  //         if (!videoElement) return;
 
-          const videoRect = videoElement.getBoundingClientRect();
-          const isInView =
-            videoRect.top < window.innerHeight && videoRect.bottom >= 0;
+  //         const videoRect = videoElement.getBoundingClientRect();
+  //         const isInView =
+  //           videoRect.top < window.innerHeight && videoRect.bottom >= 0;
 
-          setLogoState((prev) => {
-            if (
-              isInView &&
-              prev.currentLogo !== "/images/logoBiancaFerreira.png"
-            ) {
-              return {
-                currentLogo: "/images/logoBiancaFerreira.png",
-                animation: slideIn,
-              };
-            } else if (
-              !isInView &&
-              prev.currentLogo !== "/images/logoBiancaFerreiraSmall.png"
-            ) {
-              return {
-                currentLogo: "/images/logoBiancaFerreiraSmall.png",
-                animation: slideOut,
-              };
-            }
-            return prev;
-          });
-        };
+  //         setLogoState((prev) => {
+  //           if (
+  //             isInView &&
+  //             prev.currentLogo !== "/images/logoBiancaFerreira.png"
+  //           ) {
+  //             return {
+  //               currentLogo: "/images/logoBiancaFerreira.png",
+  //               animation: slideIn,
+  //             };
+  //           } else if (
+  //             !isInView &&
+  //             prev.currentLogo !== "/images/logoBiancaFerreiraSmall.png"
+  //           ) {
+  //             return {
+  //               currentLogo: "/images/logoBiancaFerreiraSmall.png",
+  //               animation: slideOut,
+  //             };
+  //           }
+  //           return prev;
+  //         });
+  //       };
 
-        window.addEventListener("scroll", handleScroll);
-        handleScroll();
-        return () => window.removeEventListener("scroll", handleScroll);
-      }
-    };
+  //       window.addEventListener("scroll", handleScroll);
+  //       handleScroll();
+  //       return () => window.removeEventListener("scroll", handleScroll);
+  //     }
+  //   };
 
-    updateLogoBasedOnRoute();
-  }, [location.pathname]);
+  //   updateLogoBasedOnRoute();
+  // }, [location.pathname]);
 
   const pages =
     language === "pt"
-      ? ["PROJETOS", "SERVIÇOS", "CONTATO"]
-      : ["PROJECTS", "SERVICES", "CONTACT"];
+      ? ["PROJETOS", "CONTATO"]
+      : ["PROJECTS", "CONTACT"];
 
   const handleToggleModal = () => {
     if (isModalOpen) {
@@ -374,9 +377,9 @@ function Header() {
       <StyledToolbar disableGutters>
         <LogoContainer>
           <AnimatedLogo
-            src={logoState.currentLogo}
+            src="/images/LOGO BF PRETO.png"
             alt="Logo"
-            $animation={logoState.animation}
+            // $animation={logoState.animation}
             onClick={() => {
               navigate("/");
               window.scrollTo({ top: 0, behavior: "smooth" });

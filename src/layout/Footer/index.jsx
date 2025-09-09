@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import Lottie from "react-lottie";
-import animationData from "../../assets/circle.json";
+// import Lottie from "react-lottie";
+// import animationData from "../../assets/circle.json";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -9,15 +9,14 @@ const FooterStyled = styled.footer`
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  background-color: ${({ theme }) => theme.colors.green};
+  background-color: ${({ theme }) => theme.colors.blue};
   color: ${({ theme }) => theme.colors.white};
-  padding: 5vw 5vw 0;
+  padding: 2vw 5vw 0;
 
   .footerContainer {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 40vw;
 
     .title h2 {
       text-align: center;
@@ -46,64 +45,70 @@ const FooterStyled = styled.footer`
   }
 
   .contact {
+    display: flex;
+    justify-content: space-between;
+    gap: 30vw;
     h2 {
       font-size: 1.2rem;
     }
-
+    .email,
+    .instagram {
+      display: flex;
+      flex-direction: column;
+    }
     p a {
       text-decoration: none;
       color: ${({ theme }) => theme.colors.white};
       &:hover {
-        color: ${({ theme }) => theme.colors.blue};
+        color: ${({ theme }) => theme.colors.green};
       }
     }
   }
-  .copyright{
-    margin-top:20px ;
+  .copyright {
+    margin-top: 10px;
     font-size: 1rem;
   }
   @media (max-width: 899px) {
-    .footerContainer{
+    .footerContainer {
       flex-direction: column;
       gap: 8vw;
       justify-content: center;
       align-items: center;
       margin-top: 20px;
-      .title, .contact{
+      .title,
+      .contact {
         text-align: center;
         line-height: 20px;
         gap: 2vw;
         display: flex;
         flex-direction: column;
       }
-
     }
   }
-
 `;
 
 function Footer() {
   const [animationTriggered, setAnimationTriggered] = useState(false);
-  const [animationDimensions, setAnimationDimensions] = useState({
-    width: "7rem",
-    height: "6rem",
-  });
+  // const [animationDimensions, setAnimationDimensions] = useState({
+  //   width: "7rem",
+  //   height: "6rem",
+  // });
   const { t, i18n } = useTranslation();
 
   // Função para definir as dimensões da animação conforme o idioma
-  const getAnimationDimensions = (language) => {
-    if (language === "en") {
-      return { width: "8.6rem", height: "6rem" }; // Dimensões para o idioma inglês
-    } else if (language === "pt") {
-      return { width: "7rem", height: "6rem" }; // Dimensões para o idioma português
-    } else {
-      return { width: "7rem", height: "6rem" }; // Valores padrão, caso precise adicionar mais idiomas
-    }
-  };
+  // const getAnimationDimensions = (language) => {
+  //   if (language === "en") {
+  //     return { width: "8.6rem", height: "6rem" }; // Dimensões para o idioma inglês
+  //   } else if (language === "pt") {
+  //     return { width: "7rem", height: "6rem" }; // Dimensões para o idioma português
+  //   } else {
+  //     return { width: "7rem", height: "6rem" }; // Valores padrão, caso precise adicionar mais idiomas
+  //   }
+  // };
 
   useEffect(() => {
     // Atualiza as dimensões da animação ao mudar o idioma
-    setAnimationDimensions(getAnimationDimensions(i18n.language));
+    // setAnimationDimensions(getAnimationDimensions(i18n.language));
   }, [i18n.language]);
 
   const yearnow = () => {
@@ -129,24 +134,24 @@ function Footer() {
     };
   }, [animationTriggered]);
 
-  const defaultOptions = {
-    loop: false, // A animação para no final
-    autoplay: animationTriggered, // Só inicia se ativada
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: "none",
-    },
-  };
+  // const defaultOptions = {
+  //   loop: false, // A animação para no final
+  //   autoplay: animationTriggered, // Só inicia se ativada
+  //   animationData: animationData,
+  //   rendererSettings: {
+  //     preserveAspectRatio: "none",
+  //   },
+  // };
 
   return (
     <FooterStyled
-      animationTriggered={animationTriggered}
-      animationWidth={animationDimensions.width}
-      animationHeight={animationDimensions.height}
+      // animationTriggered={animationTriggered}
+      // animationWidth={animationDimensions.width}
+      // animationHeight={animationDimensions.height}
       id="contato"
     >
       <div className="footerContainer">
-        <div className="title">
+        {/* <div className="title">
           <h2>
             {t("footer.title.part1")}{" "}
             <span className="highlight">
@@ -161,19 +166,23 @@ function Footer() {
             <br />
             {t("footer.title.part2")}
           </h2>
-        </div>
+        </div> */}
         <div className="contact">
-          <h2>{t("footer.contact")}</h2>
-          <p>contato@biancaferreiradesign.com</p>
-          <h2>{t("footer.instagram")}</h2>
-          <p>
-            <a
-              href="https://www.instagram.com/biancaferreiradesign/"
-              target="blank"
-            >
-              @biancaferreiradesign
-            </a>
-          </p>
+          <div className="email">
+            <h2>{t("footer.contact")}</h2>
+            <p>contato@biancaferreiradesign.com</p>
+          </div>
+          <div className="instagram">
+            <h2>{t("footer.instagram")}</h2>
+            <p>
+              <a
+                href="https://www.instagram.com/biancaferreiradesign/"
+                target="blank"
+              >
+                @biancaferreiradesign
+              </a>
+            </p>
+          </div>
         </div>
       </div>
       <p className="copyright">
