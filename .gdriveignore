@@ -1,0 +1,14 @@
+ # Ignorar dependências e arquivos de build
+    2         node_modules/
+    3         dist/
+    4         build/
+    5         .cache/
+    6
+    7         # Logs e arquivos temporários
+    8         *.log
+    9         npm-debug.log
+   10         yarn-error.log
+   11
+   12         # Arquivos de sistema operacional
+   13         .DS_Store
+   14         Thumbs.db

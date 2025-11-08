@@ -22,27 +22,26 @@
     }
   },
   {
-    "group": "ARROZ",
+    "group": "BARZA",
     "text": [
-      "No coração da Chapada Diamantina, onde a natureza exuberante e a tradição se encontram, nasce o Arroz, um restaurante que se dedica a celebrar o essencial da vida. Em um ambiente acolhedor, o Arroz proporciona uma experiência sensorial que resgata a simplicidade e transforma o cotidiano em algo extraordinário.",
-      "Neste espaço, o arroz – ingrediente simples, mas poderoso – é elevado a uma verdadeira arte. A proposta do Arroz é reimaginar o arroz em todas as suas formas, explorando suas variadas cores, texturas e sabores. Cada prato traz à mesa a essência da cultura local, mas com um toque inovador que surpreende e encanta. A combinação da tradição das receitas familiares com uma abordagem moderna e criativa revela a beleza do simples e a potência do essencial.",
-      "O compromisso com a qualidade, a união e o acolhimento está presente em cada detalhe. A tipografia escolhida, uma fusão de sem serifa e manuscrita com traços irregulares, transmite a sensação de um produto artesanal, feito com carinho e dedicação. O acabamento rústico das letras, assim como o cuidado com cada ingrediente, reflete a alma genuína da Chapada Diamantina, onde o campo e a tradição se entrelaçam com a inovação. As cores, inspiradas nas tonalidades naturais do arroz, envolvem o olhar e aquecem o coração, criando uma identidade visual única, alinhada com a proposta gastronômica do restaurante.",
-      "No Arroz, acredita-se que a comida vai além de alimentar o corpo – ela nutre a alma. O essencial que une todos está na simplicidade de um prato bem-feito, na conexão com a terra, na união dos sabores e na alegria de compartilhar uma refeição. Cada refeição no Arroz é uma celebração do que é verdadeiro, do que é simples e do que, de fato, une a todos."
+      "Barza é uma empresa que une arquitetura, interiores e urbanismo, criada por Camilla Souza e Gilvanei Barbosa. O nome do escritório é a combinação dos fundadores, refletindo a essência colaborativa e criativa da marca. Com uma visão de transformar espaços e criar experiências, Barza se destaca por sua visão sofisticada e criativa.",
+      "A identidade visual da Barza foi cuidadosamente desenvolvida para transmitir essa proposta de elegância e harmonia. A tipografia personalizada, com linhas retas e sem serifas, confere à marca uma estética moderna e limpa, simbolizando precisão e modernidade. O símbolo da marca foi inspirado nas letras do nome e na planta baixa, criando uma conexão direta com o universo da arquitetura e do design de interiores.",
+      "A paleta de cores da marca é sóbria e acolhedora, com tons de bege terroso e verde escuro, inspirados no ambiente do próprio escritório, que apresenta tons amadeirados e plantas. Essa escolha de cores reforça a ideia de espaços acolhedores e harmônicos.\r\nBarza é uma marca que representa a união entre criatividade, funcionalidade e respeito à natureza. Cada projeto é uma obra única que traduz elegância e inovação, sempre com um toque de autenticidade e sofisticação."
     ],
     "text_en": [
-      "In the heart of Chapada Diamantina, where lush nature and tradition meet, Arroz is born – a restaurant dedicated to celebrating the essence of life. In a welcoming environment, Arroz provides a sensory experience that revives simplicity and transforms everyday life into something extraordinary.",
-      "In this space, rice – a simple yet powerful ingredient – is elevated to a true art form. Arroz's proposal is to reimagine rice in all its forms, exploring its varied colors, textures, and flavors. Each dish brings to the table the essence of local culture, with an innovative touch that surprises and delights. The combination of family recipe traditions with a modern, creative approach reveals the beauty of the simple and the power of the essential.",
-      "The commitment to quality, unity, and hospitality is present in every detail. The chosen typography, a fusion of sans-serif and handwritten styles with irregular strokes, conveys the feeling of an artisanal product, made with care and dedication. The rustic finish of the letters, as well as the attention to each ingredient, reflects the genuine soul of Chapada Diamantina, where the countryside and tradition intertwine with innovation. The colors, inspired by the natural tones of rice, engage the eye and warm the heart, creating a unique visual identity aligned with the restaurant's culinary proposal.",
-      "At Arroz, it is believed that food goes beyond nourishing the body – it nourishes the soul. The essence that unites everyone lies in the simplicity of a well-prepared dish, the connection to the land, the union of flavors, and the joy of sharing a meal. Every meal at Arroz is a celebration of what is true, what is simple, and what truly brings everyone together."
+      "Barza is a company that combines architecture, interiors, and urbanism, founded by Camilla Souza and Gilvanei Barbosa. The firm's name is a blend of its founders' names, reflecting the brand's collaborative and creative essence. With a vision of transforming spaces and creating experiences, Barza stands out for its sophisticated and innovative approach.",
+      "Barza's visual identity was carefully developed to convey this concept of elegance and harmony. The custom typography, with clean, sans-serif lines, gives the brand a modern and minimalist aesthetic, symbolizing precision and contemporary design. The brand's symbol is inspired by the letters in the name and architectural floor plans, creating a direct connection to the world of architecture and interior design.",
+      "The brand's color palette is understated and inviting, featuring earthy beige and deep green tones inspired by the studio's own environment, which incorporates wood textures and greenery. This choice of colors reinforces the idea of welcoming and harmonious spaces.",
+      "Barza represents the union of creativity, functionality, and respect for nature. Each project is a unique creation that embodies elegance and innovation, always infused with authenticity and sophistication."
     ],
-    "video": "/images/portfolio/ARROZ/arroz teaser.mp4",
+    "video": "/images/portfolio/BARZA/VIDEO BARZA .mp4",
     "images": {
-      "cover": "/images/portfolio/ARROZ/cover.png",
-      "img 1": "/images/portfolio/ARROZ/ARROZ1.png",
-      "img 2": "/images/portfolio/ARROZ/ARROZ2.png",
-      "img 3": "/images/portfolio/ARROZ/ARROZ3.png",
-      "img 4": "/images/portfolio/ARROZ/ARROZ4.png",
-      "img 5": "/images/portfolio/ARROZ/ARROZ6.png"
+      "cover": "/images/portfolio/BARZA/cover.png",
+      "img 1": "/images/portfolio/BARZA/BARZA1.png",
+      "img 2": "/images/portfolio/BARZA/BARZA2.png",
+      "img 3": "/images/portfolio/BARZA/BARZA3.png",
+      "img 4": "/images/portfolio/BARZA/BARZA4.png",
+      "img 5": "/images/portfolio/BARZA/BARZA5png.png"
     }
   },
   {
@@ -93,30 +92,31 @@
       "img 5": "/images/portfolio/3P ENERGIA/3P5.png"
     }
   },
-
-  {
-    "group": "BARZA",
+{
+    "group": "ARROZ",
     "text": [
-      "Barza é uma empresa que une arquitetura, interiores e urbanismo, criada por Camilla Souza e Gilvanei Barbosa. O nome do escritório é a combinação dos fundadores, refletindo a essência colaborativa e criativa da marca. Com uma visão de transformar espaços e criar experiências, Barza se destaca por sua visão sofisticada e criativa.",
-      "A identidade visual da Barza foi cuidadosamente desenvolvida para transmitir essa proposta de elegância e harmonia. A tipografia personalizada, com linhas retas e sem serifas, confere à marca uma estética moderna e limpa, simbolizando precisão e modernidade. O símbolo da marca foi inspirado nas letras do nome e na planta baixa, criando uma conexão direta com o universo da arquitetura e do design de interiores.",
-      "A paleta de cores da marca é sóbria e acolhedora, com tons de bege terroso e verde escuro, inspirados no ambiente do próprio escritório, que apresenta tons amadeirados e plantas. Essa escolha de cores reforça a ideia de espaços acolhedores e harmônicos.\r\nBarza é uma marca que representa a união entre criatividade, funcionalidade e respeito à natureza. Cada projeto é uma obra única que traduz elegância e inovação, sempre com um toque de autenticidade e sofisticação."
+      "No coração da Chapada Diamantina, onde a natureza exuberante e a tradição se encontram, nasce o Arroz, um restaurante que se dedica a celebrar o essencial da vida. Em um ambiente acolhedor, o Arroz proporciona uma experiência sensorial que resgata a simplicidade e transforma o cotidiano em algo extraordinário.",
+      "Neste espaço, o arroz – ingrediente simples, mas poderoso – é elevado a uma verdadeira arte. A proposta do Arroz é reimaginar o arroz em todas as suas formas, explorando suas variadas cores, texturas e sabores. Cada prato traz à mesa a essência da cultura local, mas com um toque inovador que surpreende e encanta. A combinação da tradição das receitas familiares com uma abordagem moderna e criativa revela a beleza do simples e a potência do essencial.",
+      "O compromisso com a qualidade, a união e o acolhimento está presente em cada detalhe. A tipografia escolhida, uma fusão de sem serifa e manuscrita com traços irregulares, transmite a sensação de um produto artesanal, feito com carinho e dedicação. O acabamento rústico das letras, assim como o cuidado com cada ingrediente, reflete a alma genuína da Chapada Diamantina, onde o campo e a tradição se entrelaçam com a inovação. As cores, inspiradas nas tonalidades naturais do arroz, envolvem o olhar e aquecem o coração, criando uma identidade visual única, alinhada com a proposta gastronômica do restaurante.",
+      "No Arroz, acredita-se que a comida vai além de alimentar o corpo – ela nutre a alma. O essencial que une todos está na simplicidade de um prato bem-feito, na conexão com a terra, na união dos sabores e na alegria de compartilhar uma refeição. Cada refeição no Arroz é uma celebração do que é verdadeiro, do que é simples e do que, de fato, une a todos."
     ],
     "text_en": [
-      "Barza is a company that combines architecture, interiors, and urbanism, founded by Camilla Souza and Gilvanei Barbosa. The firm's name is a blend of its founders' names, reflecting the brand's collaborative and creative essence. With a vision of transforming spaces and creating experiences, Barza stands out for its sophisticated and innovative approach.",
-      "Barza's visual identity was carefully developed to convey this concept of elegance and harmony. The custom typography, with clean, sans-serif lines, gives the brand a modern and minimalist aesthetic, symbolizing precision and contemporary design. The brand's symbol is inspired by the letters in the name and architectural floor plans, creating a direct connection to the world of architecture and interior design.",
-      "The brand's color palette is understated and inviting, featuring earthy beige and deep green tones inspired by the studio's own environment, which incorporates wood textures and greenery. This choice of colors reinforces the idea of welcoming and harmonious spaces.",
-      "Barza represents the union of creativity, functionality, and respect for nature. Each project is a unique creation that embodies elegance and innovation, always infused with authenticity and sophistication."
+      "In the heart of Chapada Diamantina, where lush nature and tradition meet, Arroz is born – a restaurant dedicated to celebrating the essence of life. In a welcoming environment, Arroz provides a sensory experience that revives simplicity and transforms everyday life into something extraordinary.",
+      "In this space, rice – a simple yet powerful ingredient – is elevated to a true art form. Arroz's proposal is to reimagine rice in all its forms, exploring its varied colors, textures, and flavors. Each dish brings to the table the essence of local culture, with an innovative touch that surprises and delights. The combination of family recipe traditions with a modern, creative approach reveals the beauty of the simple and the power of the essential.",
+      "The commitment to quality, unity, and hospitality is present in every detail. The chosen typography, a fusion of sans-serif and handwritten styles with irregular strokes, conveys the feeling of an artisanal product, made with care and dedication. The rustic finish of the letters, as well as the attention to each ingredient, reflects the genuine soul of Chapada Diamantina, where the countryside and tradition intertwine with innovation. The colors, inspired by the natural tones of rice, engage the eye and warm the heart, creating a unique visual identity aligned with the restaurant's culinary proposal.",
+      "At Arroz, it is believed that food goes beyond nourishing the body – it nourishes the soul. The essence that unites everyone lies in the simplicity of a well-prepared dish, the connection to the land, the union of flavors, and the joy of sharing a meal. Every meal at Arroz is a celebration of what is true, what is simple, and what truly brings everyone together."
     ],
-    "video": "/images/portfolio/BARZA/VIDEO BARZA .mp4",
+    "video": "/images/portfolio/ARROZ/arroz teaser.mp4",
     "images": {
-      "cover": "/images/portfolio/BARZA/cover.png",
-      "img 1": "/images/portfolio/BARZA/BARZA1.png",
-      "img 2": "/images/portfolio/BARZA/BARZA2.png",
-      "img 3": "/images/portfolio/BARZA/BARZA3.png",
-      "img 4": "/images/portfolio/BARZA/BARZA4.png",
-      "img 5": "/images/portfolio/BARZA/BARZA5png.png"
+      "cover": "/images/portfolio/ARROZ/cover.png",
+      "img 1": "/images/portfolio/ARROZ/ARROZ1.png",
+      "img 2": "/images/portfolio/ARROZ/ARROZ2.png",
+      "img 3": "/images/portfolio/ARROZ/ARROZ3.png",
+      "img 4": "/images/portfolio/ARROZ/ARROZ4.png",
+      "img 5": "/images/portfolio/ARROZ/ARROZ6.png"
     }
   },
+  
 
   {
     "group": "YUMMA",

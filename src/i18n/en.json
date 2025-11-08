@@ -42,6 +42,25 @@
     },
     "button": "SHALL WE CREATE TOGETHER?"
   },
+  "services": {
+    "items": [
+      {
+        "title": "Visual Identity + Strategy",
+        "description": "We combine strategy and visual identity to shape and give voice to what makes your brand unique. From concept to execution, we create an identity that connects, differentiates, and sparks recognition at every touchpoint."
+      },
+      {
+        "title": "Websites",
+        "description": "We turn your website into a visual and emotional experience. Every detail is designed to express the brand’s personality, ensure smooth navigation, and create an instant connection with visitors. The result is a digital space that communicates clearly, inspires, and drives results."
+      },
+      {
+        "title": "Social Media",
+        "description": "We take care of your brand’s digital presence so you don’t have to worry about creating content every day. We turn your ideas into strategic and consistent communication, aligning design, narrative, and purpose."
+      }
+    ],
+    "button": "I WANT TO TRANSFORM MY BRAND"
+
+  },
+
   "cookiesBanner": {
     "text": "We use cookies to enhance your experience.",
     "linkText": "Learn more",

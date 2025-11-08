@@ -1,9 +1,7 @@
 import styled from "styled-components";
-// import Video from "@/components/Video";
 import BannerTop from "@/components/BannerTop";
-// import BannerMid from "@/components/BannerMid";
-// import Staff from "@/components/Staff";
 import Portfolio from "../../components/Portfolio";
+import Services from "../../components/Services";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
@@ -16,9 +14,9 @@ const HomeStyled = styled.section`
 
 const StyledButton = styled.button`
   background-color: ${({ theme }) => theme.colors.black};
-  margin: 6vw 0;
+  margin: 5vw 0;
   font-size: 1.8rem;
-  width: 28vw;
+  padding: 0.5rem 3rem;
   &:hover {
     background-color: ${({ theme }) => theme.colors.green};
     color: ${({ theme }) => theme.colors.white};
@@ -34,16 +32,19 @@ function Home() {
   const { t, i18n } = useTranslation();
   return (
     <HomeStyled id="home">
-      {/* <Video/> */}
       <BannerTop />
-      {/* <BannerMid/> */}
+      <Services/>
+      <StyledButton
+        onClick={() => navigate(i18n.language === "en" ? "/form-en" : "/form")}
+      >
+        {t("services.button")}
+      </StyledButton>
       <Portfolio />
       <StyledButton
         onClick={() => navigate(i18n.language === "en" ? "/form-en" : "/form")}
       >
         {t("bannerTop.button")}
       </StyledButton>
-      {/* <Staff/> */}
     </HomeStyled>
   );
 }
