@@ -4,6 +4,7 @@ import Portfolio from "../../components/Portfolio";
 import Services from "../../components/Services";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import About from "../../components/About";
 
 const HomeStyled = styled.section`
   display: flex;
@@ -33,12 +34,13 @@ function Home() {
   return (
     <HomeStyled id="home">
       <BannerTop />
-      <Services/>
+      <Services />
       <StyledButton
         onClick={() => navigate(i18n.language === "en" ? "/form-en" : "/form")}
       >
         {t("services.button")}
       </StyledButton>
+      <About />
       <Portfolio />
       <StyledButton
         onClick={() => navigate(i18n.language === "en" ? "/form-en" : "/form")}
