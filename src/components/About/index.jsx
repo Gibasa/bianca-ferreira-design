@@ -42,7 +42,7 @@ const AboutImage = styled.img`
   object-fit: cover;
 
   @media (max-width: 899px) {
-    width: 50vw;
+    width: 60vw;
     max-width: 720px;
     margin-bottom: 1.5rem;
     order: 1;

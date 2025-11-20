@@ -7,23 +7,6 @@ import { useLanguage } from "../../context/TranslationContext";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
-// const slideOut = keyframes`
-//   0% {
-//     transform: translateX(0);
-//   }
-//   100% {
-//     transform: translateX(-100%);
-//   }
-// `;
-
-// const slideIn = keyframes`
-//   0% {
-//     transform: translateX(-100%);
-//   }
-//   100% {
-//     transform: translateX(0);
-//   }
-// `;
 
 const expandModal1 = keyframes`
   from {
@@ -168,7 +151,7 @@ const LogoContainer = styled(Box)`
   }
 
   @media (max-width: 600px) {
-    height: 8vw;
+    height: 10vw;
   }
 `;
 
@@ -186,7 +169,7 @@ const AnimatedLogo = styled.img`
 `;
 
 const StyledAppBar = styled(AppBar)`
-  background-color: transparent !important;
+  background-color: white !important;
   box-shadow: none !important;
   position: fixed !important;
   top: 0;
@@ -385,17 +368,12 @@ const LanguageText = styled.span`
 `;
 
 function Header() {
-  // const [logoState, setLogoState] = useState({
-  //   currentLogo: "/images/logoBiancaFerreira.png",
-  //   animation: null,
-  // });
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const { language, toggleLanguage } = useLanguage();
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
-  // const location = useLocation();
-
+  
   const sectionIds = {
     PROJETOS: "projetos",
     PROJECTS: "projetos",
@@ -405,56 +383,7 @@ function Header() {
     SERVICES: "serviços",
   };
 
-  // useEffect(() => {
-  //   const updateLogoBasedOnRoute = () => {
-  //     const smallLogoRoutes = ["/form", "/politica-de-privacidade"];
-
-  //     if (smallLogoRoutes.includes(location.pathname)) {
-  //       setLogoState({
-  //         currentLogo: "/images/logoBiancaFerreiraSmall.png",
-  //         animation: null,
-  //       });
-  //     } else {
-  //       const handleScroll = () => {
-  //         const videoElement = document.getElementById("video");
-  //         if (!videoElement) return;
-
-  //         const videoRect = videoElement.getBoundingClientRect();
-  //         const isInView =
-  //           videoRect.top < window.innerHeight && videoRect.bottom >= 0;
-
-  //         setLogoState((prev) => {
-  //           if (
-  //             isInView &&
-  //             prev.currentLogo !== "/images/logoBiancaFerreira.png"
-  //           ) {
-  //             return {
-  //               currentLogo: "/images/logoBiancaFerreira.png",
-  //               animation: slideIn,
-  //             };
-  //           } else if (
-  //             !isInView &&
-  //             prev.currentLogo !== "/images/logoBiancaFerreiraSmall.png"
-  //           ) {
-  //             return {
-  //               currentLogo: "/images/logoBiancaFerreiraSmall.png",
-  //               animation: slideOut,
-  //             };
-  //           }
-  //           return prev;
-  //         });
-  //       };
-
-  //       window.addEventListener("scroll", handleScroll);
-  //       handleScroll();
-  //       return () => window.removeEventListener("scroll", handleScroll);
-  //     }
-  //   };
-
-  //   updateLogoBasedOnRoute();
-  // }, [location.pathname]);
-
-  const pages =
+    const pages =
     language === "pt" ? ["PROJETOS", "CONTATO"] : ["PROJECTS", "CONTACT"];
 
   const handleToggleModal = () => {
