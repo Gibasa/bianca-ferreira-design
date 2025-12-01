@@ -2,6 +2,7 @@ import styled from "styled-components";
 import BannerTop from "@/components/BannerTop";
 import Portfolio from "../../components/Portfolio";
 import Services from "../../components/Services";
+import Carousel from "../../components/Carousel";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import About from "../../components/About";
@@ -11,7 +12,14 @@ const HomeStyled = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+h2{
+  margin-bottom: 10px;
+  @media (max-width: 600px) {
+    margin-top: 4rem;
+  }
+}
 `;
+
 
 const StyledButton = styled.button`
   background-color: ${({ theme }) => theme.colors.black};
@@ -34,6 +42,7 @@ function Home() {
   return (
     <HomeStyled id="home">
       <BannerTop />
+      <Carousel />
       <Services />
       <StyledButton
         onClick={() => navigate(i18n.language === "en" ? "/form-en" : "/form")}
@@ -41,6 +50,7 @@ function Home() {
         {t("services.button")}
       </StyledButton>
       <About />
+      <h2>{t("portfolio.title")}</h2>
       <Portfolio />
       <StyledButton
         onClick={() => navigate(i18n.language === "en" ? "/form-en" : "/form")}
