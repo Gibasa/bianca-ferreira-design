@@ -59,6 +59,16 @@
     ],
     "button": "QUERO TRANSFORMAR A MINHA MARCA"
   },
+
+  "about": {
+    "title": "OI, SOU A BIA.",
+    "paragraphs": {
+      "p1": "Sou designer e estrategista de marca. Desde 2018 trabalho de forma remota, atendendo clientes do Brasil e do exterior, sempre com o foco em desenvolver identidades visuais que unem estética, propósito e estratégia.",
+      "p2": "Ao longo desses anos, percebi algo em comum entre todos os negócios que passam por aqui: existe uma história forte demais para ficar escondida. Uma história que precisa ser vista, sentida e reconhecida, e que encontra na marca o seu jeito mais poderoso de existir no mundo.",
+      "p3": "Meu trabalho é justamente esse: transformar aquilo que já vive dentro do seu negócio em identidade. Dar forma ao que você sente, traduzir sua visão em símbolos, cores e escolhas que fazem as pessoas entenderem quem você é antes mesmo de você dizer uma palavra.",
+      "p4": "Eu acredito que toda marca é, na verdade, uma narrativa. A sua. E quando essa narrativa é bem construída, você deixa de competir por atenção e passa a ocupar um lugar que ninguém mais pode tomar."
+    }
+  },
   "cookiesBanner": {
     "text": "Usamos cookies para melhorar sua experiência.",
     "linkText": "Saiba mais",

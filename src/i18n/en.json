@@ -61,6 +61,16 @@
 
   },
 
+   "about": {
+    "title": "HI, I’M BIA.",
+    "paragraphs": {
+      "p1": "I’m a designer and brand strategist. Since 2018, I’ve been working remotely with clients from Brazil and abroad, always focused on developing visual identities that blend aesthetics, purpose, and strategy.",
+      "p2": "Over the years, I’ve noticed something in common among all the businesses that come through here: there’s always a story too powerful to stay hidden. A story that needs to be seen, felt, and recognized — and that finds in branding its most powerful way of existing in the world.",
+      "p3": "My work is exactly that: transforming what already lives within your business into identity. Giving shape to what you feel, translating your vision into symbols, colors, and choices that help people understand who you are before you even say a word.",
+      "p4": "I believe every brand is, in fact, a narrative. Yours. And when that narrative is well built, you stop competing for attention and start occupying a place that no one else can take."
+    }
+  },
+
   "cookiesBanner": {
     "text": "We use cookies to enhance your experience.",
     "linkText": "Learn more",

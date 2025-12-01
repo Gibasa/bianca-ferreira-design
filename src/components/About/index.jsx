@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { useTranslation } from "react-i18next";
+
 
 const AboutStyled = styled.div`
   display: flex;
@@ -27,7 +29,6 @@ const AboutText = styled.div`
     margin-bottom: 1rem;
   }
 
-
   @media (max-width: 1200px) {
     width: 80%;
     order: 2;
@@ -54,35 +55,17 @@ const AboutImage = styled.img`
 `;
 
 function About() {
+    const { t } = useTranslation();
+  
   return (
     <AboutStyled>
       <AboutImage src="/images/bianca-about.png" />
-
       <AboutText>
-        <h2>OI, SOU A BIA.</h2>
-        <p>
-          Sou designer e estrategista de marca. Desde 2018 trabalho de forma
-          remota, atendendo clientes do Brasil e do exterior, sempre com o foco
-          em desenvolver identidades visuais que unem estética, propósito e
-          estratégia.
-        </p>
-        <p>
-          Ao longo desses anos, percebi algo em comum entre todos os negócios
-          que passam por aqui: existe uma história forte demais para ficar
-          escondida. Uma história que precisa ser vista, sentida e reconhecida,
-          e que encontra na marca o seu jeito mais poderoso de existir no mundo.
-        </p>
-        <p>
-          Meu trabalho é justamente esse: transformar aquilo que já vive dentro
-          do seu negócio em identidade. Dar forma ao que você sente, traduzir
-          sua visão em símbolos, cores e escolhas que fazem as pessoas
-          entenderem quem você é antes mesmo de você dizer uma palavra.
-        </p>
-        <p>
-          Eu acredito que toda marca é, na verdade, uma narrativa. A sua. E
-          quando essa narrativa é bem construída, você deixa de competir por
-          atenção e passa a ocupar um lugar que ninguém mais pode tomar.
-        </p>
+        <h2>{t("about.title")}</h2>
+        <p>{t("about.paragraphs.p1")}</p>
+        <p>{t("about.paragraphs.p2")}</p>
+        <p>{t("about.paragraphs.p3")}</p>
+        <p>{t("about.paragraphs.p4")}</p>
       </AboutText>
     </AboutStyled>
   );
