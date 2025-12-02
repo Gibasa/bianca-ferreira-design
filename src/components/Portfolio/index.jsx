@@ -200,10 +200,7 @@ const Modal = ({ groupData, onClose }) => {
           {paragraphs.map((para, index) => (
             <Paragraph key={index}>{para}</Paragraph>
           ))}
-        </ParagraphContainer>
-        {images.cover && (
-          <ModalImage src={images.cover} alt={`${group} Cover`} />
-        )}
+        </ParagraphContainer>        
         {otherImages.map((img, index) => (
           <ModalImage key={index} src={img} alt={`Image ${index + 1}`} />
         ))}

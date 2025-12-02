@@ -18,7 +18,8 @@
       "img 2": "/images/portfolio/COPARTNERS BANK/CB2.png",
       "img 3": "/images/portfolio/COPARTNERS BANK/CB3.png",
       "img 4": "/images/portfolio/COPARTNERS BANK/CB4.png",
-      "img 5": "/images/portfolio/COPARTNERS BANK/CB5.png"
+      "img 5": "/images/portfolio/COPARTNERS BANK/CB5.png",
+      "img 6": "/images/portfolio/COPARTNERS BANK/CB6.png"
     }
   },
   {
@@ -41,7 +42,8 @@
       "img 2": "/images/portfolio/BARZA/BARZA2.png",
       "img 3": "/images/portfolio/BARZA/BARZA3.png",
       "img 4": "/images/portfolio/BARZA/BARZA4.png",
-      "img 5": "/images/portfolio/BARZA/BARZA5png.png"
+      "img 5": "/images/portfolio/BARZA/BARZA5.png",
+      "img 6": "/images/portfolio/BARZA/BARZA6.png"
     }
   },
   {
@@ -65,7 +67,8 @@
       "img 2": "/images/portfolio/GEORGIA VITA/GEO2.png",
       "img 3": "/images/portfolio/GEORGIA VITA/GEO3.png",
       "img 4": "/images/portfolio/GEORGIA VITA/GEO4.png",
-      "img 5": "/images/portfolio/GEORGIA VITA/GEO5_1.png"
+      "img 5": "/images/portfolio/GEORGIA VITA/GEO5.png",
+      "img 6": "/images/portfolio/GEORGIA VITA/GEO6.png"
     }
   },
   {
@@ -89,7 +92,8 @@
       "img 2": "/images/portfolio/3P ENERGIA/3P2.png",
       "img 3": "/images/portfolio/3P ENERGIA/3P3.png",
       "img 4": "/images/portfolio/3P ENERGIA/3P4.png",
-      "img 5": "/images/portfolio/3P ENERGIA/3P5.png"
+      "img 5": "/images/portfolio/3P ENERGIA/3P5.png",
+      "img 6": "/images/portfolio/3P ENERGIA/3P6.png"
     }
   },
   {
@@ -119,7 +123,8 @@
       "img 2": "/images/portfolio/DIVA/DIVA2.png",
       "img 3": "/images/portfolio/DIVA/DIVA3.png",
       "img 4": "/images/portfolio/DIVA/DIVA4.png",
-      "img 5": "/images/portfolio/DIVA/DIVA6.png"
+      "img 5": "/images/portfolio/DIVA/DIVA6.png",
+      "img 6": "/images/portfolio/DIVA/DIVA1.png"
     }
   },
 
@@ -151,7 +156,8 @@
       "img 3": "/images/portfolio/YUMMA/YUMMA 3.png",
       "img 4": "/images/portfolio/YUMMA/YUMMA 4.png",
       "img 5": "/images/portfolio/YUMMA/YUMMA 5.png",
-      "img 6": "/images/portfolio/YUMMA/YUMMA 6.png"
+      "img 6": "/images/portfolio/YUMMA/YUMMA 6.png",
+      "img 7": "/images/portfolio/YUMMA/YUMMA 7.png"
     }
   }
 ]
