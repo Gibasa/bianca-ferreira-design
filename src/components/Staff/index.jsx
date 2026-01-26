@@ -84,7 +84,7 @@ function Staff() {
   const { t, i18n } = useTranslation();
   console.log(t.language);
 
-  
+
 
   useEffect(() => {
     const language = i18n.language;
@@ -144,7 +144,7 @@ function Staff() {
     <StaffStyled ref={sectionRef} animationTriggered={animationTriggered} animationWidth={animationDimensions.width} animationHeight={animationDimensions.height}>
       <div className="title">
         <h2>
-        {t("staff.title.part1")}{" "}
+          {t("staff.title.part1")}{" "}
           {/* <span className="highlight">
           {t("staff.title.highlight")}
             <div className="animation">
@@ -158,8 +158,8 @@ function Staff() {
         </h2>
       </div>
       <div className="portraits">
-        <img src={biaImgSrc} alt="Bianca Portrait" />
-        <img src="/images/giba.png" alt="Gilberto Portrait" />
+        <img src={biaImgSrc} alt="Bianca Portrait" loading="lazy" />
+        <img src="/images/giba.png" alt="Gilberto Portrait" loading="lazy" />
       </div>
     </StaffStyled>
   );

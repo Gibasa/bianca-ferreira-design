@@ -24,7 +24,10 @@
       },
       "site": {
         "h2": "SITE",
-        "buttons": ["Institucional", "Landing page"]
+        "buttons": [
+          "Institucional",
+          "Landing page"
+        ]
       }
     },
     "bottomButton": "SOLICITE SEU ORÇAMENTO"
@@ -59,7 +62,6 @@
     ],
     "button": "QUERO TRANSFORMAR A MINHA MARCA"
   },
-
   "about": {
     "title": "OI, SOU A BIA.",
     "paragraphs": {
@@ -148,5 +150,15 @@
     "contact": "FALE CONSOCO",
     "instagram": "ACOMPANHE NOSSO INSTAGRAM",
     "copyright": "Todos os direitos reservados"
+  },
+  "seo": {
+    "privacyPolicy": {
+      "title": "Política de Privacidade",
+      "description": "Leia nossa política de privacidade e entenda como coletamos, usamos e protegemos suas informações."
+    },
+    "form": {
+      "title": "Briefing de Projeto",
+      "description": "Preencha nosso formulário de briefing para iniciarmos o seu projeto de design."
+    }
   }
 }

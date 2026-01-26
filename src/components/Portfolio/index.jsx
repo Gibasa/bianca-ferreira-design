@@ -1,12 +1,12 @@
-import { useState } from "react";
 import PropTypes from "prop-types";
-import styled from "styled-components";
-import portfolioData from "/src/assets/portfolio.json";
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { FaArrowCircleRight } from "react-icons/fa";
 import { IoIosCloseCircle } from "react-icons/io";
-import { useTranslation } from "react-i18next";
 import Lottie from "react-lottie";
+import styled from "styled-components";
 import loadingAnimation from "../../assets/loading.json";
+import portfolioData from "/src/assets/portfolio.json";
 
 const Container = styled.div`
   display: flex;
@@ -200,7 +200,7 @@ const Modal = ({ groupData, onClose }) => {
           {paragraphs.map((para, index) => (
             <Paragraph key={index}>{para}</Paragraph>
           ))}
-        </ParagraphContainer>        
+        </ParagraphContainer>
         {otherImages.map((img, index) => (
           <ModalImage key={index} src={img} alt={`Image ${index + 1}`} />
         ))}
@@ -236,6 +236,7 @@ const Portfolio = () => {
           <CoverImage
             src={data.images.cover}
             alt={`${data.group} Cover`}
+            loading="lazy"
             onClick={() => openModal(data)}
           />
           <TitleContainer>

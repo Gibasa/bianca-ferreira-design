@@ -1,8 +1,8 @@
 import { useRef } from "react";
-import styled from "styled-components";
 import { useTranslation } from "react-i18next";
+import styled from "styled-components";
 
-const BannerTopContainer = styled.div`
+const BannerTopContainer = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-between;

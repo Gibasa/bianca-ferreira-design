@@ -24,7 +24,10 @@
       },
       "site": {
         "h2": "SITE",
-        "buttons": ["Institutional", "Landing Page"]
+        "buttons": [
+          "Institutional",
+          "Landing Page"
+        ]
       }
     },
     "bottomButton": "REQUEST YOUR QUOTE"
@@ -58,10 +61,8 @@
       }
     ],
     "button": "I WANT TO TRANSFORM MY BRAND"
-
   },
-
-   "about": {
+  "about": {
     "title": "HI, I’M BIA.",
     "paragraphs": {
       "p1": "I’m a designer and brand strategist. Since 2018, I’ve been working remotely with clients from Brazil and abroad, always focused on developing visual identities that blend aesthetics, purpose, and strategy.",
@@ -70,7 +71,6 @@
       "p4": "I believe every brand is, in fact, a narrative. Yours. And when that narrative is well built, you stop competing for attention and start occupying a place that no one else can take."
     }
   },
-
   "cookiesBanner": {
     "text": "We use cookies to enhance your experience.",
     "linkText": "Learn more",
@@ -147,9 +147,18 @@
       "highlight": "create",
       "part2": "TOGETHER?"
     },
-
     "contact": "CONTACT US",
     "instagram": "FOLLOW US ON INSTAGRAM",
     "copyright": "All rights reserved"
+  },
+  "seo": {
+    "privacyPolicy": {
+      "title": "Privacy Policy",
+      "description": "Read our privacy policy to understand how we collect, use, and protect your information."
+    },
+    "form": {
+      "title": "Project Briefing",
+      "description": "Fill out our briefing form to start your design project."
+    }
   }
 }

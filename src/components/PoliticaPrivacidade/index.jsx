@@ -1,14 +1,15 @@
-import styled from "styled-components";
 import { useTranslation } from "react-i18next";
+import styled from "styled-components";
+import SEO from "../SEO";
 
-const PageWrapper = styled.div`
+const PageWrapper = styled.article`
   padding: 20px;
   max-width: 800px;
   margin: 120px auto;
   background-color: ${({ theme }) => theme.colors.white};
 `;
 
-const Index = styled.div`
+const Index = styled.nav`
   margin-bottom: 20px;
   background: #f9f9f9;
   padding: 10px;
@@ -26,7 +27,7 @@ const IndexItem = styled.a`
   }
 `;
 
-const Section = styled.div`
+const Section = styled.section`
   margin-bottom: 30px;
 `;
 
@@ -45,7 +46,11 @@ const PoliticaPrivacidade = () => {
 
   return (
     <PageWrapper>
-      <h2>{t("privacyPolicy.title")}</h2>
+      <SEO
+        title={t("seo.privacyPolicy.title")}
+        description={t("seo.privacyPolicy.description")}
+      />
+      <h1>{t("privacyPolicy.title")}</h1>
       <Index>
         <h2>{t("privacyPolicy.index.title")}</h2>
         <IndexItem href="#informacoes-coletadas">
@@ -113,9 +118,9 @@ const PoliticaPrivacidade = () => {
       <Section id="contato">
         <Title>{t("privacyPolicy.sections.contato.title")}</Title>
         <Paragraph>
-        {t("privacyPolicy.sections.contato.text")}
+          {t("privacyPolicy.sections.contato.text")}
           <a href="mailto:biancafdesign@gmail.com">
-          {t("privacyPolicy.sections.contato.email")}
+            {t("privacyPolicy.sections.contato.email")}
           </a>
         </Paragraph>
       </Section>
