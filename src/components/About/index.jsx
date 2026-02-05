@@ -59,7 +59,7 @@ function About() {
   
   return (
     <AboutStyled>
-      <AboutImage src="/images/bianca-about.png" />
+      <AboutImage src="/images/bianca-about.webp" />
       <AboutText>
         <h2>{t("about.title")}</h2>
         <p>{t("about.paragraphs.p1")}</p>
