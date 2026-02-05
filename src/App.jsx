@@ -1,14 +1,14 @@
-import { HashRouter as Router, Route, Routes, useLocation } from "react-router-dom";
-import { ThemeProvider } from "styled-components";
-import GlobalStyle from "./GobalStyles";
-import { theme } from "./theme";
-import Header from "@/layout/Header";
 import Footer from "@/layout/Footer";
+import Header from "@/layout/Header";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Cookie from "./components/Cookie";
 import React, { Suspense, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
+import { Route, HashRouter as Router, Routes, useLocation } from "react-router-dom";
+import { ThemeProvider } from "styled-components";
+import Cookie from "./components/Cookie";
+import GlobalStyle from "./GobalStyles";
+import { theme } from "./theme";
 
 const Home = React.lazy(() => import("@/pages/Home"));
 const PoliticaPrivacidade = React.lazy(() =>
@@ -47,17 +47,18 @@ function App() {
               path="/"
               element={
                 <>
-                  <title>{t("home.title")}</title>
-                  <meta name="description" content={t("home.description")} />
-                  <meta name="keywords" content={t("home.keywords")} />
-                  <meta property="og:title" content={t("home.ogTitle")} />
-                  <meta
-                    property="og:description"
-                    content={t("home.ogDescription")}
-                  />
-                </Helmet>
-              <Home />
-            </>
+                  <Helmet>
+                    <title>{t("home.title")}</title>
+                    <meta name="description" content={t("home.description")} />
+                    <meta name="keywords" content={t("home.keywords")} />
+                    <meta property="og:title" content={t("home.ogTitle")} />
+                    <meta
+                      property="og:description"
+                      content={t("home.ogDescription")}
+                    />
+                  </Helmet>
+                  <Home />
+                </>
               }
             />
             <Route
