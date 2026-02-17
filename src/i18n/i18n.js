@@ -1,10 +1,10 @@
 import i18n from "i18next";
-import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector"; // Importando o detector de idioma
-import pt from "./pt.json";
+import { initReactI18next } from "react-i18next";
 import en from "./en.json";
+import pt from "./pt.json";
 
-const userLanguage = navigator.language.startsWith("pt") ? "pt" : "en"
+
 
 i18n
   .use(LanguageDetector) // Usar o detector de idioma
@@ -14,15 +14,16 @@ i18n
       pt: { translation: pt },
       en: { translation: en },
     },
-    lng: userLanguage,
+
     fallbackLng: "pt", // Idioma de fallback
     interpolation: {
       escapeValue: false, // React já trata a segurança
     },
     detection: {
       // Configurações do detector de idioma
-      order: ["navigator", "htmlTag", "querystring", "cookie", "localStorage", "sessionStorage"],
-      caches: ["cookie", "localStorage"], // Onde armazenar o idioma detectado
+      order: ["path", "navigator", "htmlTag", "querystring", "localStorage", "cookie"],
+      lookupFromPathIndex: 0,
+      caches: ["localStorage", "cookie"], // Onde armazenar o idioma detectado
     },
   });
 

@@ -3,7 +3,7 @@ import Header from "@/layout/Header";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { Suspense, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { Route, BrowserRouter as Router, Routes, useLocation } from "react-router-dom";
+import { Outlet, Route, BrowserRouter as Router, Routes, useLocation, useNavigate, useParams } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import Cookie from "./components/Cookie";
 import GlobalStyle from "./GobalStyles";
@@ -31,9 +31,50 @@ function Analytics() {
   return null;
 }
 
-function App() {
-  const { t } = useTranslation();
+// Componente para redirecionar a raiz para o idioma detectado ou padrão
+function RootRedirect() {
+  const { i18n } = useTranslation();
+  const location = useLocation();
 
+  useEffect(() => {
+    // Se estiver na raiz, redireciona para o idioma atual (detectado ou padrão)
+    if (location.pathname === "/") {
+      const formattedLang = i18n.language.split('-')[0];
+      const lang = formattedLang === "pt" ? "pt" : "en";
+      window.location.replace(`/${lang}`);
+    }
+  }, [i18n.language, location]);
+
+  return null;
+}
+
+// Layout wrapper to validate language
+function LanguageLayout() {
+  const { lang } = useParams();
+  const { i18n } = useTranslation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const supportedLangs = ["pt", "en"];
+
+    if (lang && supportedLangs.includes(lang)) {
+      if (i18n.language !== lang) {
+        i18n.changeLanguage(lang);
+      }
+    } else {
+      // If lang is not supported, redirect to pt
+      navigate("/pt", { replace: true });
+    }
+  }, [lang, i18n, navigate]);
+
+  if (lang && !["pt", "en"].includes(lang)) {
+    return null; // Avoid rendering outlet while redirecting
+  }
+
+  return <Outlet />;
+}
+
+function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
@@ -42,13 +83,16 @@ function App() {
           <Header />
           <Analytics />
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route
-              path="/politica-de-privacidade"
-              element={<PoliticaPrivacidade />}
-            />
-            <Route path="/form" element={<Form />} />
-            <Route path="/form-en" element={<FormEn />} />
+            <Route path="/" element={<RootRedirect />} />
+            <Route path="/:lang" element={<LanguageLayout />}>
+              <Route index element={<Home />} />
+              <Route
+                path="politica-de-privacidade"
+                element={<PoliticaPrivacidade />}
+              />
+              <Route path="form" element={<Form />} />
+              <Route path="form-en" element={<FormEn />} />
+            </Route>
           </Routes>
           <Footer />
         </Suspense>
