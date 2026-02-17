@@ -35,15 +35,16 @@ function Analytics() {
 function RootRedirect() {
   const { i18n } = useTranslation();
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Se estiver na raiz, redireciona para o idioma atual (detectado ou padrão)
     if (location.pathname === "/") {
       const formattedLang = i18n.language.split('-')[0];
       const lang = formattedLang === "pt" ? "pt" : "en";
-      window.location.replace(`/${lang}`);
+      navigate(`/${lang}`, { replace: true });
     }
-  }, [i18n.language, location]);
+  }, [i18n.language, location, navigate]);
 
   return null;
 }
