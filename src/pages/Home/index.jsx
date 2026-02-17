@@ -1,11 +1,13 @@
-import styled from "styled-components";
 import BannerTop from "@/components/BannerTop";
-import Portfolio from "../../components/Portfolio";
-import Services from "../../components/Services";
-import Carousel from "../../components/Carousel";
-import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
 import About from "../../components/About";
+import Carousel from "../../components/Carousel";
+import Portfolio from "../../components/Portfolio";
+import SEO from "../../components/SEO";
+import Services from "../../components/Services";
+import StructuredData from "../../components/StructuredData";
 
 const HomeStyled = styled.section`
   display: flex;
@@ -41,6 +43,12 @@ function Home() {
   const { t, i18n } = useTranslation();
   return (
     <HomeStyled id="home">
+      <SEO
+        title={t("home.title")}
+        description={t("home.description")}
+        keywords={t("home.keywords")}
+      />
+      <StructuredData />
       <BannerTop />
       <Carousel />
       <Services />
