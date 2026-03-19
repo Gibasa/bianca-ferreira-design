@@ -1,5 +1,6 @@
 import Footer from "@/layout/Footer";
 import Header from "@/layout/Header";
+import WhatsAppButton from "./components/WhatsAppButton";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { Suspense, useEffect } from "react";
 import { useTranslation } from "react-i18next";
@@ -99,6 +100,7 @@ function App() {
         </Suspense>
       </Router>
       <Cookie />
+      <WhatsAppButton />
     </ThemeProvider>
   );
 }
