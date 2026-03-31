@@ -448,7 +448,7 @@ function Header() {
               ))}
               <button
                 onClick={() => {
-                  navigate(i18n.language === "en" ? "/form-en" : "/form");
+                  navigate(`/${i18n.language}/${i18n.language === "en" ? "form-en" : "form"}`);
                   handleToggleModal();
                 }}
               >

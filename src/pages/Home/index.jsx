@@ -53,7 +53,7 @@ function Home() {
       <Carousel />
       <Services />
       <StyledButton
-        onClick={() => navigate(i18n.language === "en" ? "/form-en" : "/form")}
+        onClick={() => navigate(`/${i18n.language}/${i18n.language === "en" ? "form-en" : "form"}`)}
       >
         {t("services.button")}
       </StyledButton>
@@ -61,7 +61,7 @@ function Home() {
       <h2>{t("portfolio.title")}</h2>
       <Portfolio />
       <StyledButton
-        onClick={() => navigate(i18n.language === "en" ? "/form-en" : "/form")}
+        onClick={() => navigate(`/${i18n.language}/${i18n.language === "en" ? "form-en" : "form"}`)}
       >
         {t("bannerTop.button")}
       </StyledButton>
