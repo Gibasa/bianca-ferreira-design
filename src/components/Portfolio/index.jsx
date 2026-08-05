@@ -1,258 +1,335 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { FaArrowCircleRight } from "react-icons/fa";
 import { IoIosCloseCircle } from "react-icons/io";
 import Lottie from "react-lottie";
 import styled from "styled-components";
 import loadingAnimation from "../../assets/loading.json";
 import portfolioData from "/src/assets/portfolio.json";
 
+const WA_NUMBER = "5571993703427";
+const openWA = (msg) =>
+  window.open(
+    `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`,
+    "_blank"
+  );
+
+/* ── Grid container ─────────────────────────────────────────── */
 const Container = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 0vw 5vw;
-  background-color: ${({ theme }) => theme.colors.white};
-  border-radius: 10px;
-  padding-top: 2vw;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 100%;
+  padding: 0 5vw;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const PortfolioItem = styled.div`
-  width: calc(50% - 20px);
-  margin: 10px;
-  box-sizing: border-box;
-
-  @media (max-width: 768px) {
-    width: 100%;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 `;
 
 const CoverImage = styled.img`
   width: 100%;
-  cursor: pointer;
-  border-radius: 10px;
-  max-width: 100%;
+  aspect-ratio: 4/3;
   object-fit: cover;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.2);
+  }
 `;
 
-const TitleContainer = styled.div`
+const TitleRow = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 8px;
 `;
 
 const GroupName = styled.h3`
-  font-size: 1.2rem;
-  margin: 0;
+  font-size: 1rem;
 `;
 
-const ViewMore = styled.a`
+const ViewMoreBtn = styled.button`
   background: none;
   border: none;
-  color: ${({ theme }) => theme.colors.black};
+  color: ${({ theme }) => theme.colors.blue};
+  font-family: ${({ theme }) => theme.fonts.secondary};
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   cursor: pointer;
-  font-size: 1rem;
-  text-decoration: none;
+  padding: 0;
   display: flex;
-  gap: 10px;
-  justify-content: center;
   align-items: center;
+  gap: 6px;
+
+  &:hover { text-decoration: underline; }
 `;
 
-const ModalOverlay = styled.div`
+/* ── Modal ──────────────────────────────────────────────────── */
+const Overlay = styled.div`
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.6);
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 999;
+  padding: 20px;
 `;
 
-const ModalContent = styled.div`
-  width: 90vw;
-  height: 90vh;
+const ModalBox = styled.div`
+  width: 100%;
+  max-width: 860px;
+  max-height: 90vh;
   background: #fff;
-  border-radius: 12px;
-  padding: 20px;
+  border-radius: 16px;
+  padding: 40px 32px 32px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 2vw;
-`;
-
-const ModalHeader = styled.h2`
-  text-transform: capitalize;
-  margin-bottom: 20px;
-`;
-
-const Paragraph = styled.p`
-  line-height: 1.5;
-  text-align: justify;
-  margin-bottom: 15px;
-  width: 90%;
-`;
-
-const ParagraphContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: justify;
-  flex-direction: column;
-`;
-
-const VideoContainer = styled.div`
+  gap: 24px;
   position: relative;
-  width: 90%;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 200px;
-  flex-shrink: 0;
+
+  @media (max-width: 600px) {
+    padding: 32px 20px 24px;
+  }
 `;
 
-const Video = styled.video`
-  width: 100%;
-  border-radius: 8px;
-  display: ${({ isVideoLoaded }) => (isVideoLoaded ? "block" : "none")};
-`;
-
-const LottieWrapper = styled.div`
+const CloseBtn = styled.button`
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: ${({ isVideoLoaded }) => (isVideoLoaded ? "none" : "flex")};
-  justify-content: center;
-  align-items: center;
-`;
-
-const ModalImage = styled.img`
-  width: 90%;
-  margin-bottom: 20px;
-  border-radius: 8px;
-`;
-
-const CloseButton = styled.div`
-  position: absolute;
-  top: 10px;
-  right: 30px;
+  top: 16px;
+  right: 16px;
   background: none;
   border: none;
-  font-size: 24px;
+  padding: 0;
   cursor: pointer;
-  color: ${({ theme }) => theme.colors.white};
+  color: #666;
+  font-size: 28px;
+  line-height: 1;
+  display: flex;
+
+  &:hover { color: #000; background: none; }
 `;
 
+const ModalTitle = styled.h2`
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  text-transform: uppercase;
+`;
+
+const VideoWrap = styled.div`
+  position: relative;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  min-height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f0f0f0;
+`;
+
+const ModalVideo = styled.video`
+  width: 100%;
+  border-radius: 10px;
+  display: ${({ $loaded }) => ($loaded ? "block" : "none")};
+`;
+
+const LottieWrap = styled.div`
+  position: absolute;
+  display: ${({ $loaded }) => ($loaded ? "none" : "flex")};
+  justify-content: center;
+  align-items: center;
+`;
+
+const ParagraphsWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+`;
+
+const Para = styled.p`
+  font-family: ${({ theme }) => theme.fonts.secondary};
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: ${({ theme }) => theme.colors.grey || "#6B6B6B"};
+`;
+
+const Gallery = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+`;
+
+const GalleryImg = styled.img`
+  width: 100%;
+  border-radius: 10px;
+`;
+
+const ModalCta = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding-top: 8px;
+  border-top: 1px solid #eee;
+`;
+
+const CtaText = styled.p`
+  font-family: ${({ theme }) => theme.fonts.secondary};
+  font-size: 0.9rem;
+  color: ${({ theme }) => theme.colors.grey || "#6B6B6B"};
+  text-align: center;
+`;
+
+const WaBtn = styled.button`
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #25D366;
+  color: #fff;
+  font-family: ${({ theme }) => theme.fonts.secondary};
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 16px 32px;
+  border-radius: 60px;
+  border: none;
+  cursor: pointer;
+
+  &:hover { background: #1ebe5d; }
+
+  svg { width: 18px; height: 18px; }
+`;
+
+/* ── Modal component ────────────────────────────────────────── */
 const Modal = ({ groupData, onClose }) => {
-  const { t, i18n } = useTranslation();
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const { i18n } = useTranslation();
+  const [loaded, setLoaded] = useState(false);
 
   if (!groupData) return null;
 
   const { group, text, text_en, video, images } = groupData;
   const paragraphs = i18n.language === "en" ? text_en : text;
-
   const otherImages = Object.entries(images)
     .filter(([key]) => key !== "cover")
-    .map(([, value]) => value);
+    .map(([, v]) => v);
 
   return (
-    <ModalOverlay onClick={onClose}>
-      <ModalContent onClick={(e) => e.stopPropagation()}>
-        <CloseButton onClick={onClose}>
+    <Overlay onClick={onClose}>
+      <ModalBox onClick={(e) => e.stopPropagation()}>
+        <CloseBtn onClick={onClose}>
           <IoIosCloseCircle />
-        </CloseButton>
-        <ModalHeader>{t(group)}</ModalHeader>
+        </CloseBtn>
+
+        <ModalTitle>{group}</ModalTitle>
+
         {video && (
-          <VideoContainer>
-            <LottieWrapper isVideoLoaded={isVideoLoaded}>
+          <VideoWrap>
+            <LottieWrap $loaded={loaded}>
               <Lottie
-                options={{
-                  animationData: loadingAnimation,
-                  loop: true,
-                  autoplay: true,
-                }}
-                height={200}
-                width={200}
+                options={{ animationData: loadingAnimation, loop: true, autoplay: true }}
+                height={120}
+                width={120}
               />
-            </LottieWrapper>
-            <Video
+            </LottieWrap>
+            <ModalVideo
               src={video}
               autoPlay
               loop
               muted
-              isVideoLoaded={isVideoLoaded}
-              onLoadedData={() => setIsVideoLoaded(true)}
+              $loaded={loaded}
+              onLoadedData={() => setLoaded(true)}
             />
-          </VideoContainer>
+          </VideoWrap>
         )}
-        <ParagraphContainer>
-          {paragraphs.map((para, index) => (
-            <Paragraph key={index}>{para}</Paragraph>
+
+        <ParagraphsWrap>
+          {paragraphs.map((p, i) => (
+            <Para key={i}>{p}</Para>
           ))}
-        </ParagraphContainer>
-        {otherImages.map((img, index) => (
-          <ModalImage key={index} src={img} alt={`Image ${index + 1}`} />
-        ))}
-      </ModalContent>
-    </ModalOverlay>
+        </ParagraphsWrap>
+
+        <Gallery>
+          {otherImages.map((img, i) => (
+            <GalleryImg key={i} src={img} alt={`${group} ${i + 1}`} loading="lazy" />
+          ))}
+        </Gallery>
+
+        <ModalCta>
+          <CtaText>Gostou desse projeto? Vamos criar algo assim para sua marca.</CtaText>
+          <WaBtn
+            onClick={() =>
+              openWA(`Olá Bia! Vi o case ${group} e quero transformar minha marca.`)
+            }
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Z" />
+            </svg>
+            Quero algo assim
+          </WaBtn>
+        </ModalCta>
+      </ModalBox>
+    </Overlay>
   );
 };
 
 Modal.propTypes = {
   groupData: PropTypes.shape({
     group: PropTypes.string.isRequired,
-    text: PropTypes.objectOf(PropTypes.string),
-    text_en: PropTypes.objectOf(PropTypes.string),
+    text: PropTypes.array,
+    text_en: PropTypes.array,
     video: PropTypes.string,
-    images: PropTypes.shape({
-      cover: PropTypes.string.isRequired,
-    }).isRequired,
+    images: PropTypes.object.isRequired,
   }),
   onClose: PropTypes.func.isRequired,
 };
 
-const Portfolio = () => {
-  const [selectedGroup, setSelectedGroup] = useState(null);
+/* ── Portfolio component ────────────────────────────────────── */
+const Portfolio = ({ limit }) => {
+  const [selected, setSelected] = useState(null);
   const { t } = useTranslation();
 
-  const openModal = (groupData) => setSelectedGroup(groupData);
-  const closeModal = () => setSelectedGroup(null);
+  const data = limit ? portfolioData.slice(0, limit) : portfolioData;
 
   return (
-    <Container id="projetos">
-      {portfolioData.map((data, index) => (
-        <PortfolioItem key={index}>
-          <CoverImage
-            src={data.images.cover}
-            alt={`${data.group} Cover`}
-            loading="lazy"
-            onClick={() => openModal(data)}
-          />
-          <TitleContainer>
-            <GroupName>{data.group}</GroupName>
-            <ViewMore onClick={() => openModal(data)}>
-              {t("portfolio.viewMore")} <FaArrowCircleRight className="arrow" />
-            </ViewMore>
-          </TitleContainer>
-        </PortfolioItem>
-      ))}
+    <>
+      <Container id="projetos">
+        {data.map((item, i) => (
+          <PortfolioItem key={i}>
+            <CoverImage
+              src={item.images.cover}
+              alt={`${item.group} Cover`}
+              loading="lazy"
+              onClick={() => setSelected(item)}
+            />
+            <TitleRow>
+              <GroupName>{item.group}</GroupName>
+              <ViewMoreBtn onClick={() => setSelected(item)}>
+                {t("portfolio.viewMore")} →
+              </ViewMoreBtn>
+            </TitleRow>
+          </PortfolioItem>
+        ))}
+      </Container>
 
-      {selectedGroup && (
-        <Modal groupData={selectedGroup} onClose={closeModal} />
-      )}
-    </Container>
+      {selected && <Modal groupData={selected} onClose={() => setSelected(null)} />}
+    </>
   );
+};
+
+Portfolio.propTypes = {
+  limit: PropTypes.number,
 };
 
 export default Portfolio;

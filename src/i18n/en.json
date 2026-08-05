@@ -1,10 +1,10 @@
 {
   "home": {
-    "title": "Visual Identity and Website Design | Studio BF",
-    "description": "We are a creative studio specialized in building purpose-driven brands for businesses and individuals.",
-    "ogTitle": "Visual Identity and Website Design | Studio BF",
-    "ogDescription": "We are a creative studio specialized in building purpose-driven brands for businesses and individuals.",
-    "keywords": "branding, visual identity, brand strategy, social media design, stationery, institutional materials, website design, landing page, creative solutions"
+    "title": "Visual Identity & Branding Studio | Bianca Ferreira Design",
+    "description": "Creative branding studio specialized in purposeful visual identity and strategy. Remote service for clients worldwide.",
+    "ogTitle": "Bianca Ferreira Design | Branding Studio",
+    "ogDescription": "We transform visual communication into market positioning, elevating your brand with strategy, authorial design, and identity.",
+    "keywords": "branding, visual identity, brand strategy, social media design, stationery, institutional materials, website design, landing page"
   },
   "bannerMid": {
     "title": {
@@ -34,42 +34,135 @@
   },
   "bannerTop": {
     "title": {
-      "part1": "CREATIVE STUDIO \nSPECIALIZED IN BUILDING",
-      "highlight": "stand out",
-      "part2": "PURPOSE-DRIVEN BRANDS \nFOR BUSINESSES AND INDIVIDUALS."
+      "part1": "Your brand has",
+      "part2": "a story.",
+      "part3": "We give it shape.",
+      "part4": ""
     },
-    "description": {
-      "part1": "We transform visual communication into market positioning, elevating your brand with strategy, design, and identity.",
-      "part2": "Here, design is identity with purpose. Through branding, we give voice to your essence and build your presence in the market. Every detail, color, typography, imagery, and tone, is carefully crafted to reinforce your authority",
-      "part3": "It’s not just about creating something that delights. It’s about creating something that connects, communicates, and differentiates. Your brand deserves to be recognized for what it truly is."
-    },
-    "button": "SHALL WE CREATE TOGETHER?"
+    "description": "We transform visual communication into market positioning, elevating your brand with strategy, authorial design, and identity.",
+    "button": "Let's work together",
+    "eyebrow": "Creative branding studio"
   },
-  "services": {
+  "manifesto": {
+    "eyebrow": "Our mission",
+    "quote": "Speak less to everyone. Speak right to those who matter.",
+    "description": "We translate what your business truly is into a brand that the right people recognize and choose."
+  },
+  "spec": {
+    "eyebrow": "How we think about your brand",
+    "title": "Every detail is planned to reinforce your authority in the market.",
     "items": [
       {
-        "title": "Visual Identity + Strategy",
-        "description": "We combine strategy and visual identity to shape and give voice to what makes your brand unique. From concept to execution, we create an identity that connects, differentiates, and sparks recognition at every touchpoint."
+        "title": "Color & Light",
+        "description": "The color palette that makes your company instantly recognizable, sparking emotions and desire."
       },
       {
-        "title": "Websites",
-        "description": "We turn your website into a visual and emotional experience. Every detail is designed to express the brand’s personality, ensure smooth navigation, and create an instant connection with visitors. The result is a digital space that communicates clearly, inspires, and drives results."
+        "title": "Typography",
+        "description": "The visual voice that gives rhythm, editorial sophistication, and a unique personality to everything you communicate."
       },
       {
-        "title": "Social Media",
-        "description": "We take care of your brand’s digital presence so you don’t have to worry about creating content every day. We turn your ideas into strategic and consistent communication, aligning design, narrative, and purpose."
+        "title": "Image Direction",
+        "description": "The visual universe of textures, contrasts, and shadows that sustains your brand across all touchpoints."
+      },
+      {
+        "title": "Tone & Narrative",
+        "description": "The way your brand speaks and the reason why people stop everything to listen to you."
+      }
+    ]
+  },
+  "services": {
+    "eyebrow": "Three ways to shape your brand",
+    "title": "Services",
+    "items": [
+      {
+        "label": "Identity & Strategy",
+        "title": "Your brand, with shape and voice",
+        "description": "We combine strategy and visual identity to shape and give voice to what makes your brand unique. From concept to execution, we create a positioning that connects, differentiates, and sparks immediate recognition.",
+        "link": "I want this brand"
+      },
+      {
+        "label": "Digital Experience",
+        "title": "A website that also sells",
+        "description": "We transform your website into a visual and emotional experience. Every detail is designed to express the brand's personality, ensure smooth navigation, and convert visitors into loyal clients.",
+        "link": "I want this website"
+      },
+      {
+        "label": "Digital Presence",
+        "title": "Presence that doesn't exhaust you",
+        "description": "We take care of your brand's digital presence so you don't have to worry about creating content every day with authorial design, consistent narrative, and purpose always aligned.",
+        "link": "I want this presence"
       }
     ],
-    "button": "I WANT TO TRANSFORM MY BRAND"
+    "button": "I want to transform my brand"
+  },
+  "process": {
+    "eyebrow": "How It Works",
+    "title": "Our workflow is designed to give you clarity and security at every step.",
+    "items": [
+      {
+        "title": "STRATEGY",
+        "description": "Before any visual sketch, we define your brand's territory and target audience codes of desire. We ensure that design is not just aesthetic, but a commercial asset programmed to generate high value perception."
+      },
+      {
+        "title": "IDENTITY",
+        "description": "We blend color, editorial typography, light direction, and narrative to create an unmistakable aesthetic. We translate strategy into shape. Every visual and verbal detail is projected to spark sensations."
+      },
+      {
+        "title": "EXPERIENCE",
+        "description": "We align every touchpoint, from digital to physical finishes, so that your client's journey is flawless. Branding is consolidated in what the customer feels. We convert clients into true brand fans."
+      }
+    ]
   },
   "about": {
-    "title": "HI, I’M BIA.",
+    "eyebrow": "About",
+    "title": "Hi, I'm Bia.",
     "paragraphs": {
-      "p1": "I’m a designer and brand strategist. Since 2018, I’ve been working remotely with clients from Brazil and abroad, always focused on developing visual identities that blend aesthetics, purpose, and strategy.",
-      "p2": "Over the years, I’ve noticed something in common among all the businesses that come through here: there’s always a story too powerful to stay hidden. A story that needs to be seen, felt, and recognized — and that finds in branding its most powerful way of existing in the world.",
+      "p1": "I'm a designer and brand strategist. Since 2018, I've been working remotely with clients from Brazil and abroad, always focused on developing visual identities that blend visual + strategy.",
+      "p2": "Over the years, I've noticed something in common among all the businesses that come through here: there's always a story too powerful to stay hidden. A story that needs to be seen, felt, and recognized, and that finds in branding its most powerful way of existing in the world.",
       "p3": "My work is exactly that: transforming what already lives within your business into identity. Giving shape to what you feel, translating your vision into symbols, colors, and choices that help people understand who you are before you even say a word.",
-      "p4": "I believe every brand is, in fact, a narrative. Yours. And when that narrative is well built, you stop competing for attention and start occupying a place that no one else can take."
-    }
+      "p4": "Because every brand is, in fact, a narrative. Yours. And when that narrative is well built, you stop competing for attention and start occupying a place that no one else can take."
+    },
+    "cta": "Let's work together"
+  },
+  "testimonials": {
+    "eyebrow": "Testimonials",
+    "title": "What our clients say",
+    "items": [
+      {
+        "name": "Letícia Oliveira",
+        "text": "Perfect, attentive to details and to what the client is looking for. Congratulations on the work."
+      },
+      {
+        "name": "Pimenta Acessórios",
+        "text": "Simply enchanted with the entire result. Even being from another state, I had all the support I needed! Bianca, you do everything with so much love and care, it is remarkable and admirable. Keep shining and making more people happy like me!! Thank you for everything!"
+      },
+      {
+        "name": "Luana Grave",
+        "text": "Bianca did my visual identity a few years ago and I was enchanted with the result. Completing this service gave me more energy to keep going with my brand's purpose. I always recommend her whenever I can!! Today I already want to create a new ID with her."
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Everything you need to know before we start.",
+    "items": [
+      {
+        "question": "What is the average time for developing a project?",
+        "answer": "A complete visual identity project with strategic positioning usually takes between 4 and 6 weeks, ensuring proper time for imersive work, creation, and refinements of excellence."
+      },
+      {
+        "question": "How does payment work?",
+        "answer": "We work with personalized installment plans according to the scope of the project."
+      },
+      {
+        "question": "Does the studio serve clients from anywhere in the world?",
+        "answer": "Yes! Since 2018, we have operated remotely with validated processes, serving clients across Brazil and abroad (USA, Europe, and Latin America)."
+      },
+      {
+        "question": "What exactly do I receive at the end of the visual identity project?",
+        "answer": "You receive all original high-resolution files (EPS/AI vectors, PDF, transparent PNG), plus a Visual Identity Manual detailing color palettes, typography, and brand application rules, design of up to 10 items to combine, and social media templates."
+      }
+    ]
   },
   "cookiesBanner": {
     "text": "We use cookies to enhance your experience.",
@@ -94,7 +187,7 @@
     "sections": {
       "informacoesColetadas": {
         "title": "Information We Collect",
-        "text": "We automatically collect data such as IP address, browser type, and visited pages, as well as voluntarily provided information through the Google Form."
+        "text": "We automatically collect data such as IP address, browser type, and visited pages, as well as voluntarily provided information."
       },
       "usoDasInformacoes": {
         "title": "How We Use Information",
@@ -102,7 +195,7 @@
       },
       "compartilhamentoDados": {
         "title": "Data Sharing",
-        "text": "We do not share personal information with third parties, except for Google Analytics and Google Forms. Please refer to Google’s policies for more information."
+        "text": "We do not share personal information with third parties, except for Google Analytics. Please refer to Google's policies for more information."
       },
       "cookies": {
         "title": "Cookies and Tracking Technologies",
@@ -128,8 +221,16 @@
     }
   },
   "portfolio": {
-    "title": "GET TO KNOW SOME CASES",
-    "viewMore": "View more"
+    "eyebrow": "Selected Portfolio",
+    "title": "Get to know some cases",
+    "viewMore": "View more",
+    "allCases": "View more cases",
+    "allCasesPage": {
+      "title": "All cases | Bianca Ferreira Design",
+      "description": "Explore all visual identity projects developed by Bianca Ferreira Design. Authorial design with strategy and purpose.",
+      "heading": "Full Portfolio",
+      "eyebrow": "All projects"
+    }
   },
   "staff": {
     "title": {
@@ -139,7 +240,15 @@
     }
   },
   "header": {
-    "button": "REQUEST A QUOTATION"
+    "button": "Chat on WhatsApp",
+    "nav": {
+      "home": "Home",
+      "services": "Services",
+      "about": "About",
+      "cases": "Cases",
+      "testimonials": "Testimonials",
+      "contact": "Contact"
+    }
   },
   "footer": {
     "title": {
@@ -147,17 +256,20 @@
       "highlight": "create",
       "part2": "TOGETHER?"
     },
-    "contact": "CONTACT US",
-    "instagram": "FOLLOW US ON INSTAGRAM",
+    "cta": "Let's create something amazing",
+    "ctaButton": "Chat on WhatsApp",
+    "contact": "Contact us",
+    "instagram": "Instagram",
+    "tiktok": "TikTok",
     "copyright": "All rights reserved"
   },
   "seo": {
     "privacyPolicy": {
-      "title": "Privacy Policy",
+      "title": "Privacy Policy | Bianca Ferreira Design",
       "description": "Read our privacy policy to understand how we collect, use, and protect your information."
     },
     "form": {
-      "title": "Project Briefing",
+      "title": "Project Briefing | Bianca Ferreira Design",
       "description": "Fill out our briefing form to start your design project."
     }
   }

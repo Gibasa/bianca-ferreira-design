@@ -11,6 +11,7 @@ import GlobalStyle from "./GobalStyles";
 import { theme } from "./theme";
 
 const Home = React.lazy(() => import("@/pages/Home"));
+const Cases = React.lazy(() => import("@/pages/Cases"));
 const PoliticaPrivacidade = React.lazy(() =>
   import("./components/PoliticaPrivacidade")
 );
@@ -76,10 +77,13 @@ function LanguageLayout() {
   return <Outlet />;
 }
 
+import ProgressBar from "./components/ProgressBar";
+
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
+      <ProgressBar />
       <Router>
         <Suspense>
           <Header />
@@ -88,6 +92,7 @@ function App() {
             <Route path="/" element={<RootRedirect />} />
             <Route path="/:lang" element={<LanguageLayout />}>
               <Route index element={<Home />} />
+              <Route path="cases" element={<Cases />} />
               <Route
                 path="politica-de-privacidade"
                 element={<PoliticaPrivacidade />}

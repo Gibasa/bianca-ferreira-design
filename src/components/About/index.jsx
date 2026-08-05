@@ -58,7 +58,7 @@ function About() {
     const { t } = useTranslation();
   
   return (
-    <AboutStyled>
+    <AboutStyled id="sobre">
       <AboutImage src="/images/bianca-about.webp" />
       <AboutText>
         <h2>{t("about.title")}</h2>

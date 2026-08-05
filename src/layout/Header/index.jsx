@@ -5,138 +5,138 @@ import Box from "@mui/material/Box";
 import { useState } from "react";
 import { useLanguage } from "../../context/TranslationContext";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 
 const expandModal1 = keyframes`
   from {
     width: 60px;
-    height: 50px;
+    max-height: 50px;
   }
   to {
-    width: 25vw;
-    height: 20vw;
+    width: 280px;
+    max-height: 550px;
   }
 `;
 
 const collapseModal1 = keyframes`
   from {
-    width: 25vw;
-    height: 20vw;
+    width: 280px;
+    max-height: 550px;
   }
   to {
     width: 60px;
-    height: 50px;
+    max-height: 50px;
   }
 `;
 
 const expandModal2 = keyframes`
   from {
     width: 60px;
-    height: 50px;
+    max-height: 50px;
   }
   to {
-    width: 30vw;
-    height: 37vh;
+    width: 300px;
+    max-height: 580px;
   }
 `;
 
 const collapseModal2 = keyframes`
   from {
-    width: 30vw;
-    height: 37vh;
+    width: 300px;
+    max-height: 580px;
   }
   to {
     width: 60px;
-    height: 50px;
+    max-height: 50px;
   }
 `;
 
 const expandModal3 = keyframes`
   from {
     width: 60px;
-    height: 50px;
+    max-height: 50px;
   }
   to {
-    width: 40vw;
-    height: 35vw
+    width: 320px;
+    max-height: 600px;
   }
 `;
 
 const collapseModal3 = keyframes`
   from {
-    width: 40vw;
-    height: 35vw;
+    width: 320px;
+    max-height: 600px;
   }
   to {
     width: 60px;
-    height: 50px;
+    max-height: 50px;
   }
 `;
 
 const expandModal4 = keyframes`
   from {
     width: 60px;
-    height: 50px;
+    max-height: 50px;
   }
   to {
-    width: 38vw;
-    height: 40vw
+    width: 320px;
+    max-height: 600px;
   }
 `;
 
 const collapseModal4 = keyframes`
   from {
-    width: 38vw;
-    height: 40vw;
+    width: 320px;
+    max-height: 600px;
   }
   to {
     width: 60px;
-    height: 50px;
+    max-height: 50px;
   }
 `;
 
 const expandModal5 = keyframes`
   from {
     width: 60px;
-    height: 50px;
+    max-height: 50px;
   }
   to {
-    width: 45vw;
-    height: 50vw
+    width: 80vw;
+    max-height: 620px;
   }
 `;
 
 const collapseModal5 = keyframes`
   from {
-    width: 45vw;
-    height: 50vw;
+    width: 80vw;
+    max-height: 620px;
   }
   to {
     width: 60px;
-    height: 50px;
+    max-height: 50px;
   }
 `;
 
 const expandModal6 = keyframes`
   from {
     width: 60px;
-    height: 50px;
+    max-height: 50px;
   }
   to {
-    width: 62vw;
-    height: 67vw
+    width: 85vw;
+    max-height: 650px;
   }
 `;
 
 const collapseModal6 = keyframes`
   from {
-    width: 38vw;
-    height: 50vw;
+    width: 85vw;
+    max-height: 650px;
   }
   to {
     width: 60px;
-    height: 50px;
+    max-height: 50px;
   }
 `;
 
@@ -237,8 +237,9 @@ const StyledModal = styled.div`
   right: 0;
   margin: 1.8vw 4vw;
   display: flex;
-  padding: 2vw 2vw 2vw;
-  align-items: start;
+  flex-direction: column;
+  padding: 30px 24px;
+  align-items: center;
   justify-content: center;
   border-radius: 5px;
   background-color: ${({ theme }) => theme.colors.white};
@@ -246,8 +247,12 @@ const StyledModal = styled.div`
   animation: ${({ isClosing }) => (isClosing ? collapseModal1 : expandModal1)}
     0.5s ease-out forwards;
   z-index: 5;
+  height: auto;
+  max-height: 50px;
+  overflow: hidden;
+
   @media (max-width: 1300px) {
-    padding: 2vw 2vw 2vw;
+    padding: 30px 24px;
   }
   @media (max-width: 1080px) {
     animation: ${({ isClosing }) =>
@@ -259,33 +264,33 @@ const StyledModal = styled.div`
     animation: ${({ isClosing }) =>
         isClosing ? collapseModal2 : expandModal2}
       0.5s ease-out forwards;
-    padding: 2vw 2vw 2vw;
+    padding: 30px 24px;
   }
 
   @media (max-width: 700px) {
     animation: ${({ isClosing }) =>
         isClosing ? collapseModal3 : expandModal3}
       0.5s ease-out forwards;
-    padding: 5vw 5vw 2vw;
+    padding: 40px 24px;
   }
   @media (max-width: 625px) {
     animation: ${({ isClosing }) =>
         isClosing ? collapseModal4 : expandModal4}
       0.5s ease-out forwards;
-    padding: 5vw 5vw 2vw;
+    padding: 40px 24px;
   }
   @media (max-width: 500px) {
     animation: ${({ isClosing }) =>
         isClosing ? collapseModal5 : expandModal5}
       0.5s ease-out forwards;
-    padding: 5vw 5vw 2vw;
+    padding: 40px 24px 30px;
   }
 
   @media (max-width: 400px) {
     animation: ${({ isClosing }) =>
         isClosing ? collapseModal6 : expandModal6}
       0.5s ease-out forwards;
-    padding: 13vw 5vw 2vw;
+    padding: 40px 20px 30px;
   }
 `;
 
@@ -311,6 +316,11 @@ const ModalContent = styled.div`
     &:hover {
       color: gray;
     }
+
+    @media (max-width: 600px) {
+      margin: 6px 0;
+      font-size: 1.3rem;
+    }
   }
 
   button {
@@ -321,11 +331,11 @@ const ModalContent = styled.div`
     @media (max-width: 1300px) {
       font-size: 1.2rem;
     }
-    @media (max-width: 899px) {
-    }
     @media (max-width: 700px) {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       line-height: 20px;
+      margin-top: 12px;
+      padding: 10px 20px;
     }
   }
 
@@ -373,18 +383,16 @@ function Header() {
   const { language, toggleLanguage } = useLanguage();
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
+  const location = useLocation();
   
-  const sectionIds = {
-    PROJETOS: "projetos",
-    PROJECTS: "projetos",
-    CONTATO: "contato",
-    CONTACT: "contato",
-    SERVIÇOS: "serviços",
-    SERVICES: "serviços",
-  };
-
-    const pages =
-    language === "pt" ? ["PROJETOS", "CONTATO"] : ["PROJECTS", "CONTACT"];
+  const navItems = [
+    { key: "home", target: "home", type: "scroll" },
+    { key: "services", target: "serviços", type: "scroll" },
+    { key: "about", target: "sobre", type: "scroll" },
+    { key: "cases", target: "cases", type: "page" },
+    { key: "testimonials", target: "depoimentos", type: "scroll" },
+    { key: "contact", target: "contato", type: "scroll" },
+  ];
 
   const handleToggleModal = () => {
     if (isModalOpen) {
@@ -399,6 +407,28 @@ function Header() {
     }
   };
 
+  const handleNavItemClick = (e, item) => {
+    e.preventDefault();
+    
+    // Anima fechamento do modal primeiro
+    handleToggleModal();
+
+    if (item.type === "page") {
+      navigate(`/${i18n.language}/${item.target}`);
+    } else {
+      const isCasesPage = location.pathname.endsWith("/cases");
+      if (isCasesPage) {
+        navigate(`/${i18n.language}#${item.target}`);
+      } else {
+        if (item.target === "home") {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        } else {
+          document.getElementById(item.target)?.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    }
+  };
+
   return (
     <StyledAppBar position="static">
       <StyledToolbar disableGutters>
@@ -406,9 +436,8 @@ function Header() {
           <AnimatedLogo
             src="/images/LOGO BF PRETO.png"
             alt="Logo"
-            // $animation={logoState.animation}
             onClick={() => {
-              navigate("/");
+              navigate(`/${i18n.language}`);
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
           />
@@ -430,25 +459,21 @@ function Header() {
         {isModalOpen && (
           <StyledModal isClosing={isClosing}>
             <ModalContent isClosing={isClosing}>
-              {pages.map((page) => (
+              {navItems.map((item) => (
                 <a
-                  key={page}
-                  href={`#${sectionIds[page]}`}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    const targetId = sectionIds[page];
-                    document
-                      .getElementById(targetId)
-                      ?.scrollIntoView({ behavior: "smooth" });
-                    handleToggleModal();
-                  }}
+                  key={item.key}
+                  href={`#${item.target}`}
+                  onClick={(e) => handleNavItemClick(e, item)}
                 >
-                  {t(page)}
+                  {t(`header.nav.${item.key}`)}
                 </a>
               ))}
               <button
                 onClick={() => {
-                  navigate(`/${i18n.language}/${i18n.language === "en" ? "form-en" : "form"}`);
+                  window.open(
+                    `https://wa.me/5571993703427?text=${encodeURIComponent(t("header.button"))}`,
+                    "_blank"
+                  );
                   handleToggleModal();
                 }}
               >

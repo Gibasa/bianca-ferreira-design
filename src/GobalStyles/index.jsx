@@ -1,52 +1,71 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
-  
+
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
 
-  
   html {
     font-size: 16px;
+    scroll-behavior: smooth;
   }
 
   body {
-    font-size: 1rem; 
-    line-height: 1.5;
+    font-family: ${({ theme }) => theme.fonts.secondary};
+    font-size: 1rem;
+    line-height: 1.65;
     color: ${({ theme }) => theme.colors.black};
+    background: ${({ theme }) => theme.colors.white};
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
 
-  
-  h1, h2, h3, h4, h5, h6 {
-    font-family: ${({ theme }) => theme.fonts.secondary}; 
-    margin: 0;
-    font-size: 3.5rem;
-    font-weight: 600;
-    line-height: 40px;
+  /* ── TÍTULOS: forma-djr-display ─────────────────────────────
+     O selector "h1 *, h2 *, h3 *" garante que qualquer span/em
+     dentro de um heading também receba a fonte primária.         */
+  h1, h1 *,
+  h2, h2 *,
+  h3, h3 * {
+    font-family: ${({ theme }) => theme.fonts.primary};
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    text-transform: uppercase;
+  }
+
+  h4, h5, h6 {
+    font-family: ${({ theme }) => theme.fonts.secondary};
+    font-weight: 700;
   }
 
   p {
-    font-family: ${({ theme }) => theme.fonts.secondary}; 
-    font-size: 1.2rem;
-    font-weight: 500;
+    font-family: ${({ theme }) => theme.fonts.secondary};
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.65;
+  }
+
+  a {
+    font-family: ${({ theme }) => theme.fonts.secondary};
+    text-decoration: none;
+    color: inherit;
   }
 
   button {
-    font-size: 1.2rem; 
-    font-family: ${({ theme }) => theme.fonts.secondary}; 
+    font-family: ${({ theme }) => theme.fonts.secondary};
+    font-size: 1rem;
     font-weight: 600;
-    padding: 0.8rem 1.5rem;
+    padding: 0.8rem 1.8rem;
     border: none;
     border-radius: 30px;
-    background-color: ${({ theme }) => theme.colors.green};
+    background-color: ${({ theme }) => theme.colors.black};
     color: ${({ theme }) => theme.colors.white};
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
-  line-height: 25px;
-
+    line-height: 1.4;
   }
 
   button:hover {
@@ -54,50 +73,29 @@ const GlobalStyle = createGlobalStyle`
     color: ${({ theme }) => theme.colors.white};
   }
 
+  img {
+    max-width: 100%;
+    display: block;
+  }
+
   /* Responsividade */
   @media (max-width: 1300px) {
-     button {
-      padding: 0.7rem 1rem;
-      font-size: 0.8rem;
-     }
-  }
-  @media (max-width: 899px) {
-    html {
-      font-size: 14px; /* 1rem = 14px, ajusta o tamanho base */
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-      font-size: 3rem; /* Aproximadamente 31px */
-    }
-
-    p {
-      font-size: 1.3rem; /* Aproximadamente 14px */
-    }
-
     button {
-      font-size: 1.3rem; /* Aproximadamente 14px */
       padding: 0.7rem 1.2rem;
+      font-size: 0.9rem;
     }
+  }
+
+  @media (max-width: 899px) {
+    html { font-size: 14px; }
+    h1, h1 *, h2, h2 *, h3, h3 * { font-size: 2.5rem; }
+    button { font-size: 1rem; padding: 0.7rem 1.2rem; }
   }
 
   @media (max-width: 600px) {
-    html {
-      font-size: 12px; /* 1rem = 12px */
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-      font-size: 2.5rem; /* Aproximadamente 24px */
-      line-height: 20px;
-    }
-
-    p {
-      font-size: 1.5rem; /* Aproximadamente 12px */
-    }
-
-    button {
-      font-size: 1.5rem; /* Aproximadamente 12px */
-      padding: 0.6rem 1rem;
-    }
+    html { font-size: 13px; }
+    h1, h1 *, h2, h2 *, h3, h3 * { font-size: 2rem; line-height: 1.1; }
+    button { font-size: 1rem; padding: 0.6rem 1rem; }
   }
 `;
 

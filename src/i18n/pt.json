@@ -1,10 +1,10 @@
 {
   "home": {
-    "title": "Identidade Visual e Criação de Sites em Campinas | Studio BF",
-    "description": "Somos um estúdio criativo especializado em criar marcas com propósito para negócios e pessoas.",
-    "ogTitle": "Identidade Visual e Criação de Sites em Campinas | Studio BF",
-    "ogDescription": "Somos um estúdio criativo especializado em criar marcas com propósito para negócios e pessoas.",
-    "keywords": "identidade visual, estratégia de marca, design para redes sociais, papelaria, materiais institucionais, design de site institucional, landing page, branding"
+    "title": "Identidade Visual e Branding em Campinas | Bianca Ferreira Design",
+    "description": "Estúdio criativo de branding especializado em identidade visual com propósito e estratégia. Atendimento remoto para todo o Brasil e exterior.",
+    "ogTitle": "Bianca Ferreira Design | Estúdio de Branding",
+    "ogDescription": "Transformamos comunicação visual em posicionamento de mercado, elevando sua marca com estratégia, design autoral e identidade.",
+    "keywords": "identidade visual, branding, estratégia de marca, design para redes sociais, papelaria, materiais institucionais, design de site, landing page"
   },
   "bannerMid": {
     "title": {
@@ -34,42 +34,135 @@
   },
   "bannerTop": {
     "title": {
-      "part1": "ESTÚDIO CRIATIVO \nESPECIALIZADO EM",
-      "highlight": "marcar",
-      "part2": "CRIAR MARCAS COM \nPROPÓSITO PARA \nNEGÓCIOS E PESSOAS"
+      "part1": "Sua marca tem",
+      "part2": "uma história.",
+      "part3": "Nós damos",
+      "part4": "forma a ela."
     },
-    "description": {
-      "part1": "Transformamos comunicação visual em posicionamento de mercado, elevando \nsua marca com estratégia, design e identidade.",
-      "part2": "Aqui, design é identidade com propósito. Por meio do branding, damos voz à sua essência e construímos sua presença no mercado. Cada detalhe, cor, tipografia, imagem e tom, é pensado para reforçar sua autoridade.",
-      "part3": "Não se trata apenas de criar algo que encanta. Trata-se de criar algo que conecta, comunica e diferencia. Sua marca merece ser percebida pelo que ela é."
-    },
-    "button": "VAMOS CRIAR JUNTOS?"
+    "description": "Transformamos comunicação visual em posicionamento de mercado, elevando sua marca com estratégia, design autoral e identidade.",
+    "button": "Vamos trabalhar juntos",
+    "eyebrow": "Estúdio criativo de branding"
   },
-  "services": {
+  "manifesto": {
+    "eyebrow": "Nossa missão",
+    "quote": "Fale menos com todo mundo. Fale certo com quem importa",
+    "description": "A gente traduz o que seu negócio realmente é em uma marca que as pessoas certas reconhecem e escolhem."
+  },
+  "spec": {
+    "eyebrow": "Como pensamos sua marca",
+    "title": "Cada detalhe é planejado para reforçar sua autoridade no mercado.",
     "items": [
       {
-        "title": "Identidade visual + estratégia",
-        "description": "Unimos estratégia e identidade visual para dar forma e voz àquilo que torna sua marca única. Do conceito à execução, criamos uma identidade que conecta, diferencia e desperta reconhecimento em cada ponto de contato."
+        "title": "Cor & Luz",
+        "description": "A paleta cromática que faz sua empresa ser reconhecida de imediato, despertando sensações e desejo."
       },
       {
-        "title": "Sites",
-        "description": "Transformamos seu site em uma experiência visual e emocional. Cada detalhe é pensado para expressar a personalidade da marca, facilitar a navegação e criar conexão imediata com quem visita. O resultado é um espaço digital que comunica com clareza, encanta e impulsiona resultados."
+        "title": "Tipografia",
+        "description": "A voz visual que dá ritmo, sofisticação editorial e personalidade única a tudo o que você comunica."
       },
       {
-        "title": "Social media",
-        "description": "Cuidamos da presença digital da sua marca para que você não precise se perder criando conteúdo todos os dias. Transformamos suas ideias em uma comunicação estratégica e consistente, com design, narrativa e propósito alinhados."
+        "title": "Direção de Imagem",
+        "description": "O universo visual de texturas, contrastes e sombras que sustenta sua marca em todos os pontos de contato."
+      },
+      {
+        "title": "Tom & Narrativa",
+        "description": "A forma como sua marca fala e o motivo pelo qual as pessoas param tudo para escutar você."
+      }
+    ]
+  },
+  "services": {
+    "eyebrow": "Três formas de dar forma à sua marca",
+    "title": "Serviços",
+    "items": [
+      {
+        "label": "Identidade & Estratégia",
+        "title": "Sua marca, com forma e com voz",
+        "description": "Unimos estratégia e identidade visual para dar forma àquilo que torna sua marca única. Do conceito à execução, criamos um posicionamento que conecta, diferencia e desperta reconhecimento imediato.",
+        "link": "Quero essa marca"
+      },
+      {
+        "label": "Experiência Digital",
+        "title": "Um site que também vende",
+        "description": "Transformamos seu site em uma experiência visual e emocional. Cada detalhe expressa a personalidade da marca, facilita a navegação com fluidez e converte cada visita em um cliente fiel.",
+        "link": "Quero esse site"
+      },
+      {
+        "label": "Presença Digital",
+        "title": "Presença que não cansa você",
+        "description": "Cuidamos da presença digital da sua marca para você não precisar se perder criando conteúdo todos os dias com design autoral, narrativa e propósito sempre alinhados em cada postagem.",
+        "link": "Quero essa presença"
       }
     ],
-    "button": "QUERO TRANSFORMAR A MINHA MARCA"
+    "button": "Quero transformar minha marca"
+  },
+  "process": {
+    "eyebrow": "Como Funciona",
+    "title": "Nosso processo de trabalho é desenhado para dar clareza e segurança em cada etapa.",
+    "items": [
+      {
+        "title": "ESTRATÉGIA",
+        "description": "Antes de qualquer traço visual, definimos o território da sua marca e os códigos de desejo do seu público-alvo. Vamos garantir que o design não seja apenas estético, mas um ativo comercial programado para gerar percepção de alto valor e afastar a competição por preço."
+      },
+      {
+        "title": "IDENTIDADE",
+        "description": "Unimos cor, tipografia editorial, direção de luz e narrativa para criar uma estética inconfundível. Iremos traduzir a estratégia em forma. Cada detalhe visual e verbal é projetado para despertar sensações, transmitir sofisticação e gerar reconhecimento imediato."
+      },
+      {
+        "title": "EXPERIÊNCIA",
+        "description": "Alinhamos cada ponto de contato, do digital aos acabamentos físicos, para que a jornada do seu cliente seja impecável. O branding só se consolida no que o cliente sente. Transformamos percepção visual em uma entrega singular, convertendo clientes em verdadeiros fãs da marca."
+      }
+    ]
   },
   "about": {
-    "title": "OI, SOU A BIA.",
+    "eyebrow": "Sobre",
+    "title": "Oi, sou a Bia.",
     "paragraphs": {
-      "p1": "Sou designer e estrategista de marca. Desde 2018 trabalho de forma remota, atendendo clientes do Brasil e do exterior, sempre com o foco em desenvolver identidades visuais que unem estética, propósito e estratégia.",
-      "p2": "Ao longo desses anos, percebi algo em comum entre todos os negócios que passam por aqui: existe uma história forte demais para ficar escondida. Uma história que precisa ser vista, sentida e reconhecida, e que encontra na marca o seu jeito mais poderoso de existir no mundo.",
-      "p3": "Meu trabalho é justamente esse: transformar aquilo que já vive dentro do seu negócio em identidade. Dar forma ao que você sente, traduzir sua visão em símbolos, cores e escolhas que fazem as pessoas entenderem quem você é antes mesmo de você dizer uma palavra.",
-      "p4": "Eu acredito que toda marca é, na verdade, uma narrativa. A sua. E quando essa narrativa é bem construída, você deixa de competir por atenção e passa a ocupar um lugar que ninguém mais pode tomar."
-    }
+      "p1": "Sou designer e estrategista de marca. Desde 2018 trabalho de forma remota, atendendo clientes do Brasil e do exterior, sempre com foco em desenvolver identidades visuais que unem visual + estratégia.",
+      "p2": "Ao longo desses anos, percebi algo em comum entre todos os negócios que passam por aqui: existe uma história forte demais para ficar escondida. Uma história que precisa ser vista, sentida, reconhecida, e que encontra na marca o seu jeito mais poderoso de existir no mundo.",
+      "p3": "Meu trabalho é justamente esse: transformar o que já vive dentro do seu negócio em identidade. Dar forma ao que você sente, traduzir sua visão em símbolos, cores e escolhas que fazem as pessoas entenderem quem você é antes mesmo de você dizer uma palavra.",
+      "p4": "Porque toda marca é, na verdade, uma narrativa. A sua. E quando essa narrativa é bem construída, você deixa de competir por atenção e passa a ocupar um lugar que ninguém mais pode tomar."
+    },
+    "cta": "Vamos trabalhar juntas"
+  },
+  "testimonials": {
+    "eyebrow": "Depoimentos",
+    "title": "O que dizem sobre nós",
+    "items": [
+      {
+        "name": "Letícia Oliveira",
+        "text": "Perfeita, atenta aos detalhes e no que o cliente procura. Parabéns pelo trabalho."
+      },
+      {
+        "name": "Pimenta Acessórios",
+        "text": "Simplesmente encantada com todo o resultado. Mesmo sendo de outro estado, tive todo o atendimento que precisava! Bianca você faz tudo com muito amor e carinho, isso é notável e de admirar. Continue brilhando e deixando mais pessoas felizes como eu!! Obrigado por tudo!"
+      },
+      {
+        "name": "Luana Grave",
+        "text": "Bianca há uns anos fez minha identidade visual e eu fiquei encantada com o resultado, realizar esse serviço me deu mais gás em seguir com o propósito da minha marca. Indico ela sempre que posso!! Hoje já quero fazer uma nova ID com a mesma."
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "Dúvidas Frequentes",
+    "title": "Tudo o que você precisa saber antes de começarmos.",
+    "items": [
+      {
+        "question": "Qual é o tempo médio para o desenvolvimento de um projeto?",
+        "answer": "Um projeto de identidade visual completa com posicionamento estratégico costuma levar entre 4 e 6 semanas, garantindo tempo adequado para imersão, criação e refinamento de excelência."
+      },
+      {
+        "question": "Como funciona a forma de pagamento?",
+        "answer": "Trabalhamos com parcelamento personalizado de acordo com o escopo do projeto."
+      },
+      {
+        "question": "O estúdio atende clientes de qualquer lugar do mundo?",
+        "answer": "Sim! Desde 2018 operamos em modelo 100% remoto com processos validados, atendendo clientes por todo o Brasil e no exterior (EUA, Europa e América Latina)."
+      },
+      {
+        "question": "O que exatamente eu recebo no final do projeto de identidade visual?",
+        "answer": "Você recebe todos os arquivos originais em alta resolução (vetores EPS/AI, PDF, PNG com fundo transparente), além de um Manual de Identidade Visual detalhando paleta de cores, tipografia e regras de aplicação da marca, design de até 10 itens a combinar e templates para social media."
+      }
+    ]
   },
   "cookiesBanner": {
     "text": "Usamos cookies para melhorar sua experiência.",
@@ -94,7 +187,7 @@
     "sections": {
       "informacoesColetadas": {
         "title": "Informações que Coletamos",
-        "text": "Coletamos dados automaticamente, como endereço IP, tipo de navegador e páginas visitadas, além de informações fornecidas voluntariamente através do formulário do Google."
+        "text": "Coletamos dados automaticamente, como endereço IP, tipo de navegador e páginas visitadas, além de informações fornecidas voluntariamente."
       },
       "usoDasInformacoes": {
         "title": "Como Utilizamos as Informações",
@@ -102,7 +195,7 @@
       },
       "compartilhamentoDados": {
         "title": "Compartilhamento de Dados",
-        "text": "Não compartilhamos informações pessoais com terceiros, exceto para o Google Analytics e Google Forms. Consulte as políticas do Google para mais informações."
+        "text": "Não compartilhamos informações pessoais com terceiros, exceto para o Google Analytics. Consulte as políticas do Google para mais informações."
       },
       "cookies": {
         "title": "Cookies e Tecnologias de Rastreamento",
@@ -128,8 +221,16 @@
     }
   },
   "portfolio": {
-    "title": "CONHEÇA ALGUNS CASES",
-    "viewMore": "Ver mais"
+    "eyebrow": "Portfólio Selecionado",
+    "title": "Conheça alguns cases",
+    "viewMore": "Ver mais",
+    "allCases": "Ver mais cases",
+    "allCasesPage": {
+      "title": "Todos os cases | Bianca Ferreira Design",
+      "description": "Conheça todos os projetos de identidade visual desenvolvidos pela Bianca Ferreira Design. Design autoral com estratégia e propósito.",
+      "heading": "Portfólio Completo",
+      "eyebrow": "Todos os projetos"
+    }
   },
   "staff": {
     "title": {
@@ -139,7 +240,15 @@
     }
   },
   "header": {
-    "button": "FAÇA SEU ORÇAMENTO"
+    "button": "Falar no WhatsApp",
+    "nav": {
+      "home": "Início",
+      "services": "Serviços",
+      "about": "Sobre",
+      "cases": "Cases",
+      "testimonials": "Depoimentos",
+      "contact": "Contato"
+    }
   },
   "footer": {
     "title": {
@@ -147,17 +256,20 @@
       "highlight": "criar",
       "part2": "JUNTOS?"
     },
-    "contact": "FALE CONSOCO",
-    "instagram": "ACOMPANHE NOSSO INSTAGRAM",
+    "cta": "Vamos criar algo incrível",
+    "ctaButton": "Falar no WhatsApp",
+    "contact": "Fale conosco",
+    "instagram": "Instagram",
+    "tiktok": "TikTok",
     "copyright": "Todos os direitos reservados"
   },
   "seo": {
     "privacyPolicy": {
-      "title": "Política de Privacidade",
+      "title": "Política de Privacidade | Bianca Ferreira Design",
       "description": "Leia nossa política de privacidade e entenda como coletamos, usamos e protegemos suas informações."
     },
     "form": {
-      "title": "Briefing de Projeto",
+      "title": "Briefing de Projeto | Bianca Ferreira Design",
       "description": "Preencha nosso formulário de briefing para iniciarmos o seu projeto de design."
     }
   }
