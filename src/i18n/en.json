@@ -272,6 +272,15 @@
     "form": {
       "title": "Project Briefing | Bianca Ferreira Design",
       "description": "Fill out our briefing form to start your design project."
+    },
+    "notFound": {
+      "title": "Page not found | Bianca Ferreira Design",
+      "description": "The page you are looking for does not exist or has been moved."
     }
+  },
+  "notFound": {
+    "title": "Oops, this page doesn't exist.",
+    "text": "The address may have changed or been mistyped. How about going back to the home page and checking out our projects?",
+    "button": "Back to home"
   }
 }

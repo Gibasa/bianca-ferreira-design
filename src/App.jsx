@@ -17,6 +17,7 @@ const PoliticaPrivacidade = React.lazy(() =>
 );
 const Form = React.lazy(() => import("./components/Form"));
 const FormEn = React.lazy(() => import("./components/FormEn"));
+const NotFound = React.lazy(() => import("@/pages/NotFound"));
 
 function Analytics() {
   const location = useLocation();
@@ -99,6 +100,7 @@ function App() {
               />
               <Route path="form" element={<Form />} />
               <Route path="form-en" element={<FormEn />} />
+              <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>
           <Footer />

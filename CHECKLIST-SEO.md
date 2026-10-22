@@ -18,11 +18,12 @@ Marque `[x]` conforme cada item for concluído e publicado.
 - [x] Corrigido vídeo cortado no modal dos cases (bug anterior: blocos encolhiam com `max-height`)
 - [x] `generate.js` aceita `.webp` para cases novos
 
-## 3. Servidor (`.htaccess`)
-- [ ] Escolher domínio oficial (com ou sem `www`) e redirecionar 301 o outro
-- [ ] Forçar HTTPS (http responde 200 hoje)
-- [ ] Retornar 404 real para URLs inexistentes (hoje tudo responde 200)
-- [ ] `Cache-Control` longo para `/assets/*` (arquivos com hash)
+## 3. Servidor (`.htaccess`) — feito
+- [x] Domínio oficial `https://www.biancaferreiradesign.com`; sem-www redireciona 301
+- [x] Forçar HTTPS (301)
+- [x] 404 real para URLs inexistentes + página "não encontrada" (PT/EN, `noindex`)
+- [x] URLs antigas sem idioma (`/cases`, `/politica-de-privacidade`, `/form`, `/form-en`) → 301 para `/pt/...`
+- [x] `Cache-Control`: arquivos com hash 1 ano, imagens/vídeos 7 dias, HTML `no-cache`
 
 ## 4. SEO on-page
 - [ ] Sitemap atualizado (`/pt`, `/en`, `/pt/cases`, `/en/cases`, política) com hreflang; tirar `/form`

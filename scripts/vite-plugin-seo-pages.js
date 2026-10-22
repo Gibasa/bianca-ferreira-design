@@ -4,6 +4,7 @@
 //
 // Saída: dist/_pages/<lang><path>.html — servido pelo .htaccess para /<lang><path>.
 // O index.html raiz recebe as tags da home em português.
+// dist/404.html é a página de erro do Apache (ErrorDocument 404).
 // As tags levam data-rh="true" para o react-helmet-async substituí-las na navegação.
 
 import fs from "node:fs";
@@ -15,6 +16,7 @@ import {
   fullTitle,
   HTML_LANG,
   LANGS,
+  NOT_FOUND_PAGE,
   OG_IMAGE_HEIGHT,
   OG_IMAGE_WIDTH,
   OG_LOCALE,
@@ -47,10 +49,16 @@ const renderHead = (page, lang, dict) => {
       .map(([k, v]) => `${k}="${escapeAttr(v)}"`)
       .join(" ")} />`;
 
-  const tags = [
+  const basic = [
     `<title>${escapeAttr(title)}</title>`,
     tag("meta", { name: "description", content: description }),
     page.noindex && tag("meta", { name: "robots", content: "noindex, follow" }),
+  ];
+  // Página de erro: sem canonical/hreflang/Open Graph (não tem URL própria)
+  if (page.notFound) return basic.filter(Boolean).join("\n    ");
+
+  const tags = [
+    ...basic,
     tag("link", { rel: "canonical", href: url }),
     ...LANGS.map((l) => tag("link", { rel: "alternate", hreflang: l, href: pageUrl(l, page.path) })),
     tag("link", { rel: "alternate", hreflang: "x-default", href: pageUrl(DEFAULT_LANG, page.path) }),
@@ -114,6 +122,10 @@ export default function seoPages() {
 
       const home = PAGES.find((p) => p.path === "");
       fs.writeFileSync(indexPath, applyHead(template, home, DEFAULT_LANG, dicts[DEFAULT_LANG]));
+      fs.writeFileSync(
+        path.join(outDir, "404.html"),
+        applyHead(template, NOT_FOUND_PAGE, DEFAULT_LANG, dicts[DEFAULT_LANG])
+      );
     },
   };
 }

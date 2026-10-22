@@ -272,6 +272,15 @@
     "form": {
       "title": "Briefing de Projeto | Bianca Ferreira Design",
       "description": "Preencha nosso formulário de briefing para iniciarmos o seu projeto de design."
+    },
+    "notFound": {
+      "title": "Página não encontrada | Bianca Ferreira Design",
+      "description": "A página que você procura não existe ou foi movida."
     }
+  },
+  "notFound": {
+    "title": "Ops, essa página não existe.",
+    "text": "O endereço pode ter mudado ou estar digitado errado. Que tal voltar ao início e conhecer nossos projetos?",
+    "button": "Voltar para o início"
   }
 }

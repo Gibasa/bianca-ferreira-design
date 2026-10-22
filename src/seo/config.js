@@ -21,6 +21,9 @@ export const PAGES = [
   { path: "/form-en", titleKey: "seo.form.title", descriptionKey: "seo.form.description", noindex: true },
 ];
 
+// Servida pelo Apache (ErrorDocument) para qualquer URL inexistente
+export const NOT_FOUND_PAGE = { titleKey: "seo.notFound.title", descriptionKey: "seo.notFound.description", noindex: true, notFound: true };
+
 export const pageUrl = (lang, path = "") => `${SITE_URL}/${lang}${path}`;
 
 export const absoluteUrl = (src) => (src.startsWith("http") ? src : `${SITE_URL}${src}`);
