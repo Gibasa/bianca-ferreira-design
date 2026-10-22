@@ -2,6 +2,11 @@
   RewriteEngine On
   RewriteBase /
   RewriteRule ^index\.html$ - [L]
+
+  # Rotas /pt e /en: HTML com <head> de SEO gerado no build (scripts/vite-plugin-seo-pages.js).
+  # Se a página não existir em _pages/, a regra abaixo cai no index.html.
+  RewriteRule ^((?:pt|en)(?:/[a-z0-9-]+)*)/?$ _pages/$1.html [L]
+
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_FILENAME} !-l

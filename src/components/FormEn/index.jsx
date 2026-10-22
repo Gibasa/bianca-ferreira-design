@@ -31,6 +31,7 @@ function FormEn() {
       <SEO
         title={t("seo.form.title")}
         description={t("seo.form.description")}
+        noindex
       />
       <IframeStyled
         src="https://docs.google.com/forms/d/e/1FAIpQLSdmSkBhV4FYt7pWLB8i8jzTpR0MPHK9OzM7O5wNribXPzP1Pg/viewform?embedded=true"
