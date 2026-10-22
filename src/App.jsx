@@ -12,6 +12,7 @@ import { theme } from "./theme";
 
 const Home = React.lazy(() => import("@/pages/Home"));
 const Cases = React.lazy(() => import("@/pages/Cases"));
+const Case = React.lazy(() => import("@/pages/Case"));
 const PoliticaPrivacidade = React.lazy(() =>
   import("./components/PoliticaPrivacidade")
 );
@@ -78,6 +79,7 @@ function App() {
             <Route path="/:lang" element={<LanguageLayout />}>
               <Route index element={<Home />} />
               <Route path="cases" element={<Cases />} />
+              <Route path="cases/:slug" element={<Case />} />
               <Route
                 path="politica-de-privacidade"
                 element={<PoliticaPrivacidade />}

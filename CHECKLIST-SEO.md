@@ -45,9 +45,9 @@ Marque `[x]` conforme cada item for concluído e publicado.
 - [ ] Google Business Profile (Campinas)
 
 ## 6. Conteúdo para crescer
-- [ ] Página própria para cada case (`/pt/cases/copartners-bank` …)
-- [ ] Páginas de serviço (identidade visual, social media, sites)
-- [ ] Rotear ou remover `src/pages/Servicos` (existe mas não tem rota)
+- [x] Página própria para cada case (`/pt/cases/copartners-bank` …): 12 páginas (6 × PT/EN), prévia JPG 1200×630, JSON-LD CreativeWork + Breadcrumb, "outros cases"; sitemap com 18 URLs
+- [ ] Páginas de serviço (identidade visual, social media, sites) — precisa de texto novo aprovado pela Bia
+- [x] Removida `src/pages/Servicos` (não era usada)
 
 ## 7. Limpeza de performance
 - [ ] Remover Bootstrap (231 KB de CSS), MUI/Emotion, react-lottie e slick

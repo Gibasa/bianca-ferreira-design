@@ -239,6 +239,14 @@
       "text": "Liked this project? Let's create something like it for your brand.",
       "button": "I want something like this",
       "whatsapp": "Hi Bia! I saw the {{group}} case and I want to transform my brand."
+    },
+    "coverAlt": "visual identity project cover",
+    "casePage": {
+      "back": "All cases",
+      "eyebrow": "Case · Visual identity",
+      "imageAlt": "visual identity application",
+      "othersEyebrow": "Keep exploring",
+      "othersTitle": "Other cases"
     }
   },
   "staff": {

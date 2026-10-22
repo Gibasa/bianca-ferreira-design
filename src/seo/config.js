@@ -26,7 +26,7 @@ export const NOT_FOUND_PAGE = { titleKey: "seo.notFound.title", descriptionKey: 
 
 export const pageUrl = (lang, path = "") => `${SITE_URL}/${lang}${path}`;
 
-export const absoluteUrl = (src) => (src.startsWith("http") ? src : `${SITE_URL}${src}`);
+export const absoluteUrl = (src) => (src.startsWith("http") ? src : `${SITE_URL}${encodeURI(src)}`);
 
 // Garante o nome do estúdio no título sem duplicá-lo
 export const fullTitle = (title) =>

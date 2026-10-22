@@ -239,6 +239,14 @@
       "text": "Gostou desse projeto? Vamos criar algo assim para sua marca.",
       "button": "Quero algo assim",
       "whatsapp": "Olá Bia! Vi o case {{group}} e quero transformar minha marca."
+    },
+    "coverAlt": "capa do projeto de identidade visual",
+    "casePage": {
+      "back": "Todos os cases",
+      "eyebrow": "Case · Identidade visual",
+      "imageAlt": "aplicação da identidade visual",
+      "othersEyebrow": "Continue explorando",
+      "othersTitle": "Outros cases"
     }
   },
   "staff": {
