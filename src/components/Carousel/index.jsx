@@ -1,28 +1,64 @@
-import { useRef, useEffect } from "react";
-import styled from "styled-components";
-import Slider from "react-slick";
+import styled, { keyframes } from "styled-components";
 import { useTranslation } from "react-i18next";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
+// Faixa infinita de imagens animada só com CSS (antes: react-slick + loop em JS).
+// As imagens aparecem duas vezes e a faixa anda -50%, emendando sem salto.
+// Medidas iguais às do slick: 3 por tela (>1200px), 2,5 (≤1200), 2 (≤900), 1,2 (≤600).
+// Velocidade ~90px/s, como antes; a duração por faixa de largura mantém esse ritmo.
+
+const scroll = keyframes`
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+`;
 
 const CarouselWrapper = styled.div`
   width: 100%;
   overflow: hidden;
   background: ${({ theme }) => theme.colors.white};
   padding: 24px 0;
+  container-type: inline-size;
 
-  .slick-track {
-    display: flex;
-    align-items: center;
-    will-change: transform;
+  --per-view: 3;
+  --duration: 136s;
+
+  @media (max-width: 1200px) {
+    --per-view: 2.5;
+    --duration: 140s;
   }
 
-  .slick-slide {
-    display: flex !important;
-    justify-content: center;
-    outline: none;
-    padding: 0 8px;
+  @media (max-width: 900px) {
+    --per-view: 2;
+    --duration: 120s;
   }
+
+  @media (max-width: 600px) {
+    --per-view: 1.2;
+    --duration: 100s;
+  }
+`;
+
+const Track = styled.div`
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: ${scroll} var(--duration) linear infinite;
+  will-change: transform;
+
+  ${CarouselWrapper}:hover & {
+    animation-play-state: paused;
+  }
+`;
+
+const Slide = styled.div`
+  flex: 0 0 auto;
+  width: calc(100cqw / var(--per-view));
+  padding: 0 8px;
+`;
+
+// inline-block como no slick: mantém a mesma altura da faixa
+const SlideInner = styled.div`
+  display: inline-block;
+  width: 100%;
 `;
 
 const ImageContainer = styled.div`
@@ -52,85 +88,30 @@ const images = import.meta.glob("/src/images/carousel/*.{webp,png,jpg,jpeg,svg}"
   eager: true,
 });
 const imageArray = Object.values(images).map((img) => img.default);
-const doubledImages = [...imageArray, ...imageArray];
 
 function Carousel() {
   const { t } = useTranslation();
-  const trackRef = useRef(null);
-  const animationRef = useRef(null);
-  const offsetRef = useRef(0);
-
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    centerMode: false,
-    slidesToScroll: 1,
-    autoplay: false,
-    arrows: false,
-    responsive: [
-      {
-        breakpoint: 1200,
-        settings: { slidesToShow: 2.5 },
-      },
-      {
-        breakpoint: 900,
-        settings: { slidesToShow: 2 },
-      },
-      {
-        breakpoint: 600,
-        settings: { slidesToShow: 1.2 },
-      },
-    ],
-  };
-
-  useEffect(() => {
-    setTimeout(() => {
-      trackRef.current = document.querySelector(".slick-track");
-      if (trackRef.current) startAnimation();
-    }, 200);
-
-    return () => cancelAnimationFrame(animationRef.current);
-  }, []);
-
-  const animate = () => {
-    if (!trackRef.current) return;
-    // Velocidade reduzida: 1.5px por frame (~70s para percorrer tudo)
-    offsetRef.current -= 1.5;
-    trackRef.current.style.transform = `translateX(${offsetRef.current}px)`;
-
-    const trackWidth = trackRef.current.scrollWidth / 2;
-    if (Math.abs(offsetRef.current) >= trackWidth) {
-      offsetRef.current = 0;
-      trackRef.current.style.transform = `translateX(0px)`;
-    }
-
-    animationRef.current = requestAnimationFrame(animate);
-  };
-
-  const startAnimation = () => {
-    cancelAnimationFrame(animationRef.current);
-    animationRef.current = requestAnimationFrame(animate);
-  };
-
-  const stopAnimation = () => cancelAnimationFrame(animationRef.current);
 
   return (
-    <CarouselWrapper onMouseEnter={stopAnimation} onMouseLeave={startAnimation}>
-      <Slider {...settings}>
-        {doubledImages.map((image, index) => (
-          <div key={index}>
-            <ImageContainer>
-              <ImageStyled
-                src={image}
-                alt={index < imageArray.length ? t("carousel.alt") : ""}
-                loading="lazy"
-              />
-            </ImageContainer>
-          </div>
-        ))}
-      </Slider>
+    <CarouselWrapper data-carousel>
+      <Track>
+        {[0, 1].map((copy) =>
+          imageArray.map((image, index) => (
+            // a segunda cópia só emenda a animação: escondida de leitores de tela
+            <Slide key={`${copy}-${index}`} aria-hidden={copy === 1 || undefined}>
+              <SlideInner>
+                <ImageContainer>
+                  <ImageStyled
+                    src={image}
+                    alt={copy === 0 ? t("carousel.alt") : ""}
+                    loading="lazy"
+                  />
+                </ImageContainer>
+              </SlideInner>
+            </Slide>
+          ))
+        )}
+      </Track>
     </CarouselWrapper>
   );
 }

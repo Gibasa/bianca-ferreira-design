@@ -1,7 +1,6 @@
 import Footer from "@/layout/Footer";
 import Header from "@/layout/Header";
 import WhatsAppButton from "./components/WhatsAppButton";
-import "bootstrap/dist/css/bootstrap.min.css";
 import React, { Suspense, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Outlet, Route, BrowserRouter as Router, Routes, useLocation, useNavigate, useParams } from "react-router-dom";

@@ -1,7 +1,4 @@
 import styled, { keyframes, css } from "styled-components";
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import Box from "@mui/material/Box";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useNavigate, useLocation } from "react-router-dom";
@@ -139,7 +136,7 @@ const collapseModal6 = keyframes`
   }
 `;
 
-const LogoContainer = styled(Box)`
+const LogoContainer = styled.div`
   position: relative;
   height: 70px;
   width: 100vw;
@@ -167,13 +164,18 @@ const AnimatedLogo = styled.img`
     `}
 `;
 
-const StyledAppBar = styled(AppBar)`
-  background-color: white !important;
-  box-shadow: none !important;
-  position: fixed !important;
+// Antes era o AppBar do MUI; estes estilos reproduzem o que ele aplicava
+const StyledAppBar = styled.header`
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: 100%;
+  background-color: white;
+  color: #fff;
+  position: fixed;
   top: 0;
-  z-index: 5 !important;
-  transition: background-color 0.5s ease-in-out;
+  z-index: 5;
+  transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
   @media (max-width: 899px) {
     height: 100px;
@@ -184,9 +186,22 @@ const StyledAppBar = styled(AppBar)`
   }
 `;
 
-const StyledToolbar = styled(Toolbar)`
-  height: 120px !important;
-  margin: 0 5vw !important;
+// Antes era o Toolbar do MUI (com disableGutters)
+const StyledToolbar = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 56px;
+  height: 120px;
+  margin: 0 5vw;
+
+  @media (orientation: landscape) {
+    min-height: 48px;
+  }
+
+  @media (min-width: 600px) {
+    min-height: 64px;
+  }
 `;
 
 const StyledHamburger = styled.div`
@@ -436,15 +451,15 @@ function Header() {
   };
 
   return (
-    <StyledAppBar position="static">
-      <StyledToolbar disableGutters>
+    <StyledAppBar>
+      <StyledToolbar>
         <LogoContainer>
           <Link to={`/${language}`} onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
             <AnimatedLogo src="/images/LOGO BF PRETO.png" alt="Bianca Ferreira Design" />
           </Link>
         </LogoContainer>
 
-        <Box sx={{ flexGrow: 1 }} />
+        <div style={{ flexGrow: 1 }} />
 
         <LanguageButton onClick={handleToggleLanguage}>
           <LanguageText $isSelected={language === "pt"}>PT</LanguageText>|

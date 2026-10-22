@@ -49,9 +49,9 @@ Marque `[x]` conforme cada item for concluído e publicado.
 - [ ] Páginas de serviço (identidade visual, social media, sites) — precisa de texto novo aprovado pela Bia
 - [x] Removida `src/pages/Servicos` (não era usada)
 
-## 7. Limpeza de performance
-- [ ] Remover Bootstrap (231 KB de CSS), MUI/Emotion, react-lottie e slick
-- [ ] Carrossel com animação CSS em vez de loop JS
-- [ ] Reduzir pesos da Open Sans / preconnect do Typekit
-- [ ] Não publicar `public/images/Backup` (17 MB)
-- [ ] CI: `npm ci` e `actions/checkout@v4`
+## 7. Limpeza de performance — feito (JS+CSS: 196 KB → 120 KB gzip)
+- [x] Remover Bootstrap (reboot mínimo levado para o GlobalStyle), MUI/Emotion, react-lottie, slick, react-fast-marquee e vite-plugin-compression — layout conferido elemento a elemento (0 diferenças)
+- [x] Carrossel com animação CSS em vez de loop JS (mesmas medidas, ~90 px/s, pausa no hover)
+- [x] Preconnect do Typekit (todos os pesos da Open Sans são usados — mantidos)
+- [x] Não publicar `public/images/Backup` (excluída do FTP)
+- [x] CI: `npm ci`, `actions/checkout@v4`, `setup-node@v4` com cache

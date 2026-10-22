@@ -11,10 +11,17 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      # npm ci instala exatamente o package-lock.json (builds reproduzíveis)
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build project
         run: npm run build
@@ -32,3 +39,4 @@ jobs:
             **/.git*/**
             **node_modules**
             **.github**
+            **/images/Backup/**

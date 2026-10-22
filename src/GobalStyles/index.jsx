@@ -2,6 +2,63 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 
+  /* ── Base herdada do Bootstrap (reboot) ─────────────────────
+     O site importava o CSS inteiro do Bootstrap (231 KB) só por
+     estas regras de base. Mantidas aqui para o layout não mudar. */
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  h1 { font-size: calc(1.375rem + 1.5vw); }
+  h2 { font-size: calc(1.325rem + 0.9vw); }
+  h3 { font-size: calc(1.3rem + 0.6vw); }
+  h4 { font-size: calc(1.275rem + 0.3vw); }
+  h5 { font-size: 1.25rem; }
+  h6 { font-size: 1rem; }
+
+  @media (min-width: 1200px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.75rem; }
+    h4 { font-size: 1.5rem; }
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+
+  ul, ol {
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  hr {
+    margin: 1rem 0;
+    color: inherit;
+    opacity: 0.25;
+  }
+
+  img, svg {
+    vertical-align: middle;
+  }
+
+  iframe {
+    border: 0;
+  }
+
+  /* ── Base do site ───────────────────────────────────────── */
   * {
     margin: 0;
     padding: 0;
