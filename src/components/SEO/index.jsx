@@ -27,8 +27,9 @@ const SEO = ({ title, description, image, keywords, jsonLd, noindex = false, typ
     const metaTitle = fullTitle(title);
     const metaImage = absoluteUrl(image || DEFAULT_OG_IMAGE);
 
+    // defer={false}: título atualizado na hora, antes do GA4 registrar a troca de página
     return (
-        <Helmet>
+        <Helmet defer={false}>
             <html lang={HTML_LANG[currentLang]} />
             <title>{metaTitle}</title>
             <meta name="description" content={description} />

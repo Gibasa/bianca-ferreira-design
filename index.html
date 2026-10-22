@@ -20,7 +20,32 @@
         dataLayer.push(arguments);
       }
 
+      /* Consent Mode v2: tudo negado até o visitante aceitar no aviso de cookies
+         (src/components/Cookie). A escolha fica salva em localStorage.cookieConsent. */
+      gtag("consent", "default", {
+        ad_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+        analytics_storage: "denied",
+        wait_for_update: 500,
+      });
+      try {
+        var consent = localStorage.getItem("cookieConsent");
+        if (!consent && localStorage.getItem("cookiesAccepted")) consent = "granted"; // aviso antigo
+        if (consent === "granted") {
+          gtag("consent", "update", {
+            ad_storage: "granted",
+            ad_user_data: "granted",
+            ad_personalization: "granted",
+            analytics_storage: "granted",
+          });
+        }
+      } catch (e) {}
+
       gtag("js", new Date());
+
+      /* Pageviews: o GA4 envia o da carga da página e os das trocas de rota
+         (medição otimizada, "alterações de página com base no histórico"). Não enviar manualmente. */
 
       /* Google Ads */
       gtag("config", "AW-11495402064");

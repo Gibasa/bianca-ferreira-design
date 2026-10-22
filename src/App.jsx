@@ -19,21 +19,6 @@ const Form = React.lazy(() => import("./components/Form"));
 const FormEn = React.lazy(() => import("./components/FormEn"));
 const NotFound = React.lazy(() => import("@/pages/NotFound"));
 
-function Analytics() {
-  const location = useLocation();
-
-  useEffect(() => {
-    if (window.gtag) {
-      window.gtag("event", "page_view", {
-        page_path: location.pathname,
-        page_title: document.title,
-      });
-    }
-  }, [location]);
-
-  return null;
-}
-
 // Componente para redirecionar a raiz para o idioma detectado ou padrão
 function RootRedirect() {
   const { i18n } = useTranslation();
@@ -88,7 +73,6 @@ function App() {
       <Router>
         <Suspense>
           <Header />
-          <Analytics />
           <Routes>
             <Route path="/" element={<RootRedirect />} />
             <Route path="/:lang" element={<LanguageLayout />}>

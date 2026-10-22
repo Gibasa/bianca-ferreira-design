@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import SEO from "../SEO";
+import { OPEN_COOKIE_BANNER } from "../Cookie";
 
 const PageWrapper = styled.article`
   padding: 20px;
@@ -34,6 +35,16 @@ const Section = styled.section`
 const Title = styled.h2`
   color: #333;
   margin-top: 40px;
+`;
+
+const PreferencesButton = styled.button`
+  margin-top: 12px;
+  background: none;
+  border: 1px solid currentColor;
+  border-radius: 5px;
+  padding: 8px 14px;
+  font-size: 14px;
+  cursor: pointer;
 `;
 
 const Paragraph = styled.p`
@@ -103,6 +114,9 @@ const PoliticaPrivacidade = () => {
       <Section id="cookies">
         <Title>{t("privacyPolicy.sections.cookies.title")}</Title>
         <Paragraph>{t("privacyPolicy.sections.cookies.text")}</Paragraph>
+        <PreferencesButton onClick={() => window.dispatchEvent(new Event(OPEN_COOKIE_BANNER))}>
+          {t("privacyPolicy.sections.cookies.preferencesButton")}
+        </PreferencesButton>
       </Section>
 
       <Section id="seguranca">
@@ -119,7 +133,7 @@ const PoliticaPrivacidade = () => {
         <Title>{t("privacyPolicy.sections.contato.title")}</Title>
         <Paragraph>
           {t("privacyPolicy.sections.contato.text")}
-          <a href="mailto:biancafdesign@gmail.com">
+          <a href={`mailto:${t("privacyPolicy.sections.contato.email")}`}>
             {t("privacyPolicy.sections.contato.email")}
           </a>
         </Paragraph>

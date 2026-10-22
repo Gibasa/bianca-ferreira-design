@@ -75,7 +75,7 @@ function NotFound() {
 
   return (
     <PageWrapper>
-      <Helmet>
+      <Helmet defer={false}>
         <title>{t("seo.notFound.title")}</title>
         <meta name="robots" content="noindex, follow" />
       </Helmet>

@@ -166,9 +166,11 @@
     ]
   },
   "cookiesBanner": {
-    "text": "We use cookies to enhance your experience.",
+    "text": "We use cookies to understand how the site is used and to measure our ads.",
     "linkText": "Learn more",
-    "acceptButton": "Accept"
+    "acceptButton": "Accept",
+    "rejectButton": "Decline",
+    "ariaLabel": "Cookie notice"
   },
   "privacyPolicy": {
     "title": "Privacy Policy",
@@ -196,11 +198,12 @@
       },
       "compartilhamentoDados": {
         "title": "Data Sharing",
-        "text": "We do not share personal information with third parties, except for Google Analytics. Please refer to Google's policies for more information."
+        "text": "We do not sell or share your personal information. We use Google tools (Google Analytics and Google Ads) to measure site traffic and the performance of our ads. Please refer to Google's privacy policy for more information."
       },
       "cookies": {
         "title": "Cookies and Tracking Technologies",
-        "text": "We use cookies to improve site experience and collect traffic data. You can disable cookies in your browser settings."
+        "text": "We use Google Analytics and Google Ads cookies to understand how the site is used and to measure our ads. They are only enabled if you click \"Accept\" on the cookie notice. You can change your choice at any time with the button below or delete cookies in your browser settings.",
+        "preferencesButton": "Change cookie preferences"
       },
       "seguranca": {
         "title": "Information Security",
@@ -213,7 +216,7 @@
       "contato": {
         "title": "How to Contact Us",
         "text": "If you have questions, email us at ",
-        "email": "biancafdesign@gmail.com"
+        "email": "contato@biancaferreiradesign.com"
       },
       "alteracoes": {
         "title": "Changes to This Policy",

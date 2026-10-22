@@ -36,10 +36,12 @@ Marque `[x]` conforme cada item for concluído e publicado.
 - [x] CTA do modal de case traduzido na versão EN
 
 ## 5. Medição e presença (sem código ou pouco código)
-- [ ] Corrigir pageview contado em dobro no GA4
-- [ ] Confirmar as duas contas de Google Ads (AW-11495402064 e AW-11536947477)
-- [ ] Consent Mode v2 ligado ao aviso de cookies (LGPD)
-- [ ] Google Search Console + Bing Webmaster Tools, enviar sitemap
+- [x] Corrigir pageview contado em dobro no GA4 (agora 1 por página, com título correto)
+- [ ] Confirmar as duas contas de Google Ads — `AW-11495402064` está no `index.html`; `AW-11536947477` vem ligada à tag do GA4 (`G-BD8ZPNF0Q9`)
+- [x] Consent Mode v2 ligado ao aviso de cookies (LGPD): botão "Recusar", texto com finalidade, política atualizada (Google Ads, e-mail oficial, "alterar preferências")
+- [x] Google Search Console: propriedade de domínio já existia
+- [ ] Reenviar `sitemap.xml` no Search Console (forçar nova leitura)
+- [ ] Bing Webmaster Tools (pode importar do Search Console)
 - [ ] Google Business Profile (Campinas)
 
 ## 6. Conteúdo para crescer

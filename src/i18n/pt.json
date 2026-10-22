@@ -166,9 +166,11 @@
     ]
   },
   "cookiesBanner": {
-    "text": "Usamos cookies para melhorar sua experiência.",
+    "text": "Usamos cookies para entender como o site é usado e medir nossos anúncios.",
     "linkText": "Saiba mais",
-    "acceptButton": "Aceitar"
+    "acceptButton": "Aceitar",
+    "rejectButton": "Recusar",
+    "ariaLabel": "Aviso de cookies"
   },
   "privacyPolicy": {
     "title": "Política de Privacidade",
@@ -196,11 +198,12 @@
       },
       "compartilhamentoDados": {
         "title": "Compartilhamento de Dados",
-        "text": "Não compartilhamos informações pessoais com terceiros, exceto para o Google Analytics. Consulte as políticas do Google para mais informações."
+        "text": "Não vendemos nem compartilhamos suas informações pessoais. Usamos ferramentas do Google (Google Analytics e Google Ads) para medir o tráfego do site e o desempenho dos nossos anúncios. Consulte a política de privacidade do Google para mais informações."
       },
       "cookies": {
         "title": "Cookies e Tecnologias de Rastreamento",
-        "text": "Utilizamos cookies para melhorar a experiência no site e coletar dados de tráfego. Você pode desativar os cookies nas configurações do navegador."
+        "text": "Usamos cookies do Google Analytics e do Google Ads para entender como o site é usado e medir nossos anúncios. Eles só são ativados se você clicar em \"Aceitar\" no aviso de cookies. Você pode mudar sua escolha a qualquer momento no botão abaixo ou apagar os cookies nas configurações do navegador.",
+        "preferencesButton": "Alterar preferências de cookies"
       },
       "seguranca": {
         "title": "Segurança das Informações",
@@ -213,7 +216,7 @@
       "contato": {
         "title": "Como Entrar em Contato",
         "text": "Se você tiver dúvidas, envie um e-mail para ",
-        "email": "biancafdesign@gmail.com"
+        "email": "contato@biancaferreiradesign.com"
       },
       "alteracoes": {
         "title": "Alterações a Esta Política",
