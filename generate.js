@@ -18,10 +18,10 @@ function processGroupFolder(folderPath) {
   const textFileEn = files.find((file) => file.endsWith("_en.txt")); // Arquivo de texto em inglês
   const videoFile = files.find((file) => file.endsWith(".mp4"));
   const coverImage = files.find(
-    (file) => file.startsWith("cover") && /\.(jpg|png|jpeg)$/i.test(file)
+    (file) => file.startsWith("cover") && /\.(jpg|png|jpeg|webp)$/i.test(file)
   );
   const otherImages = files.filter(
-    (file) => /\.(jpg|png|jpeg)$/i.test(file) && !file.startsWith("cover")
+    (file) => /\.(jpg|png|jpeg|webp)$/i.test(file) && !file.startsWith("cover")
   );
 
 

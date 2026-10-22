@@ -11,10 +11,12 @@ Marque `[x]` conforme cada item for concluído e publicado.
 - [x] `noindex` nas páginas de formulário
 - [ ] Depois do deploy: testar a prévia em https://www.opengraph.xyz e no Facebook Sharing Debugger
 
-## 2. Imagens pesadas (home baixa ~19,5 MB)
-- [ ] Carrossel: converter os 29 PNGs para WebP ~800px (meta: < 2 MB no total)
-- [ ] Cases: converter PNGs para WebP e recomprimir vídeos (`preload="none"` + `poster`)
-- [ ] Foto do "Sobre" com `width`/`height` e `alt`
+## 2. Imagens pesadas (home baixava ~19,5 MB) — feito: agora ~1,6 MB
+- [x] Carrossel: 29 PNGs → WebP 1000px (26,5 MB → 1,4 MB)
+- [x] Cases: 43 PNGs → WebP 1600px (27,2 MB → 3,0 MB); vídeos Copartners (13,7 → 1,1 MB), 3P (9,9 → 2,1 MB) e Diva (1,8 → 0,45 MB); `poster` + `playsInline` nos vídeos
+- [x] Foto do "Sobre" com `width`/`height` e `alt` (PT/EN)
+- [x] Corrigido vídeo cortado no modal dos cases (bug anterior: blocos encolhiam com `max-height`)
+- [x] `generate.js` aceita `.webp` para cases novos
 
 ## 3. Servidor (`.htaccess`)
 - [ ] Escolher domínio oficial (com ou sem `www`) e redirecionar 301 o outro

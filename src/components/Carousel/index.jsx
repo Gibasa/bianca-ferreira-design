@@ -47,7 +47,7 @@ const ImageStyled = styled.img`
   }
 `;
 
-const images = import.meta.glob("/src/images/carousel/*.{png,jpg,jpeg,svg}", {
+const images = import.meta.glob("/src/images/carousel/*.{webp,png,jpg,jpeg,svg}", {
   eager: true,
 });
 const imageArray = Object.values(images).map((img) => img.default);

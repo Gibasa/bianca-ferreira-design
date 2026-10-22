@@ -100,6 +100,11 @@ const ModalBox = styled.div`
   gap: 24px;
   position: relative;
 
+  /* Com max-height + flex, os blocos encolheriam e cortariam o vídeo */
+  & > * {
+    flex-shrink: 0;
+  }
+
   @media (max-width: 600px) {
     padding: 32px 20px 24px;
   }
@@ -131,11 +136,12 @@ const VideoWrap = styled.div`
   width: 100%;
   border-radius: 10px;
   overflow: hidden;
-  min-height: 180px;
+  /* Espaço reservado só enquanto o vídeo carrega (exibe a animação de loading) */
+  min-height: ${({ $loaded }) => ($loaded ? "0" : "180px")};
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #f0f0f0;
+  background: ${({ $loaded }) => ($loaded ? "transparent" : "#f0f0f0")};
 `;
 
 const ModalVideo = styled.video`
@@ -172,6 +178,7 @@ const Gallery = styled.div`
 
 const GalleryImg = styled.img`
   width: 100%;
+  height: auto;
   border-radius: 10px;
 `;
 
@@ -235,7 +242,7 @@ const Modal = ({ groupData, onClose }) => {
         <ModalTitle>{group}</ModalTitle>
 
         {video && (
-          <VideoWrap>
+          <VideoWrap $loaded={loaded}>
             <LottieWrap $loaded={loaded}>
               <Lottie
                 options={{ animationData: loadingAnimation, loop: true, autoplay: true }}
@@ -245,9 +252,11 @@ const Modal = ({ groupData, onClose }) => {
             </LottieWrap>
             <ModalVideo
               src={video}
+              poster={images.cover}
               autoPlay
               loop
               muted
+              playsInline
               $loaded={loaded}
               onLoadedData={() => setLoaded(true)}
             />
@@ -262,7 +271,7 @@ const Modal = ({ groupData, onClose }) => {
 
         <Gallery>
           {otherImages.map((img, i) => (
-            <GalleryImg key={i} src={img} alt={`${group} ${i + 1}`} loading="lazy" />
+            <GalleryImg key={i} src={img} alt={`${group} ${i + 1}`} width={1600} height={900} loading="lazy" />
           ))}
         </Gallery>
 
@@ -310,6 +319,8 @@ const Portfolio = ({ limit }) => {
             <CoverImage
               src={item.images.cover}
               alt={`${item.group} Cover`}
+              width={1600}
+              height={900}
               loading="lazy"
               onClick={() => setSelected(item)}
             />

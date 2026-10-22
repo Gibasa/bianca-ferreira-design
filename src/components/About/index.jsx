@@ -38,6 +38,7 @@ const AboutText = styled.div`
 const AboutImage = styled.img`
   width: 30vw;
   max-width: 520px;
+  height: auto;
   margin-top: 2rem;
   border-radius: 10px;
   object-fit: cover;
@@ -59,7 +60,13 @@ function About() {
   
   return (
     <AboutStyled id="sobre">
-      <AboutImage src="/images/bianca-about.webp" />
+      <AboutImage
+        src="/images/bianca-about.webp"
+        alt={t("about.imageAlt")}
+        width={794}
+        height={782}
+        loading="lazy"
+      />
       <AboutText>
         <h2>{t("about.title")}</h2>
         <p>{t("about.paragraphs.p1")}</p>
