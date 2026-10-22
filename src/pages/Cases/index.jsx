@@ -2,7 +2,7 @@ import Portfolio from "@/components/Portfolio";
 import SEO from "@/components/SEO";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const PageWrapper = styled.main`
@@ -17,7 +17,8 @@ const Header = styled.div`
   margin-bottom: 48px;
 `;
 
-const BackBtn = styled.button`
+const BackBtn = styled(Link)`
+  text-decoration: none;
   background: none;
   border: none;
   color: ${({ theme }) => theme.colors.blue};
@@ -68,7 +69,6 @@ const GridWrap = styled.div`
 
 function Cases() {
   const { t, i18n } = useTranslation();
-  const navigate = useNavigate();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -82,7 +82,7 @@ function Cases() {
       />
 
       <Header>
-        <BackBtn onClick={() => navigate(`/${i18n.language}`)}>
+        <BackBtn to={`/${i18n.language === "en" ? "en" : "pt"}`}>
           ← {i18n.language === "en" ? "Back to home" : "Voltar para o início"}
         </BackBtn>
         <Eyebrow>{t("portfolio.allCasesPage.eyebrow")}</Eyebrow>

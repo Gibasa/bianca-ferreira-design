@@ -3,9 +3,8 @@ import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Box from "@mui/material/Box";
 import { useState } from "react";
-import { useLanguage } from "../../context/TranslationContext";
 import { useTranslation } from "react-i18next";
-import { useNavigate, useLocation } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 
 const expandModal1 = keyframes`
@@ -374,14 +373,14 @@ const LanguageButton = styled.button`
 `;
 
 const LanguageText = styled.span`
-  font-weight: ${({ isSelected }) => (isSelected ? "bold" : "normal")};
+  font-weight: ${({ $isSelected }) => ($isSelected ? "bold" : "normal")};
 `;
 
 function Header() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
-  const { language, toggleLanguage } = useLanguage();
   const { t, i18n } = useTranslation();
+  const language = i18n.language === "en" ? "en" : "pt";
   const navigate = useNavigate();
   const location = useLocation();
   
@@ -393,6 +392,13 @@ function Header() {
     { key: "testimonials", target: "depoimentos", type: "scroll" },
     { key: "contact", target: "contato", type: "scroll" },
   ];
+
+  // Troca o idioma pela URL (/pt/... <-> /en/...): o LanguageLayout aplica o idioma da rota
+  const handleToggleLanguage = () => {
+    const other = language === "pt" ? "en" : "pt";
+    const rest = location.pathname.replace(/^\/(pt|en)(?=\/|$)/, "");
+    navigate(`/${other}${rest}${location.hash}`);
+  };
 
   const handleToggleModal = () => {
     if (isModalOpen) {
@@ -414,11 +420,11 @@ function Header() {
     handleToggleModal();
 
     if (item.type === "page") {
-      navigate(`/${i18n.language}/${item.target}`);
+      navigate(`/${language}/${item.target}`);
     } else {
       const isCasesPage = location.pathname.endsWith("/cases");
       if (isCasesPage) {
-        navigate(`/${i18n.language}#${item.target}`);
+        navigate(`/${language}#${item.target}`);
       } else {
         if (item.target === "home") {
           window.scrollTo({ top: 0, behavior: "smooth" });
@@ -433,21 +439,16 @@ function Header() {
     <StyledAppBar position="static">
       <StyledToolbar disableGutters>
         <LogoContainer>
-          <AnimatedLogo
-            src="/images/LOGO BF PRETO.png"
-            alt="Logo"
-            onClick={() => {
-              navigate(`/${i18n.language}`);
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            }}
-          />
+          <Link to={`/${language}`} onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+            <AnimatedLogo src="/images/LOGO BF PRETO.png" alt="Bianca Ferreira Design" />
+          </Link>
         </LogoContainer>
 
         <Box sx={{ flexGrow: 1 }} />
 
-        <LanguageButton onClick={toggleLanguage}>
-          <LanguageText isSelected={language === "pt"}>PT</LanguageText>|
-          <LanguageText isSelected={language === "en"}>EN</LanguageText>
+        <LanguageButton onClick={handleToggleLanguage}>
+          <LanguageText $isSelected={language === "pt"}>PT</LanguageText>|
+          <LanguageText $isSelected={language === "en"}>EN</LanguageText>
         </LanguageButton>
 
         <StyledHamburger onClick={handleToggleModal} isOpen={isModalOpen}>
@@ -462,7 +463,7 @@ function Header() {
               {navItems.map((item) => (
                 <a
                   key={item.key}
-                  href={`#${item.target}`}
+                  href={item.type === "page" ? `/${language}/${item.target}` : `/${language}#${item.target}`}
                   onClick={(e) => handleNavItemClick(e, item)}
                 >
                   {t(`header.nav.${item.key}`)}

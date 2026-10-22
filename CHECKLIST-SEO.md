@@ -25,14 +25,15 @@ Marque `[x]` conforme cada item for concluído e publicado.
 - [x] URLs antigas sem idioma (`/cases`, `/politica-de-privacidade`, `/form`, `/form-en`) → 301 para `/pt/...`
 - [x] `Cache-Control`: arquivos com hash 1 ano, imagens/vídeos 7 dias, HTML `no-cache`
 
-## 4. SEO on-page
-- [ ] Sitemap atualizado (`/pt`, `/en`, `/pt/cases`, `/en/cases`, política) com hreflang; tirar `/form`
-- [ ] Menu e "ver todos os cases" como `<a href>` / `<Link>` em vez de `<button>`
-- [ ] `alt` descritivo no carrossel, logo e foto do Sobre
-- [ ] Corrigir link da política no aviso de cookies (`#/politica-de-privacidade`)
-- [ ] Dados estruturados: unificar e-mail (gmail × contato@), incluir TikTok, remover telefone vazio *(telefone 71 mantido por enquanto — ela mora em Campinas, número é de Salvador)*
-- [ ] Favicon com `type="image/png"`
-- [ ] CTA do modal de case traduzido na versão EN
+## 4. SEO on-page — feito
+- [x] Sitemap gerado no build (`/pt`, `/en`, `/pt/cases`, `/en/cases`, política) com hreflang; sem `/form`
+- [x] "Ver mais cases", "Voltar" e logo como `<Link>`; menu com `href` reais
+- [x] Botão PT | EN troca a URL (`/pt/...` ⇄ `/en/...`), não só o texto
+- [x] `alt` descritivo no carrossel (PT/EN), logo e foto do Sobre
+- [x] Link da política no aviso de cookies (aviso movido para dentro do Router)
+- [x] Dados estruturados: e-mail `contato@biancaferreiradesign.com`, TikTok, sem telefone vazio *(telefone 71 mantido fora por enquanto — ela mora em Campinas, número é de Salvador)*
+- [x] Favicon com `type="image/png"`
+- [x] CTA do modal de case traduzido na versão EN
 
 ## 5. Medição e presença (sem código ou pouco código)
 - [ ] Corrigir pageview contado em dobro no GA4

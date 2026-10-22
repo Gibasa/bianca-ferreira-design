@@ -231,6 +231,11 @@
       "description": "Explore all visual identity projects developed by Bianca Ferreira Design. Authorial design with strategy and purpose.",
       "heading": "Full Portfolio",
       "eyebrow": "All projects"
+    },
+    "modalCta": {
+      "text": "Liked this project? Let's create something like it for your brand.",
+      "button": "I want something like this",
+      "whatsapp": "Hi Bia! I saw the {{group}} case and I want to transform my brand."
     }
   },
   "staff": {
@@ -282,5 +287,8 @@
     "title": "Oops, this page doesn't exist.",
     "text": "The address may have changed or been mistyped. How about going back to the home page and checking out our projects?",
     "button": "Back to home"
+  },
+  "carousel": {
+    "alt": "Visual identity and branding project by Bianca Ferreira Design"
   }
 }

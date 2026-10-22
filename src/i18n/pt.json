@@ -231,6 +231,11 @@
       "description": "Conheça todos os projetos de identidade visual desenvolvidos pela Bianca Ferreira Design. Design autoral com estratégia e propósito.",
       "heading": "Portfólio Completo",
       "eyebrow": "Todos os projetos"
+    },
+    "modalCta": {
+      "text": "Gostou desse projeto? Vamos criar algo assim para sua marca.",
+      "button": "Quero algo assim",
+      "whatsapp": "Olá Bia! Vi o case {{group}} e quero transformar minha marca."
     }
   },
   "staff": {
@@ -282,5 +287,8 @@
     "title": "Ops, essa página não existe.",
     "text": "O endereço pode ter mudado ou estar digitado errado. Que tal voltar ao início e conhecer nossos projetos?",
     "button": "Voltar para o início"
+  },
+  "carousel": {
+    "alt": "Projeto de identidade visual e branding da Bianca Ferreira Design"
   }
 }

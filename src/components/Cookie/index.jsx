@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useTranslation } from 'react-i18next';
+import { Link } from "react-router-dom";
 
 
 const Banner = styled.div`
@@ -31,7 +32,7 @@ const Button = styled.button`
 
 const Cookie = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
 
   useEffect(() => {
@@ -52,9 +53,12 @@ const Cookie = () => {
     <Banner>
       <p>
       {t("cookiesBanner.text")}{" "}
-        <a href="#/politica-de-privacidade" style={{ color: "#4caf50" }}>
+        <Link
+          to={`/${i18n.language === "en" ? "en" : "pt"}/politica-de-privacidade`}
+          style={{ color: "#4caf50" }}
+        >
         {t("cookiesBanner.linkText")}
-        </a>.
+        </Link>.
         <Button onClick={handleAccept}>{t("cookiesBanner.acceptButton")}</Button>
       </p>
     </Banner>

@@ -105,8 +105,8 @@ function App() {
           </Routes>
           <Footer />
         </Suspense>
+        <Cookie />
       </Router>
-      <Cookie />
       <WhatsAppButton />
     </ThemeProvider>
   );

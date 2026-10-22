@@ -12,7 +12,7 @@ import Process from "@/components/Process";
 import FAQ from "@/components/FAQ";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { useNavigate, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 
 const HomeStyled = styled.main`
@@ -64,7 +64,8 @@ const CenterRow = styled.div`
   margin-top: 48px;
 `;
 
-const AllCasesBtn = styled.button`
+const AllCasesBtn = styled(Link)`
+  text-decoration: none;
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -89,7 +90,6 @@ const AllCasesBtn = styled.button`
 
 function Home() {
   const { t, i18n } = useTranslation();
-  const navigate = useNavigate();
   const location = useLocation();
 
   useEffect(() => {
@@ -142,7 +142,7 @@ function Home() {
         </PortfolioHead>
         <Portfolio limit={4} />
         <CenterRow>
-          <AllCasesBtn onClick={() => navigate(`/${i18n.language}/cases`)}>
+          <AllCasesBtn to={`/${i18n.language === "en" ? "en" : "pt"}/cases`}>
             {t("portfolio.allCases")} →
           </AllCasesBtn>
         </CenterRow>

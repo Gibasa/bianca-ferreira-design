@@ -5,6 +5,7 @@
 // Saída: dist/_pages/<lang><path>.html — servido pelo .htaccess para /<lang><path>.
 // O index.html raiz recebe as tags da home em português.
 // dist/404.html é a página de erro do Apache (ErrorDocument 404).
+// dist/sitemap.xml lista as páginas indexáveis com as versões PT/EN.
 // As tags levam data-rh="true" para o react-helmet-async substituí-las na navegação.
 
 import fs from "node:fs";
@@ -82,6 +83,30 @@ const renderHead = (page, lang, dict) => {
   return tags.filter(Boolean).join("\n    ");
 };
 
+const renderSitemap = () => {
+  const today = new Date().toISOString().slice(0, 10);
+  const urls = PAGES.filter((page) => !page.noindex).flatMap((page) =>
+    LANGS.map((lang) => {
+      const alternates = [...LANGS, "x-default"]
+        .map((l) => {
+          const href = pageUrl(l === "x-default" ? DEFAULT_LANG : l, page.path);
+          return `    <xhtml:link rel="alternate" hreflang="${l}" href="${href}" />`;
+        })
+        .join("\n");
+      return `  <url>
+    <loc>${pageUrl(lang, page.path)}</loc>
+    <lastmod>${today}</lastmod>
+${alternates}
+  </url>`;
+    })
+  );
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+${urls.join("\n")}
+</urlset>
+`;
+};
+
 const applyHead = (html, page, lang, dict) => {
   const withLang = html.replace(/<html lang="[^"]*">/, `<html lang="${HTML_LANG[lang]}">`);
   const withHead = withLang.replace(/<title>[^<]*<\/title>/, renderHead(page, lang, dict));
@@ -122,6 +147,7 @@ export default function seoPages() {
 
       const home = PAGES.find((p) => p.path === "");
       fs.writeFileSync(indexPath, applyHead(template, home, DEFAULT_LANG, dicts[DEFAULT_LANG]));
+      fs.writeFileSync(path.join(outDir, "sitemap.xml"), renderSitemap());
       fs.writeFileSync(
         path.join(outDir, "404.html"),
         applyHead(template, NOT_FOUND_PAGE, DEFAULT_LANG, dicts[DEFAULT_LANG])

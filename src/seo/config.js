@@ -39,14 +39,16 @@ export const organizationJsonLd = {
   image: absoluteUrl(DEFAULT_OG_IMAGE),
   "@id": SITE_URL,
   url: SITE_URL,
-  telephone: "",
-  email: "biancafdesign@gmail.com",
+  email: "contato@biancaferreiradesign.com",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Campinas",
     addressRegion: "SP",
     addressCountry: "BR",
   },
-  sameAs: ["https://www.instagram.com/biancaferreiradesign/"],
+  sameAs: [
+    "https://www.instagram.com/biancaferreiradesign/",
+    "https://www.tiktok.com/@biancaferreiradesign",
+  ],
   priceRange: "$$",
 };

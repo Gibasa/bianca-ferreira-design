@@ -1,6 +1,7 @@
 import { useRef, useEffect } from "react";
 import styled from "styled-components";
 import Slider from "react-slick";
+import { useTranslation } from "react-i18next";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -54,6 +55,7 @@ const imageArray = Object.values(images).map((img) => img.default);
 const doubledImages = [...imageArray, ...imageArray];
 
 function Carousel() {
+  const { t } = useTranslation();
   const trackRef = useRef(null);
   const animationRef = useRef(null);
   const offsetRef = useRef(0);
@@ -120,7 +122,11 @@ function Carousel() {
         {doubledImages.map((image, index) => (
           <div key={index}>
             <ImageContainer>
-              <ImageStyled src={image} alt={`Portfolio ${index + 1}`} loading="lazy" />
+              <ImageStyled
+                src={image}
+                alt={index < imageArray.length ? t("carousel.alt") : ""}
+                loading="lazy"
+              />
             </ImageContainer>
           </div>
         ))}

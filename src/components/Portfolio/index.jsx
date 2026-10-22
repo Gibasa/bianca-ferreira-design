@@ -221,7 +221,7 @@ const WaBtn = styled.button`
 
 /* ── Modal component ────────────────────────────────────────── */
 const Modal = ({ groupData, onClose }) => {
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [loaded, setLoaded] = useState(false);
 
   if (!groupData) return null;
@@ -276,16 +276,16 @@ const Modal = ({ groupData, onClose }) => {
         </Gallery>
 
         <ModalCta>
-          <CtaText>Gostou desse projeto? Vamos criar algo assim para sua marca.</CtaText>
+          <CtaText>{t("portfolio.modalCta.text")}</CtaText>
           <WaBtn
             onClick={() =>
-              openWA(`Olá Bia! Vi o case ${group} e quero transformar minha marca.`)
+              openWA(t("portfolio.modalCta.whatsapp", { group }))
             }
           >
             <svg viewBox="0 0 24 24" fill="currentColor">
               <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Z" />
             </svg>
-            Quero algo assim
+            {t("portfolio.modalCta.button")}
           </WaBtn>
         </ModalCta>
       </ModalBox>
