@@ -32,8 +32,9 @@ ErrorDocument 404 /404.html
 </IfModule>
 
 <IfModule mod_headers.c>
-  # HTML sempre revalidado, para cada deploy aparecer na hora
-  <FilesMatch "\.html$">
+  # HTML, sitemap e robots sempre revalidados, para cada deploy aparecer na hora
+  # (também impede a cache do HostGator/nginx de guardar versões antigas)
+  <FilesMatch "\.(html|xml|txt)$">
     Header set Cache-Control "no-cache"
   </FilesMatch>
 
