@@ -55,3 +55,9 @@ Marque `[x]` conforme cada item for concluído e publicado.
 - [x] Preconnect do Typekit (todos os pesos da Open Sans são usados — mantidos)
 - [x] Não publicar `public/images/Backup` (excluída do FTP)
 - [x] CI: `npm ci`, `actions/checkout@v4`, `setup-node@v4` com cache
+
+## Extra — Página de fotografia (`/fotografia`)
+- [x] Página independente (`public/fotografia.html`), sem links a partir do site principal; link "Conheça meu trabalho como designer" para `/pt`
+- [x] Fotos extraídas do HTML para WebP (1 MB → 13 KB de HTML), prévia 1200×630, JSON-LD de serviço com preços, GA4 com Consent Mode
+- [x] Incluída no `sitemap.xml`
+- [ ] Depois do deploy: pedir indexação de `https://www.biancaferreiradesign.com/fotografia` no Search Console

@@ -24,6 +24,9 @@ export const PAGES = [
 // Servida pelo Apache (ErrorDocument) para qualquer URL inexistente
 export const NOT_FOUND_PAGE = { titleKey: "seo.notFound.title", descriptionKey: "seo.notFound.description", noindex: true, notFound: true };
 
+// Páginas estáticas fora do app (public/*.html), sem versão EN — só entram no sitemap
+export const STANDALONE_PAGES = ["/fotografia"];
+
 export const pageUrl = (lang, path = "") => `${SITE_URL}/${lang}${path}`;
 
 export const absoluteUrl = (src) => (src.startsWith("http") ? src : `${SITE_URL}${encodeURI(src)}`);

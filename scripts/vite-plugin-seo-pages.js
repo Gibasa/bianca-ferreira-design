@@ -27,6 +27,8 @@ import {
   pageUrl,
   PAGES,
   SITE_NAME,
+  SITE_URL,
+  STANDALONE_PAGES,
 } from "../src/seo/config.js";
 
 const escapeAttr = (value) =>
@@ -121,9 +123,15 @@ ${alternates}
   </url>`;
     })
   );
+  const standalone = STANDALONE_PAGES.map(
+    (pagePath) => `  <url>
+    <loc>${SITE_URL}${pagePath}</loc>
+    <lastmod>${today}</lastmod>
+  </url>`
+  );
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-${urls.join("\n")}
+${[...urls, ...standalone].join("\n")}
 </urlset>
 `;
 };

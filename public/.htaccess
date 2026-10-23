@@ -18,6 +18,9 @@ ErrorDocument 404 /404.html
 
   RewriteRule ^index\.html$ - [L]
 
+  # Página independente de fotografia (public/fotografia.html), fora do app React
+  RewriteRule ^fotografia/?$ fotografia.html [L]
+
   # Rotas /pt e /en: HTML com <head> de SEO gerado no build (scripts/vite-plugin-seo-pages.js).
   # Só existem em _pages/ as rotas reais; as demais caem no 404 abaixo.
   RewriteRule ^((?:pt|en)(?:/[a-z0-9-]+)*)/?$ _pages/$1.html [L]
